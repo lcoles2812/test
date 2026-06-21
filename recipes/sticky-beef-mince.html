@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticky Beef Mince Bowl</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🍚 Sticky Beef Mince Bowl</h1>
+  <p class="hero-text">Sweet and savoury glazed beef mince with umami broth over rice.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="6" value="2">
+<p><span id="servingValue">2</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 25–30 mins • 💪 High Protein • 🍽 Base: 2 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="300" data-unit="g" data-name="beef mince">300g beef mince</li>
+  <li data-amount="3" data-unit="" data-name="garlic cloves">3 garlic cloves</li>
+  <li data-amount="1" data-unit="" data-name="onion">1 onion</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="soy sauce">2 tbsp soy sauce</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="honey">1 tbsp honey</li>
+  <li data-amount="1" data-unit=" tsp" data-name="miso paste">1 tsp miso paste</li>
+  <li data-amount="250" data-unit="ml" data-name="chicken stock">250ml chicken stock</li>
+  <li data-amount="200" data-unit="g" data-name="rice">200g rice</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Caramelise the beef (key step):</strong><br>
+    Heat pan until very hot. Add beef mince and press it down.  
+    Let it brown properly before stirring — this builds deep flavour. Remove excess liquid if needed.
+  </li>
+
+  <li>
+    <strong>Build aromatics base:</strong><br>
+    Add onion and cook until soft and slightly golden.  
+    Add garlic and cook for 30–60 seconds until fragrant.
+  </li>
+
+  <li>
+    <strong>Create the glaze:</strong><br>
+    Add soy sauce and honey.  
+    Let it reduce until it becomes sticky and coats the beef — this is the “gloss” layer.
+  </li>
+
+  <li>
+    <strong>Build umami broth:</strong><br>
+    Stir in miso paste and chicken stock.  
+    Simmer gently to combine into a light savoury sauce.
+  </li>
+
+  <li>
+    <strong>Combine and reduce:</strong><br>
+    Return beef fully to the pan.  
+    Simmer until sauce thickens and clings to mince instead of pooling.
+  </li>
+
+  <li>
+    <strong>Serve:</strong><br>
+    Spoon over steamed rice.  
+    Optional: top with spring onion, sesame seeds, or chilli oil for extra depth.
+
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+Beef provides high-quality protein and iron for energy, miso supports gut health through fermentation, while garlic and onion provide immune and antioxidant benefits.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 500–700 kcal</li>
+  <li><strong>Protein:</strong> 30–40g</li>
+  <li><strong>Carbs:</strong> 50–75g (rice-based)</li>
+  <li><strong>Fats:</strong> 20–35g</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Pork mince instead of beef</strong> — sweeter, softer texture.</li>
+  <li><strong>Add chilli paste or sriracha</strong> — spicy version with heat balance.</li>
+  <li><strong>Add vegetables (carrot, spinach, bok choy)</strong> — increases volume and fibre.</li>
+  <li><strong>Swap rice for cauliflower rice</strong> — low-carb option.</li>
+  <li><strong>Extra umami</strong> — add oyster sauce or soy glaze finish.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 2;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

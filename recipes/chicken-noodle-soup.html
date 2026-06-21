@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chicken Noodle Soup</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🍜 Chicken Noodle Soup</h1>
+  <p class="hero-text">Slow-simmered roast chicken broth with ginger, garlic, miso, and noodles.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="10" value="4">
+<p><span id="servingValue">4</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 2–3 hrs • 💪 High Protein • 🍽 Base: 4 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="1" data-unit="" data-name="whole roast chicken (carcass + meat)">1 whole roast chicken</li>
+  <li data-amount="1" data-unit="" data-name="onion">1 onion</li>
+  <li data-amount="4" data-unit="" data-name="garlic cloves">4 garlic cloves</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="ginger (sliced)">1 tbsp ginger</li>
+  <li data-amount="1" data-unit="" data-name="carrot (optional)">1 carrot</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="miso paste">2 tbsp miso paste</li>
+  <li data-amount="200" data-unit="g" data-name="noodles">200g noodles</li>
+  <li data-amount="2" data-unit="" data-name="spring onion">2 spring onions</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Build the stock base:</strong><br>
+    Remove meat from the roast chicken and set aside.  
+    Place carcass in a large pot with onion, garlic, ginger, and carrot.  
+    Cover with water and bring to a gentle simmer.
+  </li>
+
+  <li>
+    <strong>Slow simmer for depth:</strong><br>
+    Let the broth simmer gently for 1–2 hours.  
+    Skim off any impurities that rise to the top for a cleaner, clearer broth.
+  </li>
+
+  <li>
+    <strong>Strain and refine:</strong><br>
+    Remove solids and strain the broth.  
+    Return the liquid to the pot — this is your flavour base.
+  </li>
+
+  <li>
+    <strong>Add miso carefully:</strong><br>
+    Dissolve miso paste into a ladle of hot broth first, then stir it back in.  
+    Avoid hard boiling once miso is added to preserve flavour and probiotics.
+  </li>
+
+  <li>
+    <strong>Cook noodles:</strong><br>
+    Add noodles directly to the broth and cook until just tender.  
+    Stir occasionally to prevent sticking.
+  </li>
+
+  <li>
+    <strong>Add chicken back in:</strong><br>
+    Shred the reserved chicken and add it back to the soup.  
+    Let it warm through gently.
+  </li>
+
+  <li>
+    <strong>Finish and balance:</strong><br>
+    Taste and adjust seasoning. Add salt or extra miso if needed.  
+    Finish with fresh spring onion for brightness and freshness.
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+Rich in collagen and amino acids from slow-simmered chicken bones, supporting joint and gut health. Miso provides probiotics for digestion, while garlic and ginger support immune function and inflammation response.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 300–450 kcal</li>
+  <li><strong>Protein:</strong> 25–40g (high from chicken)</li>
+  <li><strong>Carbs:</strong> 30–55g (mainly from noodles)</li>
+  <li><strong>Fats:</strong> 8–18g (depending on chicken skin content)</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Add extra vegetables</strong> — spinach, bok choy, or mushrooms increase fibre and nutrients.</li>
+  <li><strong>Use soba or rice noodles</strong> — gluten-free or higher-fibre alternatives.</li>
+  <li><strong>Spicy version</strong> — add chilli oil or fresh chilli for heat and depth.</li>
+  <li><strong>Extra protein</strong> — add soft-boiled egg or tofu.</li>
+  <li><strong>Low-carb version</strong> — reduce noodles and increase broth + veg.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 4;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

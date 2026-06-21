@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chicken Tikka Curry</title>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🍛 Chicken Tikka Curry</h1>
+  <p class="hero-text">Creamy spiced curry built on yogurt marinade and slow-simmered tomato base.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="10" value="4">
+<p><span id="servingValue">4</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 45–60 mins • 💪 High Protein • 🍽 Base: 4 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="600" data-unit="g" data-name="chicken thighs">600g chicken thighs</li>
+  <li data-amount="150" data-unit="g" data-name="Greek yogurt">150g Greek yogurt</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="garam masala">2 tbsp garam masala</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="ground cumin">1 tbsp ground cumin</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="paprika">1 tbsp paprika</li>
+  <li data-amount="4" data-unit="" data-name="garlic cloves">4 garlic cloves</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="ginger">1 tbsp ginger</li>
+  <li data-amount="1" data-unit="" data-name="onion">1 onion</li>
+  <li data-amount="400" data-unit="g" data-name="canned tomatoes">400g canned tomatoes</li>
+  <li data-amount="100" data-unit="ml" data-name="cream or coconut cream">100ml cream or coconut cream</li>
+  <li data-amount="20" data-unit="g" data-name="butter">20g butter</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="lemon juice">1 tbsp lemon juice</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Marinate the chicken (flavour foundation):</strong><br>
+    Mix chicken thighs with Greek yogurt, garlic, ginger, spices, and lemon juice.  
+    Coat well and let marinate for at least 30 minutes (overnight gives best results).  
+    This step tenderises the chicken and builds deep flavour from within.
+  </li>
+
+  <li>
+    <strong>Sear the chicken:</strong><br>
+    Heat a pan over medium-high heat and brown the chicken lightly.  
+    You don’t need to fully cook it here — just develop surface flavour and colour.  
+    Remove and set aside.
+  </li>
+
+  <li>
+    <strong>Build the curry base:</strong><br>
+    In the same pan, cook onion slowly until soft and slightly golden.  
+    This creates sweetness that balances the spices.
+  </li>
+
+  <li>
+    <strong>Bloom the spices:</strong><br>
+    Add garlic, ginger, and dry spices.  
+    Cook for 1–2 minutes until fragrant — this step activates the spices and removes raw flavour.
+  </li>
+
+  <li>
+    <strong>Create the tomato base:</strong><br>
+    Add canned tomatoes and simmer gently.  
+    Optionally blend for a smoother, restaurant-style sauce texture.
+  </li>
+
+  <li>
+    <strong>Simmer the chicken:</strong><br>
+    Return chicken to the pan and simmer until fully cooked and tender.  
+    The sauce should thicken and coat the chicken evenly.
+  </li>
+
+  <li>
+    <strong>Finish for richness:</strong><br>
+    Add cream (or coconut cream), butter, and lemon juice.  
+    Stir through and adjust seasoning — balance should be creamy, tangy, and spiced.
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+High protein from chicken supports muscle repair, yogurt provides gut-friendly probiotics, while turmeric, ginger, and garlic offer anti-inflammatory and immune-supporting properties.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 500–700 kcal</li>
+  <li><strong>Protein:</strong> 35–45g (high, supports recovery)</li>
+  <li><strong>Carbs:</strong> 10–25g (low unless served with rice)</li>
+  <li><strong>Fats:</strong> 25–40g (cream, butter, chicken fat)</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Coconut cream instead of dairy</strong> — dairy-free version with slightly sweeter flavour.</li>
+  <li><strong>Chicken breast instead of thighs</strong> — leaner but slightly less juicy.</li>
+  <li><strong>Add spinach</strong> — boosts fibre, iron, and volume without changing flavour.</li>
+  <li><strong>Extra chilli</strong> — increases heat and depth for spice lovers.</li>
+  <li><strong>Serve with cauliflower rice</strong> — low-carb alternative to regular rice.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 4;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

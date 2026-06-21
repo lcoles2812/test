@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garlic Chilli Prawn Pasta</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🍤 Garlic Chilli Prawn Pasta</h1>
+  <p class="hero-text">Light white wine pasta with garlic, chilli, lemon, and fresh prawns.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="6" value="2">
+<p><span id="servingValue">2</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 20–25 mins • 💪 High Protein • 🍽 Base: 2 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="200" data-unit="g" data-name="prawns">200g prawns</li>
+  <li data-amount="3" data-unit="" data-name="garlic cloves">3 garlic cloves</li>
+  <li data-amount="1" data-unit=" tsp" data-name="chilli flakes">1 tsp chilli flakes</li>
+  <li data-amount="100" data-unit="ml" data-name="white wine">100ml white wine</li>
+  <li data-amount="1" data-unit="" data-name="lemon (juice)">1 lemon (juice)</li>
+  <li data-amount="200" data-unit="g" data-name="pasta">200g pasta</li>
+  <li data-amount="10" data-unit="g" data-name="parsley">10g parsley</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Cook pasta properly:</strong><br>
+    Boil pasta in heavily salted water until al dente.  
+    Reserve at least one cup of pasta water before draining — this is key for the sauce.
+  </li>
+
+  <li>
+    <strong>Sear prawns quickly:</strong><br>
+    Heat pan until very hot. Cook prawns for 1–2 minutes per side until just pink.  
+    Remove immediately to avoid overcooking — they will finish in the sauce.
+  </li>
+
+  <li>
+    <strong>Build flavour base:</strong><br>
+    Lower heat slightly and fry garlic and chilli in olive oil.  
+    Cook gently to avoid burning — this forms the flavour foundation.
+  </li>
+
+  <li>
+    <strong>Deglaze with wine:</strong><br>
+    Add white wine and scrape the pan.  
+    Let it reduce by about half to concentrate flavour and remove sharp alcohol notes.
+  </li>
+
+  <li>
+    <strong>Create the sauce (important step):</strong><br>
+    Add lemon juice and a splash of reserved pasta water.  
+    Stir vigorously — the starch in the water emulsifies with oil to create a light, glossy sauce.
+  </li>
+
+  <li>
+    <strong>Combine everything:</strong><br>
+    Add pasta and prawns back into the pan.  
+    Toss continuously until everything is coated evenly in sauce.
+  </li>
+
+  <li>
+    <strong>Finish fresh:</strong><br>
+    Turn off heat and add parsley.  
+    Adjust seasoning with salt, pepper, or extra lemon juice if needed.
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+High-quality lean protein from prawns supports muscle recovery, garlic provides immune support, lemon adds vitamin C, and olive oil provides healthy fats for heart health.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 400–550 kcal</li>
+  <li><strong>Protein:</strong> 25–35g</li>
+  <li><strong>Carbs:</strong> 45–70g</li>
+  <li><strong>Fats:</strong> 8–18g (light, olive oil based)</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Wholewheat pasta</strong> — higher fibre, slower digestion.</li>
+  <li><strong>Chilli oil finish</strong> — adds deeper heat and richness.</li>
+  <li><strong>Add spinach or rocket</strong> — increases nutrients and freshness.</li>
+  <li><strong>Swap prawns for chicken</strong> — more filling, slightly higher fat.</li>
+  <li><strong>Gluten-free pasta</strong> — keeps dish accessible without changing flavour profile.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 2;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

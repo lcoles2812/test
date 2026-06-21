@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Drunken Noodles</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🍜 Drunken Noodles</h1>
+  <p class="hero-text">Bold Thai-style noodles with chilli, garlic, soy glaze and fresh basil.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="8" value="2">
+<p><span id="servingValue">2</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 25–30 mins • 💪 High Protein • 🍽 Base: 2 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="300" data-unit="g" data-name="chicken thigh strips">300g chicken thigh strips</li>
+  <li data-amount="200" data-unit="g" data-name="rice noodles">200g rice noodles</li>
+  <li data-amount="4" data-unit="" data-name="garlic cloves">4 garlic cloves</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="ginger">1 tbsp ginger</li>
+  <li data-amount="1" data-unit=" tsp" data-name="chilli flakes">1 tsp chilli flakes</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="soy sauce">2 tbsp soy sauce</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="oyster sauce">1 tbsp oyster sauce</li>
+  <li data-amount="1" data-unit=" tsp" data-name="fish sauce">1 tsp fish sauce</li>
+  <li data-amount="1" data-unit=" tsp" data-name="honey">1 tsp honey</li>
+  <li data-amount="10" data-unit="g" data-name="Thai basil">10g Thai basil</li>
+  <li data-amount="2" data-unit="" data-name="spring onion">2 spring onions</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Prep everything first (wok cooking is fast):</strong><br>
+    Slice chicken and prepare all sauces before turning on heat.  
+    Once cooking starts, everything moves quickly.
+  </li>
+
+  <li>
+    <strong>Prepare noodles:</strong><br>
+    Soak or boil rice noodles until just tender.  
+    Drain and toss lightly with oil to prevent sticking.
+  </li>
+
+  <li>
+    <strong>Sear the chicken:</strong><br>
+    Heat a wok or large pan until very hot.  
+    Cook chicken in a single layer until browned and just cooked through. Remove and set aside.
+  </li>
+
+  <li>
+    <strong>Build aromatics base:</strong><br>
+    In the same pan, fry garlic, ginger, and chilli in oil.  
+    Cook briefly (30–60 seconds) until fragrant — do not burn.
+  </li>
+
+  <li>
+    <strong>Build the sauce:</strong><br>
+    Add soy sauce, oyster sauce, fish sauce, and honey.  
+    Let it bubble for 1–2 minutes to slightly reduce and thicken.
+  </li>
+
+  <li>
+    <strong>Combine everything:</strong><br>
+    Add noodles and chicken back into the wok.  
+    Toss continuously until noodles are fully coated and glossy.
+  </li>
+
+  <li>
+    <strong>Finish fresh:</strong><br>
+    Turn off heat and add Thai basil and spring onion.  
+    Toss lightly — residual heat is enough to release aroma without overcooking herbs.
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+High protein from chicken supports muscle repair, garlic and chilli support immune and metabolic function, while basil provides antioxidants and anti-inflammatory compounds.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 450–650 kcal</li>
+  <li><strong>Protein:</strong> 30–40g (high)</li>
+  <li><strong>Carbs:</strong> 50–80g (mainly noodles)</li>
+  <li><strong>Fats:</strong> 10–20g (light, sauce-based)</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Beef or tofu instead of chicken</strong> — changes protein profile while keeping sauce structure.</li>
+  <li><strong>Extra veg (broccoli, bok choy)</strong> — increases fibre and volume.</li>
+  <li><strong>Low-sugar version</strong> — reduce or remove honey.</li>
+  <li><strong>Gluten-free version</strong> — use tamari instead of soy sauce.</li>
+  <li><strong>Extra spice</strong> — add fresh chilli or chilli oil at the end.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 2;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

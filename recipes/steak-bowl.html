@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steak and Veg</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🥩 Steak and Veg</h1>
+  <p class="hero-text">High-protein steak plate with roasted sweet potato, greens, and fresh chimichurri.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="4" value="1">
+<p><span id="servingValue">1</span> serving</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 30–40 mins • 💪 High Protein • 🍽 Base: 1 serving</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="250" data-unit="g" data-name="steak (sirloin or ribeye)">250g steak (sirloin or ribeye)</li>
+  <li data-amount="200" data-unit="g" data-name="sweet potato">200g sweet potato</li>
+  <li data-amount="100" data-unit="g" data-name="broccolini">100g broccolini</li>
+  <li data-amount="2" data-unit="" data-name="garlic cloves">2 garlic cloves</li>
+  <li data-amount="15" data-unit="g" data-name="parsley">15g parsley</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="olive oil">1 tbsp olive oil</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="vinegar or lemon juice">1 tbsp vinegar or lemon juice</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Roast sweet potato:</strong><br>
+    Cut into chunks, season, and roast at high heat until crispy outside and soft inside.  
+    This provides your slow-digesting carbohydrate base.
+  </li>
+
+  <li>
+    <strong>Prepare chimichurri:</strong><br>
+    Mix parsley, garlic, olive oil, vinegar, and salt.  
+    Let it sit so flavours meld while you cook the rest.
+  </li>
+
+  <li>
+    <strong>Cook the steak properly:</strong><br>
+    Season generously and sear in a very hot pan.  
+    Cook to preferred doneness, then rest for 5–10 minutes — this is essential for juice retention.
+  </li>
+
+  <li>
+    <strong>Cook broccolini:</strong><br>
+    Lightly steam or blanch first, then finish in a hot pan with garlic for flavour and texture.
+  </li>
+
+  <li>
+    <strong>Assemble plate:</strong><br>
+    Slice steak against the grain.  
+    Serve with roasted sweet potato, broccolini, and spoon over chimichurri.
+
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+High-quality protein from steak supports muscle growth and recovery, sweet potato provides slow-release carbohydrates and potassium, while chimichurri delivers antioxidants and healthy fats from olive oil.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 550–800 kcal</li>
+  <li><strong>Protein:</strong> 40–55g (very high)</li>
+  <li><strong>Carbs:</strong> 30–50g (sweet potato)</li>
+  <li><strong>Fats:</strong> 25–45g (steak + oil)</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Chicken thighs instead of steak</strong> — cheaper, slightly lower fat option.</li>
+  <li><strong>Swap sweet potato for white potato</strong> — lighter flavour, crispier roast.</li>
+  <li><strong>Add avocado</strong> — increases healthy fats and creaminess.</li>
+  <li><strong>Add chili flakes to chimichurri</strong> — extra heat and metabolism boost.</li>
+  <li><strong>Swap broccolini for asparagus or green beans</strong> — seasonal flexibility.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 1;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

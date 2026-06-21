@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panang Curry</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🍛 Panang Curry</h1>
+  <p class="hero-text">Creamy Thai curry with rich coconut, subtle sweetness, and deep spice.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="10" value="3">
+<p><span id="servingValue">3</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 30–40 mins • 💪 High Protein • 🍽 Base: 3 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="600" data-unit="g" data-name="chicken thighs">600g chicken thighs</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="Panang curry paste">2 tbsp Panang curry paste</li>
+  <li data-amount="400" data-unit="ml" data-name="coconut cream/milk">400ml coconut cream/milk</li>
+  <li data-amount="4" data-unit="" data-name="garlic cloves">4 garlic cloves</li>
+  <li data-amount="1" data-unit="" data-name="capsicum">1 capsicum</li>
+  <li data-amount="100" data-unit="g" data-name="green beans">100g green beans</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="fish sauce">1 tbsp fish sauce</li>
+  <li data-amount="1" data-unit=" tsp" data-name="sugar (optional)">1 tsp sugar (optional)</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Sear the chicken:</strong><br>
+    Heat a pan over medium-high heat.  
+    Add chicken and brown lightly — this builds flavour before the sauce is added.  
+    Remove and set aside.
+  </li>
+
+  <li>
+    <strong>Fry the curry paste (key step):</strong><br>
+    Add a little oil, then fry Panang curry paste for 1–2 minutes.  
+    This step “blooms” the spices and releases deep aromatic oils.
+  </li>
+
+  <li>
+    <strong>Build the base:</strong><br>
+    Slowly add coconut cream while stirring.  
+    Mix until the paste fully dissolves and forms a smooth, rich sauce.
+  </li>
+
+  <li>
+    <strong>Simmer vegetables:</strong><br>
+    Add garlic, capsicum, and green beans.  
+    Let them simmer gently so they soften slightly but still retain texture.
+  </li>
+
+  <li>
+    <strong>Return chicken:</strong><br>
+    Add chicken back into the sauce.  
+    Simmer until fully cooked and the sauce slightly thickens.
+  </li>
+
+  <li>
+    <strong>Balance flavour:</strong><br>
+    Add fish sauce for saltiness and depth.  
+    Add a small pinch of sugar only if needed to balance heat and richness.
+  </li>
+
+  <li>
+    <strong>Final texture check:</strong><br>
+    The sauce should be thick, glossy, and cling to the chicken.  
+    Adjust consistency with a splash of water if too thick.
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+High protein from chicken supports muscle repair, coconut provides healthy fats for energy, and capsicum + green beans add fibre, antioxidants, and vitamin C for immune support.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 550–750 kcal</li>
+  <li><strong>Protein:</strong> 30–40g</li>
+  <li><strong>Carbs:</strong> 10–25g</li>
+  <li><strong>Fats:</strong> 35–55g (coconut-based)</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Beef instead of chicken</strong> — richer, deeper flavour profile.</li>
+  <li><strong>Tofu version</strong> — absorbs curry sauce well for vegetarian option.</li>
+  <li><strong>Extra vegetables</strong> — zucchini, eggplant, or spinach increase volume and fibre.</li>
+  <li><strong>Lighter version</strong> — use light coconut milk instead of cream.</li>
+  <li><strong>Extra heat</strong> — add fresh chilli or chilli oil at the end.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 3;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulled Beef Tacos</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🌮 Pulled Beef Tacos</h1>
+  <p class="hero-text">Slow-cooked chipotle beef with smoky depth, rich sauce, and fresh toppings.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="10" value="4">
+<p><span id="servingValue">4</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 2–3 hrs • 💪 High Protein • 🍽 Base: 4 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="1" data-unit="kg" data-name="chuck beef">1kg chuck beef</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="chipotle in adobo">2 tbsp chipotle in adobo</li>
+  <li data-amount="1" data-unit="" data-name="onion">1 onion</li>
+  <li data-amount="4" data-unit="" data-name="garlic cloves">4 garlic cloves</li>
+  <li data-amount="2" data-unit=" tsp" data-name="spices (cumin + paprika)">2 tsp spices (cumin + paprika)</li>
+  <li data-amount="500" data-unit="ml" data-name="beef stock">500ml beef stock</li>
+  <li data-amount="8" data-unit="" data-name="taco shells">8 taco shells</li>
+  <li data-amount="1" data-unit=" cup" data-name="pico de gallo">1 cup pico de gallo</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Build the flavour paste:</strong><br>
+    Blend onion, garlic, chipotle, and spices into a rough paste.  
+    This becomes the base that drives all flavour into the beef during cooking.
+  </li>
+
+  <li>
+    <strong>Sear the beef:</strong><br>
+    Heat a heavy pot or Dutch oven until very hot.  
+    Sear beef on all sides until deeply browned — this creates Maillard flavour (essential for depth).
+  </li>
+
+  <li>
+    <strong>Toast the paste:</strong><br>
+    Remove beef briefly, add paste into the same pot.  
+    Cook for 1–2 minutes to intensify spice oils and remove raw edges.
+  </li>
+
+  <li>
+    <strong>Slow braise:</strong><br>
+    Return beef to pot and add beef stock.  
+    Cover and simmer on low heat for 2–3 hours until meat easily pulls apart.
+  </li>
+
+  <li>
+    <strong>Shred and reduce:</strong><br>
+    Remove beef, shred with forks, then return to sauce.  
+    Simmer uncovered until liquid reduces into a thick, glossy coating.
+  </li>
+
+  <li>
+    <strong>Build tacos:</strong><br>
+    Warm taco shells. Fill with pulled beef and top with fresh pico de gallo.  
+    Optional: add lime, coriander, or pickled onions for brightness.
+
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+High iron content from beef supports energy and oxygen transport, while garlic and spices provide anti-inflammatory compounds. Tomato-based pico adds vitamin C to support iron absorption.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 500–750 kcal</li>
+  <li><strong>Protein:</strong> 35–45g</li>
+  <li><strong>Carbs:</strong> 30–60g (tortillas + toppings)</li>
+  <li><strong>Fats:</strong> 25–45g (beef-dependent)</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Chicken thighs instead of beef</strong> — lighter, faster cooking version.</li>
+  <li><strong>Black beans added</strong> — increases fibre and bulk.</li>
+  <li><strong>Lettuce wraps instead of tacos</strong> — low-carb alternative.</li>
+  <li><strong>Extra spice</strong> — add fresh chilli or hot sauce at end.</li>
+  <li><strong>Smokier flavour</strong> — add smoked paprika or char the tortillas.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 4;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

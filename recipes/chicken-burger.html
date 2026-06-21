@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chicken Burger</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Recipe Vault</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🍔 Chicken Burger</h1>
+  <p class="hero-text">Crispy crumbed chicken with fresh slaw and a spicy creamy sauce.</p>
+</header>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="6" value="2">
+<p><span id="servingValue">2</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 25–35 mins • 💪 High Protein • 🍽 Base: 2 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+
+  <li data-amount="2" data-unit="" data-name="chicken breast">2 chicken breasts</li>
+  <li data-amount="1" data-unit=" cup" data-name="breadcrumbs">1 cup breadcrumbs</li>
+  <li data-amount="1" data-unit="" data-name="egg">1 egg</li>
+  <li data-amount="0.5" data-unit=" cup" data-name="red cabbage">½ cup red cabbage</li>
+  <li data-amount="0.5" data-unit=" cup" data-name="carrot (shredded)">½ cup carrot</li>
+  <li data-amount="0.25" data-unit="" data-name="onion (sliced)">¼ onion</li>
+  <li data-amount="0.5" data-unit=" cup" data-name="Greek yogurt">½ cup Greek yogurt</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="mayo">2 tbsp mayo</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="sriracha">1 tbsp sriracha</li>
+  <li data-amount="3" data-unit="" data-name="pickles (optional)">3 pickles</li>
+
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+
+  <li>
+    <strong>Prepare chicken for even cooking:</strong><br>
+    Flatten chicken breasts slightly so they cook evenly and stay juicy inside while crisping outside.
+  </li>
+
+  <li>
+    <strong>Set up crumbing station:</strong><br>
+    Prepare three bowls: flour (optional), beaten egg, and breadcrumbs.  
+    Coat chicken in egg → breadcrumbs, pressing firmly so the coating sticks well.
+  </li>
+
+  <li>
+    <strong>Cook the chicken properly:</strong><br>
+    Pan-fry or air-fry until golden brown and fully cooked.  
+    Let it rest for a few minutes after cooking so the crust stays crisp and juices settle.
+  </li>
+
+  <li>
+    <strong>Make the slaw (balance + crunch):</strong><br>
+    Mix cabbage, carrot, and onion with a bit of Greek yogurt, salt, and vinegar or lemon juice.  
+    The goal is fresh, crunchy, and slightly tangy to cut through the fried chicken.
+  </li>
+
+  <li>
+    <strong>Make the sauce:</strong><br>
+    Combine mayo, Greek yogurt, and sriracha.  
+    Adjust spice level depending on preference — it should be creamy with a kick.
+  </li>
+
+  <li>
+    <strong>Assemble the burger:</strong><br>
+    Toast the bun if using.  
+    Layer slaw first, then crispy chicken, then sauce, and finish with pickles for acidity.
+  </li>
+
+  <li>
+    <strong>Final balance check:</strong><br>
+    Make sure you have crunch (chicken), freshness (slaw), creaminess (sauce), and acidity (pickles) in every bite.
+  </li>
+
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+High protein from chicken supports muscle repair, cabbage and carrot provide fibre and vitamin C for digestion and immunity, and yogurt supports gut health.
+</p>
+
+<!-- MACROS -->
+<h2 class="section-title">Macros (approx per serve)</h2>
+
+<ul class="text-muted">
+  <li><strong>Calories:</strong> 450–650 kcal</li>
+  <li><strong>Protein:</strong> 30–45g (high, supports satiety)</li>
+  <li><strong>Carbs:</strong> 30–50g (breadcrumbs + bun if used)</li>
+  <li><strong>Fats:</strong> 15–30g (frying oil + mayo)</li>
+</ul>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Air-fry instead of pan-fry</strong> — reduces oil while keeping crisp texture.</li>
+  <li><strong>Turkey mince patty</strong> — lighter protein option with lower fat.</li>
+  <li><strong>Add spicy slaw</strong> — mix in jalapeños or extra sriracha for heat.</li>
+  <li><strong>Wholemeal bun</strong> — higher fibre, slower digestion.</li>
+  <li><strong>Extra pickles</strong> — increases acidity and cuts through richness.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 2;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>
