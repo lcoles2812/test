@@ -17,7 +17,7 @@
         <div class="logo">Recipe Vault</div>
 
         <div class="nav-links">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="weeknight.html">Weeknight</a>
             <a href="singlenight.html">Single Night</a>
             <a href="sunday.html">Sunday</a>
@@ -27,23 +27,64 @@
 
 <!-- HERO -->
 <header class="hero">
-
     <h1>The Recipe Vault</h1>
-
     <p class="subtitle">
-        Cheap • Nutritional • Delicous
+        Cheap • Nutritious • Delicious
     </p>
-
     <p class="hero-text">
         Practical recipes designed for meal prep, quick weeknight dinners,
         and slow Sunday cooking. No fluff. Just food that works.
     </p>
-
 </header>
 
-<!-- CONTENT -->
-<div class="container">
+<!-- MAIN -->
+<main class="container">
 
+    <!-- ABOUT -->
+    <section class="about">
+
+        <div class="about-grid">
+    
+            <div class="about-content">
+    
+                <p class="eyebrow">ABOUT</p>
+    
+                <h2>Cooking that fits real life.</h2>
+    
+                <p class="about-intro">
+                    Every recipe in The Recipe Vault is something I genuinely cook.
+                    The focus isn't just high protein or low calories—it's creating
+                    meals that are nutritious, affordable and worth making again.
+                </p>
+    
+                <div class="about-features">
+    
+                    <div class="feature">
+                        ⚡ <span>Meal Prep & Weeknight Meals</span>
+                    </div>
+    
+                    <div class="feature">
+                        🍽 <span>Single Night Dinners</span>
+                    </div>
+    
+                    <div class="feature">
+                        🍲 <span>Slow Sunday Cooking</span>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            <div class="about-image">
+                <img src="images/chicken_tikka.jpeg"
+                     alt="Chicken Tikka Curry">
+            </div>
+    
+        </div>
+    
+    </section>
+
+    <!-- CATEGORY LINKS -->
     <h2 class="section-title">Browse by Cooking Style</h2>
 
     <div class="grid">
@@ -62,12 +103,13 @@
 
         <a class="card" href="sunday.html">
             <h2>🍲 Sunday Meals</h2>
-            <p>Slow cooked meals with big flavour and leftovers.</p>
+            <p>Slow cooked meals with deep flavour and leftovers.</p>
             <span class="tag">Slow Cook</span>
         </a>
 
     </div>
 
+    <!-- FEATURED -->
     <section class="featured">
 
         <h2 class="section-title">Featured Recipes</h2>
@@ -75,30 +117,49 @@
         <div class="recipe-grid">
 
             <a class="recipe-card" href="recipes/chicken-tikka.html">
-                <h3>🍛 Chicken Tikka Curry</h3>
-                <p>Rich, creamy curry with marinated chicken thighs.</p>
-            </div>
 
-            <div class="recipe-card" href="recipes/burrito-bowl.html">
-                <h3>🌯 Burrito Bowl</h3>
-                <p>High protein meal prep staple.</p>
-            </div>
+                <img src="images/chicken_tikka2.png"
+                     alt="Chicken Tikka Curry"
+                     class="recipe-image">
+            
+                <div class="recipe-content">
+                    <h3>Chicken Tikka Curry</h3>
+                    <p>Rich, creamy curry with marinated chicken thighs.</p>
+                </div>
+            
+            </a>
 
-            <div class="recipe-card" href="recipes/sticky-beef-mince.html">
-                <h3>🍚 Sticky Beef Mince Bowl</h3>
-                <p>Cheap, filling, and full of flavour.</p>
-            </div>
+            <a class="recipe-card" href="recipes/burrito-bowl.html">
 
-            <div class="recipe-card" href="recipes/pulled-beef-tacos.html">
-                <h3>🌮 Pulled Beef Tacos</h3>
-                <p>Slow cooked chipotle beef with pico de gallo.</p>
-            </div>
+                <img src="images/burrito_bowl.png"
+                     alt="Burrito Bowl"
+                     class="recipe-image">
+            
+                <div class="recipe-content">
+                    <h3>Burrito Bowl</h3>
+                    <p>High protein meal prep staple.</p>
+                </div>
+            
+            </a>
+            
+            <a class="recipe-card" href="recipes/sticky-beef-mince.html">
+
+                <img src="images/sticky mince.png"
+                     alt="sticky beef mince"
+                     class="recipe-image">
+            
+                <div class="recipe-content">
+                    <h3>Sticky Beef Mince Bowl</h3>
+                    <p>Cheap, filling, and full of flavour.</p>
+                </div>
+            
+            </a>
 
         </div>
 
     </section>
 
-</div>
+</main>
 
 <!-- FOOTER -->
 <footer>
