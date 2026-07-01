@@ -4,275 +4,147 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lemon Garlic Chilli Broccolini Pasta</title>
-
-<style>
-/* =========================
-   BASE
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-body {
-  background: #fff;
-  color: #111;
-  line-height: 1.5;
-}
-
-/* =========================
-   NAV
-========================= */
-nav {
-  position: sticky;
-  top: 0;
-  background: white;
-  border-bottom: 1px solid #eee;
-  z-index: 100;
-}
-
-.nav {
-  max-width: 1100px;
-  margin: auto;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #111;
-  margin-left: 18px;
-  font-size: 14px;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: 48px;
-  line-height: 1.1;
-  margin-bottom: 15px;
-  letter-spacing: -1px;
-}
-
-.hero p {
-  color: #666;
-  max-width: 500px;
-}
-
-.hero img {
-  width: 100%;
-  border-radius: 18px;
-  object-fit: cover;
-}
-
-/* =========================
-   META
-========================= */
-.meta {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-  font-size: 14px;
-  color: #444;
-}
-
-/* =========================
-   LAYOUT
-========================= */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 20px 80px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-h2 {
-  margin: 40px 0 15px;
-  font-size: 22px;
-  letter-spacing: -0.5px;
-}
-
-.card {
-  border: 1px solid #eee;
-  border-radius: 14px;
-  padding: 18px;
-  margin-bottom: 10px;
-}
-
-/* =========================
-   LISTS
-========================= */
-ul, ol {
-  padding-left: 18px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-/* =========================
-   BOTTOM GRID
-========================= */
-.bottom-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.small-card {
-  border: 1px solid #eee;
-  border-radius: 14px;
-  padding: 18px;
-}
-
-.small-card h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 800px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .bottom-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav">
-    <div><strong>Common table</strong></div>
-    <div>
+  <div class="nav-container">
+    <div class="logo">Common table</div>
+
+    <div class="nav-links">
       <a href="../index.html">Home</a>
       <a href="../weeknight.html">Weeknight</a>
       <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-
-  <div>
+<section class="recipe-hero">
+  <div class="recipe-hero-copy">
     <h1>🍋 Lemon Garlic Chilli Broccolini Pasta with Chicken</h1>
-    <p>
-      Light, fresh pasta with garlic, chilli, lemon and tender chicken.
-      Built for speed, flavour and balance.
+    <p class="hero-text">
+        This is the kind of quick weeknight dinner I go to when I want something fresh, bright, and properly satisfying without much effort.
+        <br><br>
+        The pasta comes together fast with lemon, garlic, chilli, and broccolini, and it feels light but still filling. It’s easy to swap the chicken for beef, steak, sausage, or even prawns depending on what’s in the fridge.
+        <br><br>
+        It’s a great one for a busy night because it cooks quickly, tastes a little special, and still feels simple enough to repeat often.
     </p>
-
-    <div class="meta">
-      <span>⏱ 25 mins</span>
-      <span>💪 High Protein</span>
-      <span>🍽 2–3 servings</span>
-    </div>
   </div>
-
-  <img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642" alt="pasta">
-
+  <img class="recipe-hero-image" src="../images/LemonPasta.jpeg" alt="Lemon garlic chilli broccolini pasta">
 </section>
 
-<!-- CONTENT -->
 <div class="container">
 
-  <div class="grid">
+  <h2 class="section-title">Servings</h2>
 
-    <!-- INGREDIENTS -->
-    <div>
-      <h2>Ingredients</h2>
-      <div class="card">
-        <ul>
-          <li>Chicken breast</li>
-          <li>Pasta (spaghetti or linguine)</li>
-          <li>Broccolini</li>
-          <li>Garlic cloves</li>
-          <li>Chilli flakes</li>
-          <li>Lemon (zest + juice)</li>
-          <li>Olive oil</li>
-          <li>Parmesan</li>
-          <li>Salt & pepper</li>
-        </ul>
-      </div>
-    </div>
+  <input id="servings" type="range" min="1" max="6" value="2">
+  <p><span id="servingValue">2</span> servings</p>
 
-    <!-- METHOD -->
-    <div>
-      <h2>Method</h2>
-      <div class="card">
-        <ol>
-          <li>Cook pasta in salted water. Reserve pasta water.</li>
-          <li>Blanch broccolini for 2–3 mins.</li>
-          <li>Sear chicken until golden, then slice.</li>
-          <li>Fry garlic + chilli in olive oil.</li>
-          <li>Add lemon juice + zest.</li>
-          <li>Toss pasta + broccolini + pasta water.</li>
-          <li>Return chicken and mix through.</li>
-          <li>Finish with parmesan.</li>
-        </ol>
-      </div>
-    </div>
+  <h2 class="section-title">Quick Stats</h2>
+  <p>⏱ 25 mins • 💪 High Protein • 🍽 Base: 2 servings</p>
 
-  </div>
+  <h2 class="section-title">Ingredients</h2>
 
-  <!-- BOTTOM INFO -->
-  <div class="bottom-grid">
+  <ul id="ingredients">
+    <li data-amount="250" data-unit="g" data-name="chicken breast">250g chicken breast</li>
+    <li data-amount="200" data-unit="g" data-name="pasta">200g pasta</li>
+    <li data-amount="200" data-unit="g" data-name="broccolini">200g broccolini</li>
+    <li data-amount="3" data-unit="" data-name="garlic cloves">3 garlic cloves</li>
+    <li data-amount="1" data-unit=" tsp" data-name="chilli flakes">1 tsp chilli flakes</li>
+    <li data-amount="1" data-unit="" data-name="lemon (zest + juice)">1 lemon (zest + juice)</li>
+    <li data-amount="2" data-unit=" tbsp" data-name="olive oil">2 tbsp olive oil</li>
+    <li data-amount="30" data-unit="g" data-name="parmesan">30g parmesan</li>
+    <li data-amount="1" data-unit="" data-name="salt & pepper">salt & pepper</li>
+  </ul>
 
-    <div class="small-card">
-      <h3>Nutrition</h3>
-      High protein, balanced carbs, light fats.
-    </div>
+  <h2 class="section-title">Method</h2>
 
-    <div class="small-card">
-      <h3>Key Benefits</h3>
-      
-      Vitamin C (lemon), fibre (broccolini), protein (chicken), antioxidants (garlic).
-    </div>
+  <ol>
+    <li>
+      <strong>Cook the pasta properly:</strong><br>
+      Boil the pasta in well-salted water until al dente. Reserve a mug of pasta water before draining.
+    </li>
+    <li>
+      <strong>Blanch the broccolini:</strong><br>
+      Cook the broccolini for 2–3 minutes until bright green and just tender. Drain and set aside.
+    </li>
+    <li>
+      <strong>Cook the chicken:</strong><br>
+      Sear the chicken breast in a hot pan with a little olive oil until golden and cooked through, then slice it.
+    </li>
+    <li>
+      <strong>Build the flavour base:</strong><br>
+      In the same pan, add garlic and chilli flakes with the remaining olive oil. Cook gently for 30–60 seconds so it stays fragrant.
+    </li>
+    <li>
+      <strong>Add lemon and pasta water:</strong><br>
+      Stir in the lemon zest and juice, then add a splash of reserved pasta water to bring everything together.
+    </li>
+    <li>
+      <strong>Bring it all together:</strong><br>
+      Add the pasta, broccolini, and chicken back to the pan. Toss until glossy, silky, and well coated.
+    </li>
+    <li>
+      <strong>Finish and serve:</strong><br>
+      Turn off the heat, add parmesan, and season with salt and pepper to taste.
+    </li>
+  </ol>
 
-    <div class="small-card">
-      <h3>Smart Swaps</h3>
-      Swap chicken → prawns, add spinach, use wholewheat pasta, or add cream for richness.
-    </div>
+  <h2 class="section-title">Key Nutrients & Benefits</h2>
+  <p class="text-muted">
+    High protein from chicken, vitamin C from lemon, and fibre from broccolini support energy, recovery, and a balanced meal.
+  </p>
 
-  </div>
+  <h2 class="section-title">Macros (approx per serve)</h2>
+  <ul class="text-muted">
+    <li><strong>Calories:</strong> 450–600 kcal</li>
+    <li><strong>Protein:</strong> 35–45g</li>
+    <li><strong>Carbs:</strong> 45–60g</li>
+    <li><strong>Fats:</strong> 12–20g</li>
+  </ul>
+
+  <h2 class="section-title">Smart Swaps & Variations</h2>
+
+  <ul class="text-muted">
+    <li><strong>Swap chicken for prawns</strong> — lighter and quicker to cook.</li>
+    <li><strong>Add spinach or rocket</strong> — boosts greens and freshness.</li>
+    <li><strong>Use wholewheat pasta</strong> — higher fibre and a slightly nuttier bite.</li>
+    <li><strong>Add cream or mascarpone</strong> — makes it richer and more indulgent.</li>
+  </ul>
 
 </div>
+
+<script>
+const baseServings = 2;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
 
 </body>
 </html>
