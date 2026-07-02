@@ -678,12 +678,31 @@ footer {
         padding-bottom: 6px;
     }
 
+    /* Stack and crop about section on small phones */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .about-content {
+        order: 1;
+    }
+
+    .about-image {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .about-image img {
         width: 100%;
         height: auto;
-        aspect-ratio: 4/3;
-        max-height: 360px;
+        max-height: 220px; /* crop more aggressively on small phones */
         object-fit: cover;
+        object-position: center; /* focus on center */
+        border-radius: 12px;
+        margin: 0;
     }
 
     .recipe-image {
