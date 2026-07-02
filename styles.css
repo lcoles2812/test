@@ -13,6 +13,12 @@
     box-sizing: border-box;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
@@ -645,8 +651,7 @@ footer {
     .recipe-hero-image {
         width: 100%;
         height: auto;
-        aspect-ratio: 4/3;
-        max-height: 360px; /* increase to keep hero images visible on phones */
+        max-width: 100%;
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(0,0,0,.08);
     }
@@ -678,7 +683,7 @@ footer {
         padding-bottom: 6px;
     }
 
-    /* Stack and crop about section on small phones */
+    /* Stack the about section and let the photo scale to fit the page */
     .about-grid {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -698,11 +703,15 @@ footer {
     .about-image img {
         width: 100%;
         height: auto;
-        max-height: 220px; /* crop more aggressively on small phones */
-        object-fit: cover;
-        object-position: center; /* focus on center */
+        max-width: 100%;
         border-radius: 12px;
         margin: 0;
+    }
+
+    .recipe-image {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
     }
 
     .recipe-image {
