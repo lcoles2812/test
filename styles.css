@@ -646,7 +646,7 @@ footer {
         width: 100%;
         height: auto;
         aspect-ratio: 4/3;
-        max-height: 240px;
+        max-height: 360px; /* increase to keep hero images visible on phones */
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(0,0,0,.08);
     }
@@ -679,7 +679,18 @@ footer {
     }
 
     .about-image img {
+        width: 100%;
         height: auto;
         aspect-ratio: 4/3;
+        max-height: 360px;
+        object-fit: cover;
+    }
+
+    .recipe-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        max-height: 360px;
+        object-fit: cover;
     }
 }
