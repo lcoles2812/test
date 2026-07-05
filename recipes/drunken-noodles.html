@@ -1,4 +1,5 @@
-o githu<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,7 +13,7 @@ o githu<!DOCTYPE html>
 
 <nav>
   <div class="nav-container">
-    <div class="logo">Common table</div>
+    <div class="logo">Common Table</div>
     <div class="nav-links">
       <a href="../index.html">Home</a>
       <a href="../weeknight.html">Weeknight</a>
@@ -25,14 +26,16 @@ o githu<!DOCTYPE html>
 <section class="recipe-hero">
   <div class="recipe-hero-copy">
     <h1>🍜 Pad Kee Mao (Drunken Noodles)</h1>
+
     <p class="hero-text">
-        A bold, fast weeknight noodle dish with chilli, garlic, soy, and fresh basil, built to be punchy and satisfying without being too fussy.<br><br>
+      A bold, spicy noodle dish packed with garlic, chilli, fresh basil and a rich savoury sauce. Despite the name, there's no alcohol involved—just big flavours and plenty of wok heat.<br><br>
 
-        This is one of the meals I like to make when I want something quick and proper, and it’s easy to change up depending on what’s around by swapping in different vegetables like capsicum, green beans, or whatever else needs using.<br><br>
+      This is one of my favourite weeknight meals when I want something quick that still feels like proper takeaway at home. Chicken thighs stay juicy, fresh basil brings everything together, and you can easily throw in whatever vegetables you have in the fridge.<br><br>
 
-        It’s a great one for a busy night when you still want something big on flavour and a little bit of texture.
+      If you've got a hot wok and everything prepped before you start cooking, dinner comes together in under 30 minutes.
     </p>
   </div>
+
   <img class="recipe-hero-image" src="../images/Drunken.png" alt="Drunken Noodles">
 </section>
 
@@ -41,30 +44,49 @@ o githu<!DOCTYPE html>
 <!-- SERVINGS -->
 <h2 class="section-title">Servings</h2>
 
-<input id="servings" type="range" min="1" max="8" value="2">
-<p><span id="servingValue">2</span> servings</p>
+<input id="servings" type="range" min="1" max="8" value="4">
+<p><span id="servingValue">4</span> servings</p>
 
 <!-- QUICK STATS -->
 <h2 class="section-title">Quick Stats</h2>
-<p>⏱ 25–30 mins • 💪 High Protein • 🍽 Base: 2 servings</p>
+
+<p>⏱ 25–30 mins • 💪 High Protein • 🍽 Base: 4 servings</p>
 
 <!-- INGREDIENTS -->
 <h2 class="section-title">Ingredients</h2>
 
 <ul id="ingredients">
 
-  <li data-amount="300" data-unit="g" data-name="chicken thigh strips">300g chicken thigh strips</li>
-  <li data-amount="200" data-unit="g" data-name="rice noodles">200g rice noodles</li>
-  <li data-amount="4" data-unit="" data-name="garlic cloves">4 garlic cloves</li>
-  <li data-amount="1" data-unit=" tbsp" data-name="ginger">1 tbsp ginger</li>
-  <li data-amount="1" data-unit=" tsp" data-name="chilli flakes">1 tsp chilli flakes</li>
-  <li data-amount="2" data-unit=" tbsp" data-name="soy sauce">2 tbsp soy sauce</li>
-  <li data-amount="1" data-unit=" tbsp" data-name="oyster sauce">1 tbsp oyster sauce</li>
-  <li data-amount="1" data-unit=" tsp" data-name="fish sauce">1 tsp fish sauce</li>
-  <li data-amount="1" data-unit=" tsp" data-name="honey">1 tsp honey</li>
-  <li data-amount="10" data-unit="g" data-name="Thai basil">10g Thai basil</li>
-  <li data-amount="2" data-unit="" data-name="spring onion">2 spring onions</li>
+  <li data-amount="500" data-unit="g" data-name="chicken thigh, sliced">500g chicken thigh, sliced</li>
 
+  <li data-amount="400" data-unit="g" data-name="fresh Pad Thai rice noodles">400g fresh Pad Thai rice noodles</li>
+
+  <li data-amount="4" data-unit="" data-name="garlic cloves, minced">4 garlic cloves, minced</li>
+
+  <li data-amount="1" data-unit="" data-name="brown onion, sliced">1 brown onion, sliced</li>
+
+  <li data-amount="1" data-unit="tbsp" data-name="fresh ginger, grated">1 tbsp fresh ginger, grated</li>
+
+  <li data-amount="1" data-unit="tsp" data-name="chilli flakes">1 tsp chilli flakes</li>
+
+  <li data-amount="3" data-unit="tbsp" data-name="soy sauce">3 tbsp soy sauce</li>
+
+  <li data-amount="2" data-unit="tbsp" data-name="oyster sauce">2 tbsp oyster sauce</li>
+
+  <li data-amount="1" data-unit="tbsp" data-name="fish sauce">1 tbsp fish sauce</li>
+
+  <li data-amount="2" data-unit="tsp" data-name="brown sugar or honey">2 tsp brown sugar or honey</li>
+
+  <li data-amount="20" data-unit="g" data-name="Thai basil leaves">20g Thai basil leaves</li>
+
+  <li data-amount="2" data-unit="" data-name="spring onions, sliced">2 spring onions, sliced</li>
+
+</ul>
+
+<h3 class="section-subtitle">Optional</h3>
+
+<ul class="text-muted">
+  <li>1 red capsicum, sliced</li>
 </ul>
 
 <!-- METHOD -->
@@ -72,107 +94,111 @@ o githu<!DOCTYPE html>
 
 <ol>
 
-  <li>
-    <strong>Prep everything first (wok cooking is fast):</strong><br>
-    Slice chicken and prepare all sauces before turning on heat.  
-    Once cooking starts, everything moves quickly.
-  </li>
+<li>
+<strong>Prep everything first:</strong><br>
+Slice the chicken, onion and garlic, grate the ginger, prepare the sauce and separate the basil leaves. Wok cooking moves quickly, so have everything ready before turning on the heat.
+</li>
 
-  <li>
-    <strong>Prepare noodles:</strong><br>
-    Soak or boil rice noodles until just tender.  
-    Drain and toss lightly with oil to prevent sticking.
-  </li>
+<li>
+<strong>Prepare the noodles:</strong><br>
+If using fresh Pad Thai noodles, separate them gently. If they're cold, microwave for 30–60 seconds to loosen them before cooking.
+</li>
 
-  <li>
-    <strong>Sear the chicken:</strong><br>
-    Heat a wok or large pan until very hot.  
-    Cook chicken in a single layer until browned and just cooked through. Remove and set aside.
-  </li>
+<li>
+<strong>Cook the chicken:</strong><br>
+Heat a wok or large frying pan over high heat with a little oil. Cook the chicken until browned and just cooked through, then remove from the pan.
+</li>
 
-  <li>
-    <strong>Build aromatics base:</strong><br>
-    In the same pan, fry garlic, ginger, and chilli in oil.  
-    Cook briefly (30–60 seconds) until fragrant — do not burn.
-  </li>
+<li>
+<strong>Cook the aromatics:</strong><br>
+Add a little more oil if needed, then cook the onion for 2–3 minutes. Add the garlic, ginger and chilli flakes, cooking for about 30 seconds until fragrant. If using capsicum, add it now and stir fry for another minute.
+</li>
 
-  <li>
-    <strong>Build the sauce:</strong><br>
-    Add soy sauce, oyster sauce, fish sauce, and honey.  
-    Let it bubble for 1–2 minutes to slightly reduce and thicken.
-  </li>
+<li>
+<strong>Add the sauce:</strong><br>
+Pour in the soy sauce, oyster sauce, fish sauce and brown sugar (or honey). Let everything bubble for about a minute.
+</li>
 
-  <li>
-    <strong>Combine everything:</strong><br>
-    Add noodles and chicken back into the wok.  
-    Toss continuously until noodles are fully coated and glossy.
-  </li>
+<li>
+<strong>Finish the noodles:</strong><br>
+Return the chicken to the wok along with the noodles. Toss continuously over high heat until everything is evenly coated and the noodles are hot.
+</li>
 
-  <li>
-    <strong>Finish fresh:</strong><br>
-    Turn off heat and add Thai basil and spring onion.  
-    Toss lightly — residual heat is enough to release aroma without overcooking herbs.
-  </li>
+<li>
+<strong>Finish fresh:</strong><br>
+Turn off the heat and toss through the Thai basil and spring onions. Serve immediately with extra chilli if you like.
+</li>
 
 </ol>
 
 <!-- KEY NUTRIENTS -->
 <h2 class="section-title">Key Nutrients & Benefits</h2>
+
 <p class="text-muted">
-High protein from chicken supports muscle repair, garlic and chilli support immune and metabolic function, while basil provides antioxidants and anti-inflammatory compounds.
+Chicken thighs provide plenty of protein while remaining juicy, fresh garlic and ginger add depth of flavour and natural antioxidants, and basil brings freshness that balances the rich savoury sauce.
 </p>
 
 <!-- MACROS -->
 <h2 class="section-title">Macros (approx per serve)</h2>
 
 <ul class="text-muted">
-  <li><strong>Calories:</strong> 450–650 kcal</li>
-  <li><strong>Protein:</strong> 30–40g (high)</li>
-  <li><strong>Carbs:</strong> 50–80g (mainly noodles)</li>
-  <li><strong>Fats:</strong> 10–20g (light, sauce-based)</li>
+  <li><strong>Calories:</strong> 550–650 kcal</li>
+  <li><strong>Protein:</strong> 35–40g</li>
+  <li><strong>Carbs:</strong> 45–55g</li>
+  <li><strong>Fat:</strong> 18–22g</li>
 </ul>
 
 <!-- SMART SWAPS -->
 <h2 class="section-title">Smart Swaps & Variations</h2>
 
 <ul class="text-muted">
-  <li><strong>Beef or tofu instead of chicken</strong> — changes protein profile while keeping sauce structure.</li>
-  <li><strong>Extra veg (broccoli, bok choy)</strong> — increases fibre and volume.</li>
-  <li><strong>Low-sugar version</strong> — reduce or remove honey.</li>
-  <li><strong>Gluten-free version</strong> — use tamari instead of soy sauce.</li>
-  <li><strong>Extra spice</strong> — add fresh chilli or chilli oil at the end.</li>
+  <li><strong>Beef</strong> — Thinly sliced rump or rib fillet works beautifully.</li>
+  <li><strong>Prawns</strong> — A lighter option that cooks in just a couple of minutes.</li>
+  <li><strong>Tofu</strong> — Great vegetarian alternative.</li>
+  <li><strong>Extra vegetables</strong> — Broccoli, green beans, bok choy or baby corn all work well.</li>
+  <li><strong>More heat</strong> — Add fresh bird's eye chillies or finish with chilli oil.</li>
 </ul>
 
 </div>
 
-<!-- SCRIPT -->
 <script>
-const baseServings = 2;
+
+const baseServings = 4;
 
 const slider = document.getElementById("servings");
 const display = document.getElementById("servingValue");
 const ingredients = document.querySelectorAll("#ingredients li");
 
 function updateIngredients() {
+
     const servings = parseInt(slider.value);
     display.textContent = servings;
 
     const multiplier = servings / baseServings;
 
     ingredients.forEach(item => {
+
         const baseAmount = parseFloat(item.dataset.amount);
         const unit = item.dataset.unit || "";
         const name = item.dataset.name;
 
         let newAmount = baseAmount * multiplier;
+
         newAmount = Math.round(newAmount * 10) / 10;
 
-        item.textContent = `${newAmount}${unit} ${name}`;
+        if (Number.isInteger(newAmount)) {
+            item.textContent = `${newAmount}${unit ? " " + unit : ""} ${name}`;
+        } else {
+            item.textContent = `${newAmount.toFixed(1)}${unit ? " " + unit : ""} ${name}`;
+        }
+
     });
+
 }
 
 slider.addEventListener("input", updateIngredients);
 updateIngredients();
+
 </script>
 
 </body>
