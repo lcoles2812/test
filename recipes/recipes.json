@@ -30,6 +30,16 @@
     "search": "chicken burger crispy crumbed slaw spicy sauce quick fresh single night"
   },
   {
+    "title": "Lemon-Herb Chicken Quinoa Crunch Salad",
+    "url": "recipes/chicken-quinoa-crunch-salad.html",
+    "image": "images/chicken supersalad.jpg",
+    "time": "25–30 mins",
+    "category": "single night",
+    "excerpt": "A bright chicken super salad with quinoa, chickpeas, cucumber, tomato, pomegranate, feta, capers and herbs.",
+    "tags": ["high protein", "fresh", "chicken", "salad", "meal prep"],
+    "search": "chicken supersalad chicken super salad quinoa chickpeas cucumber tomato pomegranate feta capers parsley mint honey mustard lemon olive oil"
+  },
+  {
     "title": "Chipotle Chicken Tacos",
     "url": "recipes/chicken-taco.html",
     "image": "images/Chicken taco.png",
