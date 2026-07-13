@@ -1,0 +1,162 @@
+[
+  {
+    "title": "Beef Ragú",
+    "url": "recipes/bolognese.html",
+    "image": "images/ragu.png",
+    "time": "1–3 hrs",
+    "category": "sunday",
+    "excerpt": "A slow-cooked ragù built on deep browning, gentle simmering and a rich tomato base.",
+    "tags": ["comfort food", "slow cook", "beef", "pasta", "italian"],
+    "search": "beef ragu bolognese slow-cooked tomato base beef mince pulled beef ragù italian pasta comfort food sunday"
+  },
+  {
+    "title": "Burrito Bowl",
+    "url": "recipes/burrito-bowl.html",
+    "image": "images/taco2.jpg",
+    "time": "30–40 mins",
+    "category": "weeknight",
+    "excerpt": "Smoky chipotle chicken with fresh toppings, built for high protein and meal prep.",
+    "tags": ["high protein", "meal prep", "chicken", "mexican"],
+    "search": "burrito bowl chipotle chicken rice beans corn high protein meal prep quick weeknight mexican"
+  },
+  {
+    "title": "Chicken Burger",
+    "url": "recipes/chicken-burger.html",
+    "image": "images/chicken_tikka2.png",
+    "time": "25–35 mins",
+    "category": "single night",
+    "excerpt": "Crispy crumbed chicken with fresh slaw and a spicy creamy sauce.",
+    "tags": ["quick", "chicken", "crispy", "fresh"],
+    "search": "chicken burger crispy crumbed slaw spicy sauce quick fresh single night"
+  },
+  {
+    "title": "Chipotle Chicken Tacos",
+    "url": "recipes/chicken-taco.html",
+    "image": "images/Chicken taco.png",
+    "time": "25–35 mins",
+    "category": "weeknight",
+    "excerpt": "Smoky chipotle adobo chicken tacos topped with guac, feta, diced onion and tomato.",
+    "tags": ["quick", "high protein", "chicken", "mexican", "fresh"],
+    "search": "chipotle chicken tacos adobo garlic paprika lime guac guacamole feta onion tomato mexican weeknight"
+  },
+  {
+    "title": "Chicken Noodle Soup",
+    "url": "recipes/chicken-noodle-soup.html",
+    "image": "images/chicken_tikka2.png",
+    "time": "2–3 hrs",
+    "category": "sunday",
+    "excerpt": "Slow-simmered roast chicken broth with ginger, garlic, miso, and noodles.",
+    "tags": ["comfort food", "slow cook", "chicken", "soup", "asian"],
+    "search": "chicken noodle soup broth miso ginger slow simmer noodles comfort food warm"
+  },
+  {
+    "title": "Chicken Tikka Curry",
+    "url": "recipes/chicken-tikka.html",
+    "image": "images/chicken_tikka2.png",
+    "time": "45–60 mins",
+    "category": "weeknight",
+    "excerpt": "A rich, creamy curry built on a spiced yogurt marinade and a deeply developed tomato base.",
+    "tags": ["high protein", "curry", "chicken", "indian"],
+    "search": "chicken tikka curry spiced yogurt tomato base creamy indian high protein"
+  },
+  {
+    "title": "Pad Kee Mao (Drunken Noodles)",
+    "url": "recipes/drunken-noodles.html",
+    "image": "images/Drunken.png",
+    "time": "25–30 mins",
+    "category": "weeknight",
+    "excerpt": "A bold, spicy noodle dish packed with garlic, chilli, fresh basil and a rich savoury sauce.",
+    "tags": ["quick", "spicy", "thai", "noodles", "chicken"],
+    "search": "drunken noodles pad kee mao spicy basil chicken thai wok quick"
+  },
+  {
+    "title": "Lemon Garlic Chilli Broccolini Pasta",
+    "url": "recipes/lemon-broccolini-pasta.html",
+    "image": "images/LemonPasta.jpeg",
+    "time": "25 mins",
+    "category": "weeknight",
+    "excerpt": "Bright, lemony pasta with garlic, chilli and broccolini — quick and satisfying.",
+    "tags": ["quick", "fresh", "pasta", "chicken", "vegetarian-friendly"],
+    "search": "lemon pasta broccolini garlic chilli quick weeknight fresh light pasta"
+  },
+  {
+    "title": "Greek-Style Lamb Pitta",
+    "url": "recipes/lamb-pitta.html",
+    "image": "images/lamb pitta.png",
+    "time": "45–60 mins",
+    "category": "single night",
+    "excerpt": "BBQ or oven-cooked lamb in homemade pittas with fresh salad and homemade tzatziki.",
+    "tags": ["fresh", "lamb", "greek", "high protein", "sharing"],
+    "search": "lamb pitta greek style bbq oven tomato cucumber salad homemade tzatziki taziki greek yogurt flour pitta single night"
+  },
+  {
+    "title": "Korean Fried Chicken",
+    "url": "recipes/korean-fried-chicken.html",
+    "image": "images/Korean Fried Chicken.png",
+    "time": "40–50 mins",
+    "category": "single night",
+    "excerpt": "Crispy fried chicken tossed in a sticky Korean-style chilli glaze, with oven/air-fry options.",
+    "tags": ["comfort food", "chicken", "asian", "weekend", "sharing"],
+    "search": "korean fried chicken gochujang garlic soy honey sesame fried in oil friday weekend people over oven air fryer healthier alternative"
+  },
+  {
+    "title": "Panang Curry",
+    "url": "recipes/panang-curry.html",
+    "image": "images/panang.jpg",
+    "time": "30–40 mins",
+    "category": "weeknight",
+    "excerpt": "A quick weeknight curry that still feels indulgent — creamy coconut, warm spice, and tender chicken.",
+    "tags": ["quick", "curry", "thai", "chicken", "high protein"],
+    "search": "panang curry coconut chicken thai spicy quick weeknight indulgent"
+  },
+  {
+    "title": "Teriyaki Chicken Poke Bowl",
+    "url": "recipes/poke-bowl.html",
+    "image": "images/Poke.png",
+    "time": "20–30 mins",
+    "category": "weeknight",
+    "excerpt": "A quick, fresh rice bowl with sticky teriyaki chicken, crunchy veg and a homemade sauce.",
+    "tags": ["quick", "fresh", "high protein", "asian", "chicken"],
+    "search": "poke bowl teriyaki chicken rice edamame cucumber carrot spring onion sauce fresh quick"
+  },
+  {
+    "title": "Garlic Chilli Prawn Pasta",
+    "url": "recipes/prawn-pasta.html",
+    "image": "images/Gamberi.png",
+    "time": "20–25 mins",
+    "category": "single night",
+    "excerpt": "A bright, silky pasta built on garlic, chilli, lemon and sweet prawns.",
+    "tags": ["quick", "fresh", "pasta", "seafood", "italian"],
+    "search": "prawn pasta garlic chilli lemon quick prawns seafood italian fresh"
+  },
+  {
+    "title": "Pulled Beef Tacos",
+    "url": "recipes/pulled-beef-tacos.html",
+    "image": "images/taco.png",
+    "time": "2–3 hrs",
+    "category": "sunday",
+    "excerpt": "Rich chipotle beef that pulls apart and keeps well for taco night or leftovers.",
+    "tags": ["comfort food", "slow cook", "beef", "mexican", "meal prep"],
+    "search": "pulled beef tacos chipotle slow braise pico lime mexican comfort food"
+  },
+  {
+    "title": "Steak and Veg",
+    "url": "recipes/steak-bowl.html",
+    "image": "images/steak.jpg",
+    "time": "30–40 mins",
+    "category": "single night",
+    "excerpt": "A fresh dinner plate with steak, roasted sweet potato and greens — flexible and satisfying.",
+    "tags": ["high protein", "fresh", "beef", "single serving"],
+    "search": "steak veg steak bowl sweet potato broccolini chimichurri fresh high protein"
+  },
+  {
+    "title": "Sticky Beef Mince Bowl",
+    "url": "recipes/sticky-beef-mince.html",
+    "image": "images/stickymince.jpg",
+    "time": "25–30 mins",
+    "category": "weeknight",
+    "excerpt": "Comforting, sticky-savoury beef mince glazed in an umami-rich sauce, built for meal prep.",
+    "tags": ["meal prep", "high protein", "beef", "asian", "comfort food"],
+    "search": "sticky beef mince umami soy honey miso rice bowl meal prep weeknight"
+  }
+]

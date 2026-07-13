@@ -1,0 +1,148 @@
+e <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teriyaki Chicken Poke Bowl</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Common table</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../weeknight.html">Weeknight</a>
+      <a href="../singlenight.html">Single Night</a>
+      <a href="../sunday.html">Sunday</a>
+    </div>
+  </div>
+</nav>
+
+<section class="recipe-hero">
+  <div class="recipe-hero-copy">
+    <h1>🍚 Teriyaki Chicken Poke Bowl</h1>
+
+    <p class="hero-text">
+      A quick, fresh rice bowl with sticky teriyaki chicken, crunchy veg, edamame and a homemade sauce that feels bright, balanced and a little bit special.
+    </p>
+
+    <p class="hero-text">
+      This is one of those meals I keep coming back to when I want something fast but still satisfying. The chicken gets a proper glaze, the toppings bring texture and freshness, and it comes together easily with ingredients you can prep ahead or use straight from the fridge.
+    </p>
+  </div>
+
+  <img class="recipe-hero-image" src="../images/Poke.png" alt="Teriyaki chicken poke bowl">
+</section>
+
+<div class="container">
+
+<!-- SERVINGS -->
+<h2 class="section-title">Servings</h2>
+
+<input id="servings" type="range" min="1" max="10" value="2">
+<p><span id="servingValue">2</span> servings</p>
+
+<!-- QUICK STATS -->
+<h2 class="section-title">Quick Stats</h2>
+<p>⏱ 25 mins • 💪 High Protein • 🍽 Base: 2 servings</p>
+
+<!-- INGREDIENTS -->
+<h2 class="section-title">Ingredients</h2>
+
+<ul id="ingredients">
+  <li data-amount="300" data-unit="g" data-name="chicken thigh, sliced">300g chicken thigh</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="soy sauce">2 tbsp soy sauce</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="honey">1 tbsp honey</li>
+  <li data-amount="1" data-unit=" tbsp" data-name="mirin or rice vinegar">1 tbsp mirin or rice vinegar</li>
+  <li data-amount="1" data-unit=" tsp" data-name="sesame oil">1 tsp sesame oil</li>
+  <li data-amount="1" data-unit=" cup" data-name="cooked rice">1 cup cooked rice</li>
+  <li data-amount="1" data-unit="" data-name="carrot, julienned">1 carrot</li>
+  <li data-amount="1" data-unit=" cup" data-name="edamame">1 cup edamame</li>
+  <li data-amount="1" data-unit="" data-name="cucumber, sliced">1 cucumber</li>
+  <li data-amount="1" data-unit=" cup" data-name="corn">1 cup corn</li>
+  <li data-amount="2" data-unit="" data-name="spring onions, sliced">2 spring onions</li>
+  <li data-amount="2" data-unit=" tbsp" data-name="homemade sauce">2 tbsp homemade sauce</li>
+</ul>
+
+<!-- METHOD -->
+<h2 class="section-title">Method</h2>
+
+<ol>
+  <li>
+    <strong>Marinate the chicken:</strong><br>
+    Toss the sliced chicken with soy sauce, honey, mirin or rice vinegar, and sesame oil.
+  </li>
+
+  <li>
+    <strong>Cook the chicken:</strong><br>
+    Pan-fry or grill the chicken until sticky and lightly caramelised.
+  </li>
+
+  <li>
+    <strong>Prep the toppings:</strong><br>
+    Slice the carrot and cucumber, and portion out the edamame, corn, and spring onion.
+  </li>
+
+  <li>
+    <strong>Assemble the bowl:</strong><br>
+    Start with rice, then add the chicken and vegetables. Finish with the sauce and extra spring onion.
+  </li>
+
+  <li>
+    <strong>Serve:</strong><br>
+    Eat straight away while the chicken is warm and the veg still crisp.
+  </li>
+</ol>
+
+<!-- KEY NUTRIENTS -->
+<h2 class="section-title">Key Nutrients & Benefits</h2>
+<p class="text-muted">
+Chicken and edamame provide a solid protein hit, while carrot, cucumber, and corn add crunch, fibre and a good mix of vitamins.
+</p>
+
+<!-- SMART SWAPS -->
+<h2 class="section-title">Smart Swaps & Variations</h2>
+
+<ul class="text-muted">
+  <li><strong>Use tofu instead</strong> — a great vegetarian option with the same sauce.</li>
+  <li><strong>Add avocado</strong> — extra creaminess and healthy fats.</li>
+  <li><strong>Swap the sauce</strong> — go spicy with chilli crisp or keep it simple with extra soy and sesame.</li>
+</ul>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const baseServings = 2;
+
+const slider = document.getElementById("servings");
+const display = document.getElementById("servingValue");
+const ingredients = document.querySelectorAll("#ingredients li");
+
+function updateIngredients() {
+    const servings = parseInt(slider.value);
+    display.textContent = servings;
+
+    const multiplier = servings / baseServings;
+
+    ingredients.forEach(item => {
+        const baseAmount = parseFloat(item.dataset.amount);
+        const unit = item.dataset.unit || "";
+        const name = item.dataset.name;
+
+        let newAmount = baseAmount * multiplier;
+        newAmount = Math.round(newAmount * 10) / 10;
+
+        item.textContent = `${newAmount}${unit} ${name}`;
+    });
+}
+
+slider.addEventListener("input", updateIngredients);
+updateIngredients();
+</script>
+
+</body>
+</html>

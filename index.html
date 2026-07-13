@@ -109,65 +109,144 @@
 
     </div>
 
-    <!-- FEATURED -->
     <section class="featured">
+        <div class="featured-heading">
+            <h2 class="section-title">Featured Recipes</h2>
+            <p class="search-help">Search by recipe name, ingredient, or vibe.</p>
+        </div>
 
-        <h2 class="section-title">Featured Recipes</h2>
+        <section class="search-section">
+            <div class="search-row">
+                <input type="text" id="recipeSearch" class="search-box" placeholder="Try chicken, noodles, pasta, bowl...">
+                <button type="button" id="clearSearch" class="search-clear">Clear</button>
+            </div>
+            <div class="search-controls">
+                <div class="search-filter-group">
+                    <label for="sortBy">Sort:</label>
+                    <select id="sortBy" class="filter-select">
+                        <option value="">Relevance</option>
+                        <option value="time-asc">Time (Quick First)</option>
+                        <option value="time-desc">Time (Slow First)</option>
+                        <option value="title">Alphabetical</option>
+                    </select>
+                </div>
+                
+                <div class="search-filter-group">
+                    <label for="filterCategory">Category:</label>
+                    <select id="filterCategory" class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="weeknight">Weeknight</option>
+                        <option value="single night">Single Night</option>
+                        <option value="sunday">Sunday</option>
+                    </select>
+                </div>
 
-<!-- FEATURED -->
-<section class="featured">
+                <div class="search-filter-group">
+                    <label for="filterCuisine">Cuisine:</label>
+                    <select id="filterCuisine" class="filter-select">
+                        <option value="">All Cuisines</option>
+                        <option value="italian">Italian</option>
+                        <option value="thai">Thai</option>
+                        <option value="indian">Indian</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="asian">Asian</option>
+                    </select>
+                </div>
+            </div>
 
-    <h2 class="section-title">Featured Recipes</h2>
+            <div class="search-tags">
+                <button type="button" class="tag search-tag-btn" data-filter="quick">Quick</button>
+                <button type="button" class="tag search-tag-btn" data-filter="high protein">High Protein</button>
+                <button type="button" class="tag search-tag-btn" data-filter="meal prep">Meal Prep</button>
+                <button type="button" class="tag search-tag-btn" data-filter="comfort food">Comfort Food</button>
+            </div>
+
+            <div class="sort-filter-controls">
+                <div class="sort-control">
+                    <label for="sortSelect" class="sort-label">Sort by:</label>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="default">Default</option>
+                        <option value="time-asc">⏱ Time (Quick to Slow)</option>
+                        <option value="time-desc">⏱ Time (Slow to Quick)</option>
+                        <option value="difficulty-asc">📊 Difficulty (Easy to Hard)</option>
+                    </select>
+                </div>
+
+                <div class="filter-control">
+                    <label class="filter-label">Category:</label>
+                    <div class="category-buttons">
+                        <button type="button" class="tag category-btn active" data-category="all">All</button>
+                        <button type="button" class="tag category-btn" data-category="weeknight">⚡ Weeknight</button>
+                        <button type="button" class="tag category-btn" data-category="single night">🍽 Single Night</button>
+                        <button type="button" class="tag category-btn" data-category="sunday">🍲 Sunday</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="noResults" class="no-results" hidden>No recipes match that search yet.</div>
+
+        <div id="searchResults" class="search-results" hidden>
+            <h3 class="search-results-title">Search Results</h3>
+            <div id="searchResultsGrid" class="recipe-grid">
+            </div>
+        </div>
 
         <div class="recipe-grid">
 
-            <!-- Chicken Tikka -->
-            <a class="recipe-card" href="recipes/chicken-tikka.html">
-
-                <img src="images/chicken_tikka2.png"
-                    alt="Chicken Tikka Curry"
-                    class="recipe-image">
-
+            <a class="recipe-card" href="recipes/chicken-tikka.html" data-url="recipes/chicken-tikka.html" data-search="chicken tikka curry creamy chicken high protein curry">
+                <img src="images/chicken_tikka2.png" alt="Chicken Tikka Curry" class="recipe-image">
                 <div class="recipe-content">
                     <h3>🍛 Chicken Tikka Curry</h3>
                     <p>Rich, creamy curry with marinated chicken thighs.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-meta-item"><strong>⏱</strong> 45–60 mins</span>
+                    </div>
+                    <span class="tag">High Protein</span>
                 </div>
-
             </a>
 
-            <!--Prawn Pasta -->
-            <a class="recipe-card" href="recipes/prawn-pasta.html">
-
-                <img src="images/Gamberi.png"
-                    alt="Lemon Garlic Chilli Prawn Pasta"
-                    class="recipe-image">
-
+            <a class="recipe-card" href="recipes/prawn-pasta.html" data-url="recipes/prawn-pasta.html" data-search="prawn pasta lemon garlic chilli quick seafood">
+                <img src="images/Gamberi.png" alt="Lemon Garlic Chilli Prawn Pasta" class="recipe-image">
                 <div class="recipe-content">
                     <h3>Gamberi Aglio e Olio (Prawn Pasta)</h3>
                     <p>Juicy prawns tossed through a silky lemon, garlic and chilli butter sauce.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-meta-item"><strong>⏱</strong> 25–30 mins</span>
+                    </div>
+                    <span class="tag">Quick</span>
                 </div>
-
             </a>
 
-            <!-- Drunken Noodles -->
-            <a class="recipe-card" href="recipes/drunken-noodles.html">
-
-                <img src="images/Drunken.png"
-                    alt="Drunken Noodles"
-                    class="recipe-image">
-
+            <a class="recipe-card" href="recipes/drunken-noodles.html" data-url="recipes/drunken-noodles.html" data-search="drunken noodles pad kee mao chicken thai spicy quick">
+                <img src="images/Drunken.png" alt="Drunken Noodles" class="recipe-image">
                 <div class="recipe-content">
                     <h3>Pad Kee Mao (Drunken Noodles)</h3>
                     <p>Wok-fried rice noodles with chicken, vegetables and a bold Thai-inspired sauce.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-meta-item"><strong>⏱</strong> 25–30 mins</span>
+                    </div>
+                    <span class="tag">30 min</span>
                 </div>
+            </a>
 
+            <a class="recipe-card" href="recipes/poke-bowl.html" data-url="recipes/poke-bowl.html" data-search="poke bowl teriyaki chicken fresh rice bowl homemade sauce">
+                <img src="images/Poke.png" alt="Teriyaki Chicken Poke Bowl" class="recipe-image">
+                <div class="recipe-content">
+                    <h3>🍚 Teriyaki Chicken Poke Bowl</h3>
+                    <p>Fresh rice bowl with teriyaki chicken, crunchy vegetables and a glossy homemade sauce.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-meta-item"><strong>⏱</strong> 20–30 mins</span>
+                    </div>
+                    <span class="tag">Fresh</span>
+                </div>
             </a>
 
         </div>
 
-</section>
+        </section>
 
-    </section>
+        </section>
 
 </main>
 
@@ -175,6 +254,291 @@
 <footer>
     © 2026 Common Table • Built for real cooking
 </footer>
+
+<script>
+const searchInput = document.getElementById("recipeSearch");
+const clearButton = document.getElementById("clearSearch");
+const featuredCards = Array.from(document.querySelectorAll(".recipe-card"));
+const recipeLinks = Array.from(document.querySelectorAll('a[href^="recipes/"]'));
+const tagButtons = Array.from(document.querySelectorAll(".search-tag-btn"));
+const categoryButtons = Array.from(document.querySelectorAll(".category-btn"));
+const sortSelect = document.getElementById("sortSelect");
+const noResults = document.getElementById("noResults");
+
+let recipeIndex = [];
+let activeCategory = "all";
+
+// Initialize filter controls (must be before fetch)
+const sortBy = document.getElementById("sortBy");
+const filterCategory = document.getElementById("filterCategory");
+const filterCuisine = document.getElementById("filterCuisine");
+
+// Build list of unique nodes to filter: featured cards plus any link that points to a recipe
+function buildFilterNodes() {
+    const set = new Set();
+    featuredCards.forEach(c => set.add(c));
+    recipeLinks.forEach(link => {
+        // Prefer to hide the nearest card or section wrapper if present
+        const card = link.closest('.card') || link.closest('.section-card') || link.closest('.recipe-card') || link;
+        if (card) set.add(card);
+    });
+    return Array.from(set);
+}
+
+let filterNodes = buildFilterNodes();
+
+function tokenMatch(searchable, query) {
+    // Split query and searchable text into tokens, match all query tokens
+    const queryTokens = query.split(/\s+/).filter(t => t.length > 0);
+    const searchTokens = searchable.split(/\s+/);
+    
+    return queryTokens.every(qToken => 
+        searchTokens.some(sToken => sToken.includes(qToken))
+    );
+}
+
+function parseTimeToMinutes(timeStr) {
+    // Extract numeric time for sorting: "20–30 mins" -> 25, "1–3 hrs" -> 90
+    const match = timeStr.match(/(\d+)/);
+    if (!match) return 999;
+    let num = parseInt(match[1]);
+    if (timeStr.includes('hr')) num *= 60;
+    return num;
+}
+
+function createRecipeCard(recipe) {
+    // Create a recipe card from JSON data
+    const card = document.createElement('a');
+    card.className = 'recipe-card';
+    card.href = recipe.url;
+    card.dataset.url = recipe.url;
+    
+    const tags = (recipe.tags || []).slice(0, 1).map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(', ');
+    
+    card.innerHTML = `
+        <img src="${recipe.image || 'images/placeholder.png'}" alt="${recipe.title}" class="recipe-image">
+        <div class="recipe-content">
+            <h3>${recipe.title}</h3>
+            <p>${recipe.excerpt}</p>
+            <div class="recipe-meta">
+                <span class="recipe-meta-item"><strong>⏱</strong> ${recipe.time}</span>
+            </div>
+            <span class="tag">${tags || 'Recipe'}</span>
+        </div>
+    `;
+    
+    return card;
+}
+
+function getSortValue(recipe, sortType) {
+    // Extract numeric value from time string for sorting
+    if (sortType === 'time-asc' || sortType === 'time-desc') {
+        const timeStr = recipe.time || '';
+        const match = timeStr.match(/(\d+)/);
+        if (!match) return 999;
+        let num = parseInt(match[0]);
+        if (timeStr.includes('hr')) num *= 60;  // Convert hours to minutes
+        return num;
+    }
+    if (sortType === 'difficulty-asc') {
+        // Define difficulty order: quick=1, normal=2, slow=3
+        const timeStr = recipe.time || '';
+        if (timeStr.includes('20') || timeStr.includes('25') || timeStr.includes('30')) return 1;
+        if (timeStr.includes('45') || timeStr.includes('60')) return 2;
+        return 3;
+    }
+    if (sortType === 'title') {
+        // Return a special marker for title sorting (handled separately)
+        return -1;
+    }
+    return 0;
+}
+
+function sortRecipes(recipes, sortType) {
+    if (sortType === '' || sortType === 'default') return recipes;
+    if (sortType === 'title') {
+        const sorted = [...recipes];
+        sorted.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+        return sorted;
+    }
+    
+    const sorted = [...recipes];
+    sorted.sort((a, b) => {
+        const valA = getSortValue(a, sortType);
+        const valB = getSortValue(b, sortType);
+        
+        if (sortType === 'time-desc') return valB - valA;
+        return valA - valB;
+    });
+    return sorted;
+}
+
+function filterRecipes() {
+    const query = searchInput.value.trim().toLowerCase();
+    const sortType = sortBy ? sortBy.value : '';
+    let visibleCount = 0;
+    const searchResultsGrid = document.getElementById('searchResultsGrid');
+    const searchResultsSection = document.getElementById('searchResults');
+    const categoryFilter = filterCategory ? filterCategory.value.toLowerCase() : '';
+    const cuisineFilter = filterCuisine ? filterCuisine.value.toLowerCase() : '';
+    const hasAdvancedFilters = query.length > 0 || categoryFilter || cuisineFilter;
+    
+    // Clear previous search results
+    searchResultsGrid.innerHTML = '';
+
+    // If we have a fetched index, prefer searching it for site-wide results
+    if (recipeIndex.length > 0) {
+        // Match all recipes when query is empty so category/cuisine filters still work
+        let matchedRecipes = recipeIndex.filter(item => {
+            const searchable = (item.search || item.title || item.excerpt || '').toLowerCase();
+            const matchesQuery = query.length === 0 ? true : tokenMatch(searchable, query);
+            if (!matchesQuery) return false;
+
+            const itemCategory = (item.category || '').toLowerCase();
+            const itemCuisines = (item.tags || []).map(t => t.toLowerCase()).join(' ');
+
+            const matchCat = !categoryFilter || itemCategory === categoryFilter;
+            const matchCuis = !cuisineFilter || itemCuisines.includes(cuisineFilter);
+
+            return matchCat && matchCuis;
+        });
+
+        // Sort the results
+        matchedRecipes = sortRecipes(matchedRecipes, sortType);
+
+        // Display filtered & sorted results
+        if (matchedRecipes.length > 0 && hasAdvancedFilters) {
+            matchedRecipes.forEach(recipe => {
+                const card = createRecipeCard(recipe);
+                searchResultsGrid.appendChild(card);
+                visibleCount += 1;
+            });
+            searchResultsSection.hidden = false;
+        } else {
+            searchResultsSection.hidden = true;
+        }
+
+        // Still filter featured cards for visual feedback
+        filterNodes.forEach(node => {
+            // Determine the node url to match: use href if it's a link, or data-url
+            let nodeUrl = '';
+            if (node.tagName === 'A' && node.getAttribute('href')) nodeUrl = node.getAttribute('href');
+            if (node.dataset && node.dataset.url) nodeUrl = node.dataset.url;
+
+            // Normalize
+            nodeUrl = nodeUrl.replace(/^\//, '');
+
+            // Check against matched recipes
+            let isMatch = false;
+            if (!hasAdvancedFilters) {
+                isMatch = true;
+            } else {
+                isMatch = matchedRecipes.some(r => r.url.replace(/^\//, '') === nodeUrl);
+                // Fallback to DOM data-search attribute if not in index
+                if (!isMatch) {
+                    const searchableText = (node.dataset && node.dataset.search ? node.dataset.search : '').toLowerCase();
+                    isMatch = tokenMatch(searchableText, query);
+                }
+            }
+            
+            node.style.display = isMatch ? '' : 'none';
+            if (isMatch) visibleCount += 1;
+        });
+    } else {
+        // Fallback to DOM-only filtering when no index is available
+        filterNodes.forEach(node => {
+            const searchableText = (node.dataset && node.dataset.search ? node.dataset.search : node.textContent || '').toLowerCase();
+            const isMatch = query.length === 0 ? true : tokenMatch(searchableText, query);
+            node.style.display = isMatch ? '' : 'none';
+            if (isMatch) visibleCount += 1;
+        });
+        searchResultsSection.hidden = true;
+    }
+
+    // Toggle single-result class for featured grid when exactly one result is visible
+    const recipeGrid = document.querySelector('.recipe-grid');
+    if (recipeGrid && !searchResultsSection.hidden) {
+        // If results section is showing, don't apply single-result to featured grid
+        recipeGrid.classList.remove('single-result');
+    } else if (recipeGrid) {
+        const featuredVisibleCount = Array.from(document.querySelectorAll('.recipe-grid > a')).filter(el => el.style.display !== 'none').length;
+        recipeGrid.classList.toggle('single-result', featuredVisibleCount === 1);
+    }
+
+    noResults.hidden = visibleCount > 0;
+}
+
+function setActiveTag(activeButton) {
+    tagButtons.forEach(button => {
+        button.classList.toggle("active", button === activeButton);
+    });
+}
+
+function setActiveCategoryTab(category) {
+    categoryButtons.forEach(button => {
+        button.classList.toggle("active", (button.dataset.category || 'all') === category);
+    });
+}
+
+function syncCategoryTabWithDropdown() {
+    const selectedCategory = filterCategory && filterCategory.value ? filterCategory.value.toLowerCase() : 'all';
+    activeCategory = selectedCategory;
+    setActiveCategoryTab(selectedCategory);
+}
+
+searchInput.addEventListener("input", () => {
+    setActiveTag(null);
+    filterRecipes();
+});
+
+clearButton.addEventListener("click", () => {
+    searchInput.value = "";
+    setActiveTag(null);
+    filterRecipes();
+    searchInput.focus();
+});
+
+tagButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        searchInput.value = button.dataset.filter || button.textContent;
+        setActiveTag(button);
+        filterRecipes();
+    });
+});
+
+categoryButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const selectedCategory = (button.dataset.category || 'all').toLowerCase();
+        activeCategory = selectedCategory;
+        if (filterCategory) {
+            filterCategory.value = selectedCategory === 'all' ? '' : selectedCategory;
+        }
+        setActiveCategoryTab(selectedCategory);
+        filterRecipes();
+    });
+});
+
+if (sortBy) sortBy.addEventListener("change", filterRecipes);
+if (filterCategory) {
+    filterCategory.addEventListener("change", () => {
+        syncCategoryTabWithDropdown();
+        filterRecipes();
+    });
+    syncCategoryTabWithDropdown();
+}
+if (filterCuisine) filterCuisine.addEventListener("change", filterRecipes);
+
+// Rebuild nodes if the DOM changes (optional) — basic observer to catch lazy content
+const observer = new MutationObserver(() => { filterNodes = buildFilterNodes(); });
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Fetch the site-wide index for better search coverage
+fetch('recipes/recipes.json')
+    .then(r => r.json())
+    .then(data => { recipeIndex = data; filterRecipes(); })
+    .catch(() => { /* silently continue with DOM-only search */ filterRecipes(); });
+
+</script>
 
 </body>
 </html>
