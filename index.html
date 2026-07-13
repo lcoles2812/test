@@ -126,6 +126,7 @@
                 <input type="text" id="recipeSearch" class="search-box" placeholder="Try chicken, noodles, pasta, bowl...">
                 <button type="button" id="clearSearch" class="search-clear">Clear</button>
             </div>
+            <p id="searchSummary" class="search-summary" aria-live="polite"></p>
             <div class="search-controls">
                 <div class="search-filter-group">
                     <label for="sortBy">Sort:</label>
@@ -190,7 +191,7 @@
             </div>
         </section>
 
-        <div id="noResults" class="no-results" hidden>No recipes match that search yet.</div>
+        <div id="noResults" class="no-results" hidden>No recipes match that search yet. Clear the search or choose a different filter.</div>
 
         <div id="searchResults" class="search-results" hidden>
             <h3 class="search-results-title">Search Results</h3>
@@ -270,6 +271,7 @@ const tagButtons = Array.from(document.querySelectorAll(".search-tag-btn"));
 const categoryButtons = Array.from(document.querySelectorAll(".category-btn"));
 const sortSelect = document.getElementById("sortSelect");
 const noResults = document.getElementById("noResults");
+const searchSummary = document.getElementById("searchSummary");
 
 let recipeIndex = [];
 let activeCategory = "all";
@@ -383,6 +385,7 @@ function filterRecipes() {
     const query = searchInput.value.trim().toLowerCase();
     const sortType = sortBy ? sortBy.value : '';
     let visibleCount = 0;
+    let resultCount = 0;
     const searchResultsGrid = document.getElementById('searchResultsGrid');
     const searchResultsSection = document.getElementById('searchResults');
     const categoryFilter = filterCategory ? filterCategory.value.toLowerCase() : '';
@@ -414,6 +417,7 @@ function filterRecipes() {
 
         // Display filtered & sorted results
         if (matchedRecipes.length > 0 && hasAdvancedFilters) {
+            resultCount = matchedRecipes.length;
             matchedRecipes.forEach(recipe => {
                 const card = createRecipeCard(recipe);
                 searchResultsGrid.appendChild(card);
@@ -459,6 +463,15 @@ function filterRecipes() {
             if (isMatch) visibleCount += 1;
         });
         searchResultsSection.hidden = true;
+    }
+
+    if (searchSummary) {
+        if (hasAdvancedFilters) {
+            const count = recipeIndex.length > 0 ? resultCount : visibleCount;
+            searchSummary.textContent = count === 1 ? "1 recipe found." : `${count} recipes found.`;
+        } else {
+            searchSummary.textContent = "Browse the featured recipes below, or use search and filters to narrow things down.";
+        }
     }
 
     // Toggle single-result class for featured grid when exactly one result is visible

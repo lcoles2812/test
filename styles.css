@@ -267,6 +267,12 @@ nav {
     margin-bottom: 8px;
 }
 
+.search-summary {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
 .search-controls {
     display: grid;
     grid-template-columns: repeat(3, minmax(180px, 1fr));
