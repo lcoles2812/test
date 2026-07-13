@@ -246,7 +246,7 @@
         <div class="recipe-grid">
 
             <a class="recipe-card" href="recipes/chicken-tikka.html" data-url="recipes/chicken-tikka.html" data-search="chicken tikka curry creamy chicken high protein curry">
-                <img src="images/chicken_tikka2.png" alt="Chicken Tikka Curry" class="recipe-image">
+                <img src="images/chicken_tikka2.png" alt="Chicken Tikka Curry" class="recipe-image" loading="lazy">
                 <div class="recipe-content">
                     <h3>🍛 Chicken Tikka Curry</h3>
                     <p>Rich, creamy curry with marinated chicken thighs.</p>
@@ -258,7 +258,7 @@
             </a>
 
             <a class="recipe-card" href="recipes/prawn-pasta.html" data-url="recipes/prawn-pasta.html" data-search="prawn pasta lemon garlic chilli quick seafood">
-                <img src="images/Gamberi.png" alt="Lemon Garlic Chilli Prawn Pasta" class="recipe-image">
+                <img src="images/Gamberi.png" alt="Lemon Garlic Chilli Prawn Pasta" class="recipe-image" loading="lazy">
                 <div class="recipe-content">
                     <h3>Gamberi Aglio e Olio (Prawn Pasta)</h3>
                     <p>Juicy prawns tossed through a silky lemon, garlic and chilli butter sauce.</p>
@@ -270,7 +270,7 @@
             </a>
 
             <a class="recipe-card" href="recipes/drunken-noodles.html" data-url="recipes/drunken-noodles.html" data-search="drunken noodles pad kee mao chicken thai spicy quick">
-                <img src="images/Drunken.png" alt="Drunken Noodles" class="recipe-image">
+                <img src="images/Drunken.png" alt="Drunken Noodles" class="recipe-image" loading="lazy">
                 <div class="recipe-content">
                     <h3>Pad Kee Mao (Drunken Noodles)</h3>
                     <p>Wok-fried rice noodles with chicken, vegetables and a bold Thai-inspired sauce.</p>
@@ -282,7 +282,7 @@
             </a>
 
             <a class="recipe-card" href="recipes/poke-bowl.html" data-url="recipes/poke-bowl.html" data-search="poke bowl teriyaki chicken fresh rice bowl homemade sauce">
-                <img src="images/Poke.png" alt="Teriyaki Chicken Poke Bowl" class="recipe-image">
+                <img src="images/Poke.png" alt="Teriyaki Chicken Poke Bowl" class="recipe-image" loading="lazy">
                 <div class="recipe-content">
                     <h3>🍚 Teriyaki Chicken Poke Bowl</h3>
                     <p>Fresh rice bowl with teriyaki chicken, crunchy vegetables and a glossy homemade sauce.</p>
@@ -368,7 +368,7 @@ function createRecipeCard(recipe) {
     const tags = (recipe.tags || []).slice(0, 1).map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(', ');
     
     card.innerHTML = `
-        <img src="${recipe.image || 'images/placeholder.png'}" alt="${recipe.title}" class="recipe-image">
+        <img src="${recipe.image || 'images/placeholder.png'}" alt="${recipe.title}" class="recipe-image" loading="lazy">
         <div class="recipe-content">
             <h3>${recipe.title}</h3>
             <p>${recipe.excerpt}</p>
