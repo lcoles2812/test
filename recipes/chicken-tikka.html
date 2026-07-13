@@ -15,7 +15,8 @@ rov<!DOCTYPE html>
   <div class="nav-container">
     <div class="logo">Common table</div>
 
-    <div class="nav-links">
+    <button class="nav-toggle-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">☰</button>
+    <div class="nav-links" id="site-nav">
       <a href="../index.html">Home</a>
       <a href="../weeknight.html">Weeknight</a>
       <a href="../singlenight.html">Single Night</a>
@@ -182,5 +183,6 @@ slider.addEventListener("input", updateIngredients);
 updateIngredients();
 </script>
 
+<script src="../scripts/nav.js"></script>
 </body>
 </html>
