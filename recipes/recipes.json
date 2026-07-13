@@ -12,7 +12,7 @@
   {
     "title": "Burrito Bowl",
     "url": "recipes/burrito-bowl.html",
-    "image": "images/taco2.jpg",
+    "image": "images/taco.png",
     "time": "30–40 mins",
     "category": "weeknight",
     "excerpt": "Smoky chipotle chicken with fresh toppings, built for high protein and meal prep.",
@@ -42,7 +42,7 @@
   {
     "title": "Chicken Noodle Soup",
     "url": "recipes/chicken-noodle-soup.html",
-    "image": "images/chicken_tikka2.png",
+    "image": "images/beefnoodles.png",
     "time": "2–3 hrs",
     "category": "sunday",
     "excerpt": "Slow-simmered roast chicken broth with ginger, garlic, miso, and noodles.",
