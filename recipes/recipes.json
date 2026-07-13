@@ -110,6 +110,16 @@
     "search": "panang curry coconut chicken thai spicy quick weeknight indulgent"
   },
   {
+    "title": "Spicy Peanut Noodles",
+    "url": "recipes/peanut-noodles.html",
+    "image": "images/peanut noodles.jpg",
+    "time": "25–30 mins",
+    "category": "weeknight",
+    "excerpt": "Chewy noodles tossed in a creamy peanut-chilli sauce with savoury mince, cucumber and fresh herbs.",
+    "tags": ["quick", "high protein", "noodles", "asian", "meal prep"],
+    "search": "spicy peanut noodles mince cucumber coriander spring onion lime chilli crisp quick weeknight"
+  },
+  {
     "title": "Teriyaki Chicken Poke Bowl",
     "url": "recipes/poke-bowl.html",
     "image": "images/Poke.png",
@@ -158,5 +168,15 @@
     "excerpt": "Comforting, sticky-savoury beef mince glazed in an umami-rich sauce, built for meal prep.",
     "tags": ["meal prep", "high protein", "beef", "asian", "comfort food"],
     "search": "sticky beef mince umami soy honey miso rice bowl meal prep weeknight"
+  },
+  {
+    "title": "Crispy Chorizo Tacos",
+    "url": "recipes/chorizo-tacos.html",
+    "image": "images/chorizo taco.jpg",
+    "time": "25–30 mins",
+    "category": "weeknight",
+    "excerpt": "Pan-crisped chorizo tacos with melty cheese, red onion, coriander and fresh lime.",
+    "tags": ["quick", "comfort food", "mexican", "tacos", "sharing"],
+    "search": "crispy chorizo tacos pan fried tortillas cheese red onion coriander lime quick weeknight"
   }
 ]

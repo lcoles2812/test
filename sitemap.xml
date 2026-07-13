@@ -66,6 +66,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://commontablekitchen.com.au/recipes/chorizo-tacos.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://commontablekitchen.com.au/recipes/drunken-noodles.html</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -91,6 +97,12 @@
   </url>
   <url>
     <loc>https://commontablekitchen.com.au/recipes/panang-curry.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/recipes/peanut-noodles.html</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
