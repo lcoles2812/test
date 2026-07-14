@@ -70,6 +70,16 @@
     "search": "chicken shawarma sweet potato puree crispy chickpeas garlic yoghurt broccoli broccolini pickled onion parsley mint meal prep"
   },
   {
+    "title": "Korean Beef Mince Rice Bowl",
+    "url": "recipes/korean-beef-mince-rice-bowl.html",
+    "image": "images/Korean mince bowl.jpg",
+    "time": "30–35 mins",
+    "category": "weeknight",
+    "excerpt": "A Korean-inspired rice bowl with garlicky beef mince, spring onion, chilli, sesame and a creamy sriracha yoghurt sauce.",
+    "tags": ["high protein", "beef", "asian", "weeknight", "quick"],
+    "search": "korean beef mince rice bowl garlic spring onion chilli sriracha mayo greek yoghurt sesame weeknight"
+  },
+  {
     "title": "Chicken Tikka Curry",
     "url": "recipes/chicken-tikka.html",
     "image": "images/chicken_tikka2.png",
