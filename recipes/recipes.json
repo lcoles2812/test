@@ -60,6 +60,16 @@
     "search": "chicken noodle soup broth miso ginger slow simmer noodles comfort food warm"
   },
   {
+    "title": "Chicken Shawarma with Sweet Potato Puree",
+    "url": "recipes/chicken-shawarma-sweet-potato.html",
+    "image": "images/chicken_tikka2.png",
+    "time": "70–90 mins",
+    "category": "sunday",
+    "excerpt": "Spiced shawarma chicken over sweet potato puree with crispy chickpeas, greens and garlic yoghurt.",
+    "tags": ["high protein", "meal prep", "chicken", "middle eastern", "comfort food"],
+    "search": "chicken shawarma sweet potato puree crispy chickpeas garlic yoghurt broccoli broccolini pickled onion parsley mint meal prep"
+  },
+  {
     "title": "Chicken Tikka Curry",
     "url": "recipes/chicken-tikka.html",
     "image": "images/chicken_tikka2.png",
