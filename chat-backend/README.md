@@ -2,6 +2,12 @@
 
 Production-ready backend for the site chat widget using Google AI Studio (Gemini).
 
+## Public URL Details (Live)
+
+- Website: https://commontablekitchen.com.au
+- Chat API endpoint: https://ais-pre-uanud6caph7jycyiiesi43-413938524988.asia-southeast1.run.app/api/chat
+- Chat API health check: https://ais-pre-uanud6caph7jycyiiesi43-413938524988.asia-southeast1.run.app/health
+
 ## 1. Setup
 
 ```bash
@@ -64,7 +70,7 @@ Update [scripts/chat-config.js](../scripts/chat-config.js):
 
 ```js
 window.COMMON_TABLE_CHAT_MODE = "gemini";
-window.COMMON_TABLE_CHAT_ENDPOINT = "https://YOUR_CLOUD_RUN_URL/api/chat";
+window.COMMON_TABLE_CHAT_ENDPOINT = "https://ais-pre-uanud6caph7jycyiiesi43-413938524988.asia-southeast1.run.app/api/chat";
 ```
 
 The frontend already sends:
