@@ -20,6 +20,9 @@
 
 <link rel="canonical" href="https://commontablekitchen.com.au/">
 
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-family='Arial'>🍳</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23fff' width='180' height='180'/><text x='90' y='130' font-size='120' font-family='Arial' text-anchor='middle'>🍳</text></svg>">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -595,8 +598,8 @@ if (filterCuisine) filterCuisine.addEventListener("change", filterRecipes);
 const observer = new MutationObserver(() => { filterNodes = buildFilterNodes(); });
 observer.observe(document.body, { childList: true, subtree: true });
 
-// Fetch the site-wide index for better search coverage
-fetch('recipes/recipes.json')
+// Fetch the site-wide index for better search coverage, bypassing stale cache
+fetch('recipes/recipes.json?v=20260714', { cache: 'no-store' })
     .then(r => r.json())
     .then(data => { recipeIndex = data; filterRecipes(); })
     .catch(() => { /* silently continue with DOM-only search */ filterRecipes(); });
