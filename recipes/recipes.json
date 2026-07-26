@@ -170,6 +170,16 @@
     "search": "prawn pasta garlic chilli lemon quick prawns seafood italian fresh"
   },
   {
+    "title": "Paprika Chicken with Romesco",
+    "url": "recipes/paprika-chicken-romesco.html",
+    "image": "images/Paprika Chicken with Romesco.jpg",
+    "time": "35–45 mins",
+    "category": "single night",
+    "excerpt": "Garlic paprika marinated chicken with a roasted capsicum romesco, tomato, garlic, pumpkin seeds and broccolini.",
+    "tags": ["high protein", "chicken", "fresh", "single night", "mediterranean"],
+    "search": "paprika chicken romesco roasted capsicum garlic tomato pumpkin seeds broccolini single night high protein"
+  },
+  {
     "title": "Pulled Beef Tacos",
     "url": "recipes/pulled-beef-tacos.html",
     "image": "images/taco.png",
