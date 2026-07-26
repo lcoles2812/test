@@ -70,6 +70,16 @@
     "search": "chicken shawarma sweet potato puree crispy chickpeas garlic yoghurt broccoli broccolini pickled onion parsley mint meal prep"
   },
   {
+    "title": "Chicken, Sundried Tomato & Spinach Risotto",
+    "url": "recipes/chicken-sundried-tomato-spinach-risotto.html",
+    "image": "images/chicken_rissoto.jpg",
+    "time": "45–50 mins",
+    "category": "weeknight",
+    "excerpt": "Creamy risotto with chicken, sundried tomato, spinach, garlic, lemon and parmesan.",
+    "tags": ["comfort food", "high protein", "chicken", "italian", "weeknight"],
+    "search": "chicken risotto rissoto sundried tomato spinach arborio rice parmesan butter lemon garlic onion weeknight"
+  },
+  {
     "title": "Korean Beef Mince Rice Bowl",
     "url": "recipes/korean-beef-mince-rice-bowl.html",
     "image": "images/Korean mince bowl.jpg",
