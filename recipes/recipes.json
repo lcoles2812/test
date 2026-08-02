@@ -12,7 +12,7 @@
   {
     "title": "Burrito Bowl",
     "url": "recipes/burrito-bowl.html",
-    "image": "images/taco.png",
+    "image": "images/taco.jpg",
     "time": "30–40 mins",
     "category": "weeknight",
     "excerpt": "Smoky chipotle chicken with fresh toppings, built for high protein and meal prep.",
@@ -22,7 +22,7 @@
   {
     "title": "Chicken Burger",
     "url": "recipes/chicken-burger.html",
-    "image": "images/chicken_tikka2.png",
+    "image": "images/chicken_tikka2.jpg",
     "time": "25–35 mins",
     "category": "single night",
     "excerpt": "Crispy crumbed chicken with fresh slaw and a spicy creamy sauce.",
@@ -92,7 +92,7 @@
   {
     "title": "Chicken Tikka Curry",
     "url": "recipes/chicken-tikka.html",
-    "image": "images/chicken_tikka2.png",
+    "image": "images/chicken_tikka2.jpg",
     "time": "45–60 mins",
     "category": "weeknight",
     "excerpt": "A rich, creamy curry built on a spiced yogurt marinade and a deeply developed tomato base.",
@@ -192,7 +192,7 @@
   {
     "title": "Pulled Beef Tacos",
     "url": "recipes/pulled-beef-tacos.html",
-    "image": "images/taco.png",
+    "image": "images/taco.jpg",
     "time": "2–3 hrs",
     "category": "sunday",
     "excerpt": "Rich chipotle beef that pulls apart and keeps well for taco night or leftovers.",
