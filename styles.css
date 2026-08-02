@@ -814,6 +814,43 @@ footer {
     display: flex;
 }
 
+.related-recipes {
+    margin-top: 56px;
+}
+
+.related-recipes-intro {
+    color: var(--muted);
+    margin: -6px 0 20px;
+    max-width: 650px;
+}
+
+.related-recipes .recipe-grid {
+    gap: 18px;
+}
+
+.related-recipe-card {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,.04);
+    padding: 0;
+}
+
+.related-recipe-card:hover {
+    transform: translateY(-4px);
+}
+
+.related-recipes .recipe-image {
+    height: 220px;
+}
+
+.related-recipe-meta {
+    margin: 12px 0 4px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
 .recipe-hero {
     max-width: 1200px;
     margin: 0 auto;

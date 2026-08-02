@@ -39,7 +39,109 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     initChatUI({ mode: chatMode, endpoint: chatEndpoint, settings: chatSettings });
+    initRelatedRecipes();
 });
+
+function initRelatedRecipes() {
+    if (!window.location.pathname.includes("/recipes/") && !window.location.pathname.includes("/Recipe%20Project/test/recipes/")) {
+        return;
+    }
+
+    if (document.querySelector(".related-recipes")) return;
+
+    const recipeContainer = document.querySelector(".container");
+    const recipeHero = document.querySelector(".recipe-hero");
+
+    if (!recipeContainer || !recipeHero) return;
+
+    const currentBasename = window.location.pathname.split("/").pop();
+
+    fetch("recipes.json", { cache: "no-store" })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Recipe index request failed: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(recipes => {
+            const currentRecipe = recipes.find(recipe => getRecipeBasename(recipe.url) === currentBasename);
+            if (!currentRecipe) return;
+
+            const relatedRecipes = recipes
+                .filter(recipe => getRecipeBasename(recipe.url) !== currentBasename)
+                .map(recipe => ({ recipe, score: getRelatedRecipeScore(currentRecipe, recipe) }))
+                .filter(entry => entry.score > 0)
+                .sort((a, b) => b.score - a.score || a.recipe.title.localeCompare(b.recipe.title))
+                .slice(0, 3)
+                .map(entry => entry.recipe);
+
+            const fallbackRecipes = recipes
+                .filter(recipe => getRecipeBasename(recipe.url) !== currentBasename)
+                .slice(0, 3);
+
+            const recipesToRender = relatedRecipes.length > 0 ? relatedRecipes : fallbackRecipes;
+            if (recipesToRender.length === 0) return;
+
+            const section = document.createElement("section");
+            section.className = "related-recipes";
+            section.innerHTML = `
+                <h2 class="section-title">Related Recipes</h2>
+                <p class="related-recipes-intro">Keep cooking with a few similar dishes from the same part of the site.</p>
+                <div class="recipe-grid"></div>
+            `;
+
+            const grid = section.querySelector(".recipe-grid");
+            recipesToRender.forEach(recipe => {
+                grid.appendChild(createRelatedRecipeCard(recipe));
+            });
+
+            recipeContainer.appendChild(section);
+        })
+        .catch(error => {
+            console.error("Unable to load related recipes", error);
+        });
+}
+
+function getRecipeBasename(recipeUrl) {
+    return String(recipeUrl || "").split("/").pop();
+}
+
+function getRelatedRecipeScore(currentRecipe, candidateRecipe) {
+    let score = 0;
+
+    if ((currentRecipe.category || "") === (candidateRecipe.category || "")) {
+        score += 4;
+    }
+
+    const currentTags = new Set(currentRecipe.tags || []);
+    (candidateRecipe.tags || []).forEach(tag => {
+        if (currentTags.has(tag)) score += 1;
+    });
+
+    return score;
+}
+
+function createRelatedRecipeCard(recipe) {
+    const card = document.createElement("a");
+    card.className = "recipe-card related-recipe-card";
+    card.href = getRecipeBasename(recipe.url);
+
+    const imageSrc = recipe.image ? `../${String(recipe.image).replace(/^\.\//, "")}` : "../images/placeholder.png";
+    const primaryTag = (recipe.tags || [])[0] || "Recipe";
+    const displayTag = primaryTag.charAt(0).toUpperCase() + primaryTag.slice(1);
+
+    card.innerHTML = `
+        <img src="${imageSrc}" alt="${recipe.title}" class="recipe-image" loading="lazy">
+        <div class="recipe-content">
+            <h3>${recipe.title}</h3>
+            <p>${recipe.excerpt || ""}</p>
+            <div class="related-recipe-meta">⏱ ${recipe.time || ""}</div>
+            <span class="tag">${displayTag}</span>
+        </div>
+    `;
+
+    return card;
+}
 
 function initChatUI(config) {
     if (document.querySelector(".chat-fab")) return;
