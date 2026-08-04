@@ -450,6 +450,41 @@ nav {
     color: var(--text);
 }
 
+.seo-hub {
+    margin-top: 56px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+.seo-hub-heading .section-title {
+    margin-top: 0;
+}
+
+.seo-link-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.seo-link-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--text);
+    background: #fff;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seo-link-pill:hover {
+    transform: translateY(-1px);
+    border-color: rgba(0, 0, 0, 0.18);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
 /* =========================
    FEATURED
    ========================= */
