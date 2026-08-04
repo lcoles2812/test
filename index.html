@@ -299,6 +299,18 @@
                 </div>
             </a>
 
+            <a class="recipe-card" href="recipes/spiced-beef-meatball-bowl.html" data-url="recipes/spiced-beef-meatball-bowl.html" data-search="spiced beef meatball bowl carrot puree aromatic rice high protein sunday">
+                <img src="images/Meatball_carrot%20and%20rice.JPG" alt="Spiced Beef Meatball Bowl" class="recipe-image" loading="lazy">
+                <div class="recipe-content">
+                    <h3>🥣 Spiced Beef Meatball Bowl</h3>
+                    <p>Juicy baked meatballs with carrot puree and aromatic rice.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-meta-item"><strong>⏱</strong> 70–80 mins</span>
+                    </div>
+                    <span class="tag">Meal Prep</span>
+                </div>
+            </a>
+
         </div>
 
         </section>
@@ -602,7 +614,7 @@ const observer = new MutationObserver(() => { filterNodes = buildFilterNodes(); 
 observer.observe(document.body, { childList: true, subtree: true });
 
 // Fetch the site-wide index for better search coverage, bypassing stale cache
-fetch('recipes/recipes.json?v=20260714', { cache: 'no-store' })
+fetch('recipes/recipes.json?v=20260804', { cache: 'no-store' })
     .then(r => r.json())
     .then(data => { recipeIndex = data; filterRecipes(); })
     .catch(() => { /* silently continue with DOM-only search */ filterRecipes(); });
