@@ -238,5 +238,15 @@
     "excerpt": "Pan-crisped chorizo tacos with melty cheese, red onion, coriander and fresh lime.",
     "tags": ["quick", "comfort food", "mexican", "tacos", "sharing"],
     "search": "crispy chorizo tacos pan fried tortillas cheese red onion coriander lime quick weeknight"
+  },
+  {
+    "title": "Crispy Skin Salmon with Sweet Potato Mash",
+    "url": "recipes/crispy-skin-salmon-mash-carrots-spinach.html",
+    "image": "images/salmon and mash.png",
+    "time": "30-35 mins",
+    "category": "weeknight",
+    "excerpt": "Crispy skin salmon with buttery sweet potato mash, glazed Dutch carrots and garlic sauteed spinach.",
+    "tags": ["quick", "high protein", "seafood", "fresh", "weeknight"],
+    "search": "crispy skin salmon sweet potato mash dutch carrots garlic spinach weeknight high protein omega-3 fish dinner"
   }
 ]

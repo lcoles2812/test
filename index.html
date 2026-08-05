@@ -60,7 +60,7 @@
     "@type": "ItemList",
     "name": "Common Table Recipe Index",
     "itemListOrder": "https://schema.org/ItemListOrderAscending",
-    "numberOfItems": 24,
+    "numberOfItems": 25,
     "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Beef Ragu", "url": "https://commontablekitchen.com.au/recipes/bolognese.html"},
         {"@type": "ListItem", "position": 2, "name": "Burrito Bowl", "url": "https://commontablekitchen.com.au/recipes/burrito-bowl.html"},
@@ -85,7 +85,8 @@
         {"@type": "ListItem", "position": 21, "name": "Pulled Beef Tacos", "url": "https://commontablekitchen.com.au/recipes/pulled-beef-tacos.html"},
         {"@type": "ListItem", "position": 22, "name": "Spiced Beef Meatball Bowl", "url": "https://commontablekitchen.com.au/recipes/spiced-beef-meatball-bowl.html"},
         {"@type": "ListItem", "position": 23, "name": "Steak and Veg", "url": "https://commontablekitchen.com.au/recipes/steak-bowl.html"},
-        {"@type": "ListItem", "position": 24, "name": "Sticky Beef Mince Bowl", "url": "https://commontablekitchen.com.au/recipes/sticky-beef-mince.html"}
+        {"@type": "ListItem", "position": 24, "name": "Sticky Beef Mince Bowl", "url": "https://commontablekitchen.com.au/recipes/sticky-beef-mince.html"},
+        {"@type": "ListItem", "position": 25, "name": "Crispy Skin Salmon with Sweet Potato Mash", "url": "https://commontablekitchen.com.au/recipes/crispy-skin-salmon-mash-carrots-spinach.html"}
     ]
 }
 </script>
@@ -349,6 +350,18 @@
                 </div>
             </a>
 
+            <a class="recipe-card" href="recipes/crispy-skin-salmon-mash-carrots-spinach.html" data-url="recipes/crispy-skin-salmon-mash-carrots-spinach.html" data-search="crispy skin salmon sweet potato mash dutch carrots garlic spinach weeknight fish">
+                <img src="images/salmon%20and%20mash.png" alt="Crispy Skin Salmon with Sweet Potato Mash" class="recipe-image" loading="lazy">
+                <div class="recipe-content">
+                    <h3>🐟 Crispy Skin Salmon Plate</h3>
+                    <p>Crispy salmon with mash, glazed Dutch carrots and garlic spinach.</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-meta-item"><strong>⏱</strong> 30-35 mins</span>
+                    </div>
+                    <span class="tag">Fresh</span>
+                </div>
+            </a>
+
         </div>
 
         <section class="seo-hub" aria-labelledby="all-recipes-title">
@@ -382,6 +395,7 @@
                 <a class="seo-link-pill" href="recipes/spiced-beef-meatball-bowl.html">Spiced Beef Meatball Bowl</a>
                 <a class="seo-link-pill" href="recipes/steak-bowl.html">Steak and Veg</a>
                 <a class="seo-link-pill" href="recipes/sticky-beef-mince.html">Sticky Beef Mince Bowl</a>
+                <a class="seo-link-pill" href="recipes/crispy-skin-salmon-mash-carrots-spinach.html">Crispy Skin Salmon with Sweet Potato Mash</a>
             </div>
         </section>
 
@@ -686,7 +700,7 @@ const observer = new MutationObserver(() => { filterNodes = buildFilterNodes(); 
 observer.observe(document.body, { childList: true, subtree: true });
 
 // Fetch the site-wide index for better search coverage, bypassing stale cache
-fetch('recipes/recipes.json?v=20260804', { cache: 'no-store' })
+fetch('recipes/recipes.json?v=20260805', { cache: 'no-store' })
     .then(r => r.json())
     .then(data => { recipeIndex = data; filterRecipes(); })
     .catch(() => { /* silently continue with DOM-only search */ filterRecipes(); });
