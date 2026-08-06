@@ -257,36 +257,9 @@
                 <button type="button" class="tag search-tag-btn" data-filter="comfort food">Comfort Food</button>
             </div>
 
-            <div class="sort-filter-controls">
-                <div class="sort-control">
-                    <label for="sortSelect" class="sort-label">Sort by:</label>
-                    <select id="sortSelect" class="sort-select">
-                        <option value="default">Default</option>
-                        <option value="time-asc">⏱ Time (Quick to Slow)</option>
-                        <option value="time-desc">⏱ Time (Slow to Quick)</option>
-                        <option value="difficulty-asc">📊 Difficulty (Easy to Hard)</option>
-                    </select>
-                </div>
-
-                <div class="filter-control">
-                    <label class="filter-label">Category:</label>
-                    <div class="category-buttons">
-                        <button type="button" class="tag category-btn active" data-category="all">All</button>
-                        <button type="button" class="tag category-btn" data-category="weeknight">⚡ Weeknight</button>
-                        <button type="button" class="tag category-btn" data-category="single night">🍽 Single Night</button>
-                        <button type="button" class="tag category-btn" data-category="sunday">🍲 Sunday</button>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <div id="noResults" class="no-results" hidden>No recipes match that search yet. Clear the search or choose a different filter.</div>
-
-        <div id="searchResults" class="search-results" hidden>
-            <h3 class="search-results-title">Search Results</h3>
-            <div id="searchResultsGrid" class="recipe-grid">
-            </div>
-        </div>
 
         <div class="recipe-grid" id="featuredRecipesGrid"></div>
 
@@ -340,35 +313,16 @@
 const searchInput = document.getElementById("recipeSearch");
 const clearButton = document.getElementById("clearSearch");
 const tagButtons = Array.from(document.querySelectorAll(".search-tag-btn"));
-const categoryButtons = Array.from(document.querySelectorAll(".category-btn"));
-const sortSelect = document.getElementById("sortSelect");
 const noResults = document.getElementById("noResults");
 const searchSummary = document.getElementById("searchSummary");
 const featuredRecipesGrid = document.getElementById("featuredRecipesGrid");
 
 let recipeIndex = [];
-let activeCategory = "all";
 
 // Initialize filter controls (must be before fetch)
 const sortBy = document.getElementById("sortBy");
 const filterCategory = document.getElementById("filterCategory");
 const filterCuisine = document.getElementById("filterCuisine");
-
-// Build list of unique nodes to filter: featured cards plus any link that points to a recipe
-function buildFilterNodes() {
-    const featuredCards = Array.from(document.querySelectorAll("#featuredRecipesGrid .recipe-card"));
-    const recipeLinks = Array.from(document.querySelectorAll('a[href^="recipes/"]'));
-    const set = new Set();
-    featuredCards.forEach(c => set.add(c));
-    recipeLinks.forEach(link => {
-        // Prefer to hide the nearest card or section wrapper if present
-        const card = link.closest('.card') || link.closest('.section-card') || link.closest('.recipe-card') || link;
-        if (card) set.add(card);
-    });
-    return Array.from(set);
-}
-
-let filterNodes = buildFilterNodes();
 
 function tokenMatch(searchable, query) {
     // Split query and searchable text into tokens, match all query tokens
@@ -378,15 +332,6 @@ function tokenMatch(searchable, query) {
     return queryTokens.every(qToken => 
         searchTokens.some(sToken => sToken.includes(qToken))
     );
-}
-
-function parseTimeToMinutes(timeStr) {
-    // Extract numeric time for sorting: "20–30 mins" -> 25, "1–3 hrs" -> 90
-    const match = timeStr.match(/(\d+)/);
-    if (!match) return 999;
-    let num = parseInt(match[1]);
-    if (timeStr.includes('hr')) num *= 60;
-    return num;
 }
 
 function createRecipeCard(recipe) {
@@ -461,15 +406,9 @@ function filterRecipes() {
     const query = searchInput.value.trim().toLowerCase();
     const sortType = sortBy ? sortBy.value : '';
     let visibleCount = 0;
-    let resultCount = 0;
-    const searchResultsGrid = document.getElementById('searchResultsGrid');
-    const searchResultsSection = document.getElementById('searchResults');
     const categoryFilter = filterCategory ? filterCategory.value.toLowerCase() : '';
     const cuisineFilter = filterCuisine ? filterCuisine.value.toLowerCase() : '';
     const hasAdvancedFilters = query.length > 0 || categoryFilter || cuisineFilter;
-    
-    // Clear previous search results
-    searchResultsGrid.innerHTML = '';
 
     // If we have a fetched index, prefer searching it for site-wide results
     if (recipeIndex.length > 0) {
@@ -491,70 +430,29 @@ function filterRecipes() {
         // Sort the results
         matchedRecipes = sortRecipes(matchedRecipes, sortType);
 
-        // Render full default recipe grid from index (all recipes when no filters)
+        // Render recipe grid from index (all recipes when no filters)
         if (featuredRecipesGrid) {
             featuredRecipesGrid.innerHTML = '';
             const baseRecipes = hasAdvancedFilters ? matchedRecipes : sortRecipes(recipeIndex, sortType);
             baseRecipes.forEach(recipe => {
                 featuredRecipesGrid.appendChild(createRecipeCard(recipe));
             });
-            filterNodes = buildFilterNodes();
+            visibleCount = baseRecipes.length;
         }
-
-        // Display filtered & sorted results
-        if (matchedRecipes.length > 0 && hasAdvancedFilters) {
-            resultCount = matchedRecipes.length;
-            matchedRecipes.forEach(recipe => {
-                const card = createRecipeCard(recipe);
-                searchResultsGrid.appendChild(card);
-                visibleCount += 1;
-            });
-            searchResultsSection.hidden = false;
-        } else {
-            searchResultsSection.hidden = true;
-        }
-
-        // Still filter featured cards for visual feedback
-        filterNodes.forEach(node => {
-            // Determine the node url to match: use href if it's a link, or data-url
-            let nodeUrl = '';
-            if (node.tagName === 'A' && node.getAttribute('href')) nodeUrl = node.getAttribute('href');
-            if (node.dataset && node.dataset.url) nodeUrl = node.dataset.url;
-
-            // Normalize
-            nodeUrl = nodeUrl.replace(/^\//, '');
-
-            // Check against matched recipes
-            let isMatch = false;
-            if (!hasAdvancedFilters) {
-                isMatch = true;
-            } else {
-                isMatch = matchedRecipes.some(r => r.url.replace(/^\//, '') === nodeUrl);
-                // Fallback to DOM data-search attribute if not in index
-                if (!isMatch) {
-                    const searchableText = (node.dataset && node.dataset.search ? node.dataset.search : '').toLowerCase();
-                    isMatch = tokenMatch(searchableText, query);
-                }
-            }
-            
-            node.style.display = isMatch ? '' : 'none';
-            if (isMatch) visibleCount += 1;
-        });
     } else {
         // Fallback to DOM-only filtering when no index is available
-        filterNodes.forEach(node => {
+        const cards = Array.from(document.querySelectorAll('#featuredRecipesGrid .recipe-card'));
+        cards.forEach(node => {
             const searchableText = (node.dataset && node.dataset.search ? node.dataset.search : node.textContent || '').toLowerCase();
             const isMatch = query.length === 0 ? true : tokenMatch(searchableText, query);
             node.style.display = isMatch ? '' : 'none';
             if (isMatch) visibleCount += 1;
         });
-        searchResultsSection.hidden = true;
     }
 
     if (searchSummary) {
         if (hasAdvancedFilters) {
-            const count = recipeIndex.length > 0 ? resultCount : visibleCount;
-            searchSummary.textContent = count === 1 ? "1 recipe found." : `${count} recipes found.`;
+            searchSummary.textContent = visibleCount === 1 ? "1 recipe found." : `${visibleCount} recipes found.`;
         } else {
             searchSummary.textContent = "Showing all recipes. Use search and filters to narrow things down.";
         }
@@ -562,10 +460,7 @@ function filterRecipes() {
 
     // Toggle single-result class for featured grid when exactly one result is visible
     const recipeGrid = document.getElementById('featuredRecipesGrid');
-    if (recipeGrid && !searchResultsSection.hidden) {
-        // If results section is showing, don't apply single-result to featured grid
-        recipeGrid.classList.remove('single-result');
-    } else if (recipeGrid) {
+    if (recipeGrid) {
         const featuredVisibleCount = Array.from(recipeGrid.querySelectorAll(':scope > a')).filter(el => el.style.display !== 'none').length;
         recipeGrid.classList.toggle('single-result', featuredVisibleCount === 1);
     }
@@ -577,18 +472,6 @@ function setActiveTag(activeButton) {
     tagButtons.forEach(button => {
         button.classList.toggle("active", button === activeButton);
     });
-}
-
-function setActiveCategoryTab(category) {
-    categoryButtons.forEach(button => {
-        button.classList.toggle("active", (button.dataset.category || 'all') === category);
-    });
-}
-
-function syncCategoryTabWithDropdown() {
-    const selectedCategory = filterCategory && filterCategory.value ? filterCategory.value.toLowerCase() : 'all';
-    activeCategory = selectedCategory;
-    setActiveCategoryTab(selectedCategory);
 }
 
 searchInput.addEventListener("input", () => {
@@ -611,34 +494,14 @@ tagButtons.forEach(button => {
     });
 });
 
-categoryButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const selectedCategory = (button.dataset.category || 'all').toLowerCase();
-        activeCategory = selectedCategory;
-        if (filterCategory) {
-            filterCategory.value = selectedCategory === 'all' ? '' : selectedCategory;
-        }
-        setActiveCategoryTab(selectedCategory);
-        filterRecipes();
-    });
-});
-
 if (sortBy) sortBy.addEventListener("change", filterRecipes);
 if (filterCategory) {
-    filterCategory.addEventListener("change", () => {
-        syncCategoryTabWithDropdown();
-        filterRecipes();
-    });
-    syncCategoryTabWithDropdown();
+    filterCategory.addEventListener("change", filterRecipes);
 }
 if (filterCuisine) filterCuisine.addEventListener("change", filterRecipes);
 
-// Rebuild nodes if the DOM changes (optional) — basic observer to catch lazy content
-const observer = new MutationObserver(() => { filterNodes = buildFilterNodes(); });
-observer.observe(document.body, { childList: true, subtree: true });
-
 // Fetch the site-wide index for better search coverage, bypassing stale cache
-fetch('recipes/recipes.json?v=20260805', { cache: 'no-store' })
+fetch('recipes/recipes.json?v=20260806', { cache: 'no-store' })
     .then(r => r.json())
     .then(data => { recipeIndex = data; filterRecipes(); })
     .catch(() => { /* silently continue with DOM-only search */ filterRecipes(); });
