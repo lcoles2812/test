@@ -206,8 +206,8 @@
 
     <section class="featured">
         <div class="featured-heading">
-            <h2 class="section-title">Featured Recipes</h2>
-            <p class="search-help">Search by recipe name, ingredient, or vibe.</p>
+            <h2 class="section-title">All Recipes</h2>
+            <p class="search-help">Browse all recipes, then use search, sort and filters to narrow things down.</p>
         </div>
 
         <section class="search-section">
@@ -288,81 +288,7 @@
             </div>
         </div>
 
-        <div class="recipe-grid">
-
-            <a class="recipe-card" href="recipes/chicken-tikka.html" data-url="recipes/chicken-tikka.html" data-search="chicken tikka curry creamy chicken high protein curry">
-                <img src="images/chicken_tikka2.jpg" alt="Chicken Tikka Curry" class="recipe-image" loading="lazy">
-                <div class="recipe-content">
-                    <h3>🍛 Chicken Tikka Curry</h3>
-                    <p>Rich, creamy curry with marinated chicken thighs.</p>
-                    <div class="recipe-meta">
-                        <span class="recipe-meta-item"><strong>⏱</strong> 45–60 mins</span>
-                    </div>
-                    <span class="tag">High Protein</span>
-                </div>
-            </a>
-
-            <a class="recipe-card" href="recipes/prawn-pasta.html" data-url="recipes/prawn-pasta.html" data-search="prawn pasta lemon garlic chilli quick seafood">
-                <img src="images/Gamberi.png" alt="Lemon Garlic Chilli Prawn Pasta" class="recipe-image" loading="lazy">
-                <div class="recipe-content">
-                    <h3>Gamberi Aglio e Olio (Prawn Pasta)</h3>
-                    <p>Juicy prawns tossed through a silky lemon, garlic and chilli butter sauce.</p>
-                    <div class="recipe-meta">
-                        <span class="recipe-meta-item"><strong>⏱</strong> 25–30 mins</span>
-                    </div>
-                    <span class="tag">Quick</span>
-                </div>
-            </a>
-
-            <a class="recipe-card" href="recipes/drunken-noodles.html" data-url="recipes/drunken-noodles.html" data-search="drunken noodles pad kee mao chicken thai spicy quick">
-                <img src="images/Drunken.png" alt="Drunken Noodles" class="recipe-image" loading="lazy">
-                <div class="recipe-content">
-                    <h3>Pad Kee Mao (Drunken Noodles)</h3>
-                    <p>Wok-fried rice noodles with chicken, vegetables and a bold Thai-inspired sauce.</p>
-                    <div class="recipe-meta">
-                        <span class="recipe-meta-item"><strong>⏱</strong> 25–30 mins</span>
-                    </div>
-                    <span class="tag">30 min</span>
-                </div>
-            </a>
-
-            <a class="recipe-card" href="recipes/poke-bowl.html" data-url="recipes/poke-bowl.html" data-search="poke bowl teriyaki chicken fresh rice bowl homemade sauce">
-                <img src="images/Poke.png" alt="Teriyaki Chicken Poke Bowl" class="recipe-image" loading="lazy">
-                <div class="recipe-content">
-                    <h3>🍚 Teriyaki Chicken Poke Bowl</h3>
-                    <p>Fresh rice bowl with teriyaki chicken, crunchy vegetables and a glossy homemade sauce.</p>
-                    <div class="recipe-meta">
-                        <span class="recipe-meta-item"><strong>⏱</strong> 20–30 mins</span>
-                    </div>
-                    <span class="tag">Fresh</span>
-                </div>
-            </a>
-
-            <a class="recipe-card" href="recipes/spiced-beef-meatball-bowl.html" data-url="recipes/spiced-beef-meatball-bowl.html" data-search="spiced beef meatball bowl carrot puree aromatic rice high protein sunday">
-                <img src="images/Meatball_carrot%20and%20rice.JPG" alt="Spiced Beef Meatball Bowl" class="recipe-image" loading="lazy">
-                <div class="recipe-content">
-                    <h3>🥣 Spiced Beef Meatball Bowl</h3>
-                    <p>Juicy baked meatballs with carrot puree and aromatic rice.</p>
-                    <div class="recipe-meta">
-                        <span class="recipe-meta-item"><strong>⏱</strong> 70–80 mins</span>
-                    </div>
-                    <span class="tag">Meal Prep</span>
-                </div>
-            </a>
-
-            <a class="recipe-card" href="recipes/crispy-skin-salmon-mash-carrots-spinach.html" data-url="recipes/crispy-skin-salmon-mash-carrots-spinach.html" data-search="crispy skin salmon sweet potato mash dutch carrots garlic spinach weeknight fish">
-                <img src="images/salmon%20and%20mash.png" alt="Crispy Skin Salmon with Sweet Potato Mash" class="recipe-image" loading="lazy">
-                <div class="recipe-content">
-                    <h3>🐟 Crispy Skin Salmon Plate</h3>
-                    <p>Crispy salmon with mash, glazed Dutch carrots and garlic spinach.</p>
-                    <div class="recipe-meta">
-                        <span class="recipe-meta-item"><strong>⏱</strong> 30-35 mins</span>
-                    </div>
-                    <span class="tag">Fresh</span>
-                </div>
-            </a>
-
-        </div>
+        <div class="recipe-grid" id="featuredRecipesGrid"></div>
 
         <section class="seo-hub" aria-labelledby="all-recipes-title">
             <div class="featured-heading seo-hub-heading">
@@ -413,13 +339,12 @@
 <script>
 const searchInput = document.getElementById("recipeSearch");
 const clearButton = document.getElementById("clearSearch");
-const featuredCards = Array.from(document.querySelectorAll(".recipe-card"));
-const recipeLinks = Array.from(document.querySelectorAll('a[href^="recipes/"]'));
 const tagButtons = Array.from(document.querySelectorAll(".search-tag-btn"));
 const categoryButtons = Array.from(document.querySelectorAll(".category-btn"));
 const sortSelect = document.getElementById("sortSelect");
 const noResults = document.getElementById("noResults");
 const searchSummary = document.getElementById("searchSummary");
+const featuredRecipesGrid = document.getElementById("featuredRecipesGrid");
 
 let recipeIndex = [];
 let activeCategory = "all";
@@ -431,6 +356,8 @@ const filterCuisine = document.getElementById("filterCuisine");
 
 // Build list of unique nodes to filter: featured cards plus any link that points to a recipe
 function buildFilterNodes() {
+    const featuredCards = Array.from(document.querySelectorAll("#featuredRecipesGrid .recipe-card"));
+    const recipeLinks = Array.from(document.querySelectorAll('a[href^="recipes/"]'));
     const set = new Set();
     featuredCards.forEach(c => set.add(c));
     recipeLinks.forEach(link => {
@@ -468,6 +395,7 @@ function createRecipeCard(recipe) {
     card.className = 'recipe-card';
     card.href = recipe.url;
     card.dataset.url = recipe.url;
+    card.dataset.search = (recipe.search || recipe.title || recipe.excerpt || '').toLowerCase();
     
     const tags = (recipe.tags || []).slice(0, 1).map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(', ');
     
@@ -563,6 +491,16 @@ function filterRecipes() {
         // Sort the results
         matchedRecipes = sortRecipes(matchedRecipes, sortType);
 
+        // Render full default recipe grid from index (all recipes when no filters)
+        if (featuredRecipesGrid) {
+            featuredRecipesGrid.innerHTML = '';
+            const baseRecipes = hasAdvancedFilters ? matchedRecipes : sortRecipes(recipeIndex, sortType);
+            baseRecipes.forEach(recipe => {
+                featuredRecipesGrid.appendChild(createRecipeCard(recipe));
+            });
+            filterNodes = buildFilterNodes();
+        }
+
         // Display filtered & sorted results
         if (matchedRecipes.length > 0 && hasAdvancedFilters) {
             resultCount = matchedRecipes.length;
@@ -618,17 +556,17 @@ function filterRecipes() {
             const count = recipeIndex.length > 0 ? resultCount : visibleCount;
             searchSummary.textContent = count === 1 ? "1 recipe found." : `${count} recipes found.`;
         } else {
-            searchSummary.textContent = "Browse the featured recipes below, or use search and filters to narrow things down.";
+            searchSummary.textContent = "Showing all recipes. Use search and filters to narrow things down.";
         }
     }
 
     // Toggle single-result class for featured grid when exactly one result is visible
-    const recipeGrid = document.querySelector('.recipe-grid');
+    const recipeGrid = document.getElementById('featuredRecipesGrid');
     if (recipeGrid && !searchResultsSection.hidden) {
         // If results section is showing, don't apply single-result to featured grid
         recipeGrid.classList.remove('single-result');
     } else if (recipeGrid) {
-        const featuredVisibleCount = Array.from(document.querySelectorAll('.recipe-grid > a')).filter(el => el.style.display !== 'none').length;
+        const featuredVisibleCount = Array.from(recipeGrid.querySelectorAll(':scope > a')).filter(el => el.style.display !== 'none').length;
         recipeGrid.classList.toggle('single-result', featuredVisibleCount === 1);
     }
 
