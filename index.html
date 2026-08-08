@@ -206,8 +206,11 @@
 
     <section class="featured">
         <div class="featured-heading">
-            <h2 class="section-title">All Recipes</h2>
-            <p class="search-help">Browse all recipes, then use search, sort and filters to narrow things down.</p>
+            <div>
+                <h2 class="section-title">All Recipes</h2>
+                <p class="search-help">Browse a shuffled set of 20 recipes, then use search, sort and filters to narrow things down.</p>
+            </div>
+            <button type="button" id="shuffleRecipes" class="search-clear">Shuffle 20</button>
         </div>
 
         <section class="search-section">
@@ -312,12 +315,15 @@
 <script>
 const searchInput = document.getElementById("recipeSearch");
 const clearButton = document.getElementById("clearSearch");
+const shuffleButton = document.getElementById("shuffleRecipes");
 const tagButtons = Array.from(document.querySelectorAll(".search-tag-btn"));
 const noResults = document.getElementById("noResults");
 const searchSummary = document.getElementById("searchSummary");
 const featuredRecipesGrid = document.getElementById("featuredRecipesGrid");
 
 let recipeIndex = [];
+let shuffledRecipes = [];
+const homepageRecipeLimit = 20;
 
 // Initialize filter controls (must be before fetch)
 const sortBy = document.getElementById("sortBy");
@@ -402,6 +408,22 @@ function sortRecipes(recipes, sortType) {
     return sorted;
 }
 
+function shuffleRecipes(recipes) {
+    const shuffled = [...recipes];
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+    }
+    return shuffled;
+}
+
+function getDefaultRecipeSelection() {
+    if (shuffledRecipes.length === 0) {
+        shuffledRecipes = shuffleRecipes(recipeIndex);
+    }
+    return shuffledRecipes.slice(0, homepageRecipeLimit);
+}
+
 function filterRecipes() {
     const query = searchInput.value.trim().toLowerCase();
     const sortType = sortBy ? sortBy.value : '';
@@ -430,10 +452,10 @@ function filterRecipes() {
         // Sort the results
         matchedRecipes = sortRecipes(matchedRecipes, sortType);
 
-        // Render recipe grid from index (all recipes when no filters)
+        // Render a shuffled subset by default, or all filtered results when controls are active.
         if (featuredRecipesGrid) {
             featuredRecipesGrid.innerHTML = '';
-            const baseRecipes = hasAdvancedFilters ? matchedRecipes : sortRecipes(recipeIndex, sortType);
+            const baseRecipes = hasAdvancedFilters ? matchedRecipes : getDefaultRecipeSelection();
             baseRecipes.forEach(recipe => {
                 featuredRecipesGrid.appendChild(createRecipeCard(recipe));
             });
@@ -454,7 +476,9 @@ function filterRecipes() {
         if (hasAdvancedFilters) {
             searchSummary.textContent = visibleCount === 1 ? "1 recipe found." : `${visibleCount} recipes found.`;
         } else {
-            searchSummary.textContent = "Showing all recipes. Use search and filters to narrow things down.";
+            const totalRecipes = recipeIndex.length;
+            const visibleRecipes = Math.min(homepageRecipeLimit, totalRecipes);
+            searchSummary.textContent = `Showing ${visibleRecipes} shuffled recipes from ${totalRecipes}. Use search and filters to narrow things down.`;
         }
     }
 
@@ -485,6 +509,18 @@ clearButton.addEventListener("click", () => {
     filterRecipes();
     searchInput.focus();
 });
+
+if (shuffleButton) {
+    shuffleButton.addEventListener("click", () => {
+        shuffledRecipes = shuffleRecipes(recipeIndex);
+        if (sortBy) sortBy.value = "";
+        if (filterCategory) filterCategory.value = "";
+        if (filterCuisine) filterCuisine.value = "";
+        searchInput.value = "";
+        setActiveTag(null);
+        filterRecipes();
+    });
+}
 
 tagButtons.forEach(button => {
     button.addEventListener("click", () => {
