@@ -40,7 +40,174 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initChatUI({ mode: chatMode, endpoint: chatEndpoint, settings: chatSettings });
     initRelatedRecipes();
+    enhanceRecipeStructuredData();
 });
+
+function enhanceRecipeStructuredData() {
+    if (!window.location.pathname.includes("/recipes/") && !window.location.pathname.includes("/Recipe%20Project/test/recipes/")) {
+        return;
+    }
+
+    const recipeScript = Array.from(document.querySelectorAll('script[type="application/ld+json"]')).find(script => {
+        const content = script.textContent || "";
+        return content.includes('"@type": "Recipe"') || content.includes('"@type":"Recipe"');
+    });
+
+    if (!recipeScript) return;
+
+    let recipeData;
+    try {
+        recipeData = JSON.parse(recipeScript.textContent);
+    } catch (error) {
+        console.error("Unable to parse recipe structured data", error);
+        return;
+    }
+
+    const recipeUrl = getCanonicalUrl();
+    const recipeImage = getRecipeImageUrl(recipeData);
+
+    if (!recipeData.keywords) {
+        const derivedKeywords = buildRecipeKeywords(recipeData);
+        if (derivedKeywords.length > 0) {
+            recipeData.keywords = derivedKeywords.join(", ");
+        }
+    }
+
+    if (!recipeData.nutrition) {
+        const nutrition = extractNutritionFromPage();
+        if (nutrition) {
+            recipeData.nutrition = nutrition;
+        }
+    }
+
+    if (Array.isArray(recipeData.recipeInstructions)) {
+        recipeData.recipeInstructions = enrichRecipeInstructions(recipeData.recipeInstructions, recipeUrl, recipeImage);
+    }
+
+    recipeScript.textContent = `${JSON.stringify(recipeData, null, 2)}\n`;
+}
+
+function getCanonicalUrl() {
+    const canonical = document.querySelector('link[rel="canonical"]');
+    return canonical ? canonical.href : window.location.href.split("#")[0];
+}
+
+function getRecipeImageUrl(recipeData) {
+    if (typeof recipeData.image === "string" && recipeData.image.length > 0) {
+        return recipeData.image;
+    }
+
+    if (Array.isArray(recipeData.image) && recipeData.image.length > 0) {
+        return recipeData.image[0];
+    }
+
+    const metaImage = document.querySelector('meta[property="og:image"]');
+    return metaImage ? metaImage.content : "";
+}
+
+function buildRecipeKeywords(recipeData) {
+    const rawKeywords = [];
+
+    rawKeywords.push(recipeData.name || "");
+    rawKeywords.push(recipeData.recipeCuisine || "");
+    rawKeywords.push(recipeData.recipeCategory || "");
+
+    (recipeData.recipeIngredient || []).slice(0, 8).forEach(ingredient => {
+        rawKeywords.push(String(ingredient).replace(/^[0-9./]+\s*[a-zA-Z()%-]*\s*/u, "").trim());
+    });
+
+    const seen = new Set();
+    return rawKeywords
+        .map(keyword => String(keyword || "").replace(/\s+/g, " ").trim())
+        .filter(keyword => keyword.length > 1)
+        .filter(keyword => {
+            const normalized = keyword.toLowerCase();
+            if (seen.has(normalized)) return false;
+            seen.add(normalized);
+            return true;
+        });
+}
+
+function extractNutritionFromPage() {
+    const macrosHeading = Array.from(document.querySelectorAll(".section-title")).find(heading =>
+        heading.textContent && heading.textContent.toLowerCase().includes("macros")
+    );
+
+    if (!macrosHeading) return null;
+
+    const macrosList = macrosHeading.nextElementSibling;
+    if (!macrosList || macrosList.tagName !== "UL") return null;
+
+    const nutrition = {
+        "@type": "NutritionInformation"
+    };
+
+    macrosList.querySelectorAll("li").forEach(item => {
+        const label = item.querySelector("strong");
+        const key = label ? label.textContent.toLowerCase().replace(/:$/, "").trim() : "";
+        const value = item.textContent.replace(label ? label.textContent : "", "").trim();
+
+        if (!key || !value) return;
+
+        if (key === "calories") nutrition.calories = value;
+        if (key === "protein") nutrition.proteinContent = value;
+        if (key === "carbs") nutrition.carbohydrateContent = value;
+        if (key === "fats") nutrition.fatContent = value;
+        if (key === "fiber" || key === "fibre") nutrition.fiberContent = value;
+    });
+
+    return Object.keys(nutrition).length > 1 ? nutrition : null;
+}
+
+function enrichRecipeInstructions(instructions, recipeUrl, recipeImage) {
+    const stepElements = Array.from(document.querySelectorAll(".container ol li"));
+
+    return instructions.map((instruction, index) => {
+        const source = typeof instruction === "string"
+            ? { "@type": "HowToStep", text: instruction }
+            : { ...instruction };
+
+        const stepElement = stepElements[index] || null;
+        const stepText = normalizeStepText(source.text || (stepElement ? stepElement.textContent : ""));
+        const stepName = source.name || extractStepName(stepElement, stepText, index);
+        const stepUrl = `${recipeUrl}#step-${index + 1}`;
+
+        if (stepElement && !stepElement.id) {
+            stepElement.id = `step-${index + 1}`;
+        }
+
+        return {
+            "@type": "HowToStep",
+            name: stepName,
+            text: stepText,
+            url: source.url || stepUrl,
+            ...(source.image || recipeImage ? { image: source.image || recipeImage } : {})
+        };
+    });
+}
+
+function normalizeStepText(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+}
+
+function extractStepName(stepElement, stepText, index) {
+    const strong = stepElement ? stepElement.querySelector("strong") : null;
+    if (strong && strong.textContent.trim().length > 0) {
+        return strong.textContent.replace(/:$/, "").trim();
+    }
+
+    const leadingClause = stepText.split(":")[0].trim();
+    if (leadingClause && leadingClause.length <= 80 && leadingClause !== stepText) {
+        return leadingClause;
+    }
+
+    const words = stepText.split(/\s+/).filter(Boolean).slice(0, 6);
+    if (words.length > 0) {
+        return words.join(" ");
+    }
+
+    return `Step ${index + 1}`;
+}
 
 function initRelatedRecipes() {
     if (!window.location.pathname.includes("/recipes/") && !window.location.pathname.includes("/Recipe%20Project/test/recipes/")) {
