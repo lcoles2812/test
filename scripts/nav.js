@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatMode = String(window.COMMON_TABLE_CHAT_MODE || "beta").toLowerCase();
     const chatEndpoint = String(window.COMMON_TABLE_CHAT_ENDPOINT || "").trim();
     const chatSettings = window.COMMON_TABLE_CHAT_SETTINGS || null;
+    const chatlingConfig = window.COMMON_TABLE_CHATLING || null;
 
     const navs = Array.from(document.querySelectorAll("nav .nav-container"));
 
@@ -38,10 +39,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    initChatUI({ mode: chatMode, endpoint: chatEndpoint, settings: chatSettings });
+    if (chatMode === "chatling") {
+        const loaded = initChatling(chatlingConfig);
+        if (!loaded) {
+            initChatUI({ mode: "beta", endpoint: "", settings: chatSettings });
+        }
+    } else {
+        initChatUI({ mode: chatMode, endpoint: chatEndpoint, settings: chatSettings });
+    }
     initRelatedRecipes();
     enhanceRecipeStructuredData();
 });
+
+function initChatling(config) {
+    const chatbotId = String(config?.chatbotId || "").trim();
+    const scriptSrc = String(config?.scriptSrc || "https://chatling.ai/js/embed.js").trim();
+
+    if (!chatbotId || chatbotId === "REPLACE_WITH_CHATLING_CHATBOT_ID") {
+        console.warn("Chatling mode is enabled but chatbotId is missing. Falling back to internal chat.");
+        return false;
+    }
+
+    window.chtlConfig = {
+        chatbotId
+    };
+
+    if (document.getElementById("chtl-script") || document.getElementById("chatling-embed-script")) {
+        return true;
+    }
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.id = "chtl-script";
+    script.setAttribute("data-id", chatbotId);
+    script.type = "text/javascript";
+    script.src = scriptSrc;
+    document.body.appendChild(script);
+    return true;
+}
 
 function enhanceRecipeStructuredData() {
     if (!window.location.pathname.includes("/recipes/") && !window.location.pathname.includes("/Recipe%20Project/test/recipes/")) {
