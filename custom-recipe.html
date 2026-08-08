@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Recipe Builder | Common Table</title>
+
+<meta name="description" content="Build your own custom recipe with Common Table Chat. Recipes are saved only in your browser on your device.">
+<meta property="og:title" content="Custom Recipe Builder | Common Table">
+<meta property="og:description" content="Create custom recipes with chatbot help and keep them private to your device.">
+<meta property="og:url" content="https://commontablekitchen.com.au/custom-recipe.html">
+<meta property="og:image" content="https://commontablekitchen.com.au/images/chicken_tikka2.jpg">
+<meta property="og:type" content="website">
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ff4d2e">
+
+<link rel="canonical" href="https://commontablekitchen.com.au/custom-recipe.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="stylesheet" href="styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDM7SCTG3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-TDM7SCTG3K");
+</script>
+</head>
+
+<body>
+<nav>
+  <div class="nav-container">
+    <div class="logo">Common Table</div>
+
+    <button class="nav-toggle-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">☰</button>
+    <div class="nav-links" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="weeknight.html">Weeknight</a>
+      <a href="singlenight.html">Single Night</a>
+      <a href="sunday.html">Sunday</a>
+      <a href="custom-recipe.html" class="active">Custom Recipe</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>🧪 Custom Recipe Builder</h1>
+  <p class="hero-text">Create your own recipe with chatbot help. Saved recipes stay on your device only.</p>
+</header>
+
+<main class="container custom-recipe-page">
+  <section class="custom-recipe-intro">
+    <h2 class="section-title">Build Your Own</h2>
+    <p>
+      This page does not save to the live website database. Your custom recipes are stored in your browser only.
+      If you clear browser data or switch devices, they will not carry across.
+    </p>
+  </section>
+
+  <section class="custom-recipe-grid" aria-label="Custom recipe workspace">
+    <article class="custom-panel">
+      <h3>Recipe Draft</h3>
+      <form id="customRecipeForm" class="custom-form">
+        <label for="recipeTitle">Recipe Name</label>
+        <input id="recipeTitle" name="title" class="custom-input" type="text" maxlength="120" placeholder="Example: Weeknight Chicken Rice Bowl" required>
+
+        <div class="custom-inline-fields">
+          <div>
+            <label for="recipeServings">Servings</label>
+            <input id="recipeServings" name="servings" class="custom-input" type="text" maxlength="40" placeholder="2-4">
+          </div>
+          <div>
+            <label for="recipeTime">Time</label>
+            <input id="recipeTime" name="time" class="custom-input" type="text" maxlength="40" placeholder="30 mins">
+          </div>
+        </div>
+
+        <label for="recipeIngredients">Ingredients (one per line)</label>
+        <textarea id="recipeIngredients" name="ingredients" class="custom-input custom-textarea" rows="8" placeholder="300g chicken mince&#10;1 cup rice&#10;2 cloves garlic"></textarea>
+
+        <label for="recipeSteps">Method (one step per line)</label>
+        <textarea id="recipeSteps" name="steps" class="custom-input custom-textarea" rows="8" placeholder="Cook rice as per packet.&#10;Brown chicken mince in a hot pan."></textarea>
+
+        <label for="recipeNotes">Notes (optional)</label>
+        <textarea id="recipeNotes" name="notes" class="custom-input custom-textarea" rows="4" placeholder="Swaps, storage tips, or macros."></textarea>
+
+        <div class="custom-actions">
+          <button type="submit" class="custom-btn custom-btn-primary">Save Recipe</button>
+          <button type="button" id="clearRecipeForm" class="custom-btn">Clear Form</button>
+          <button type="button" id="deleteRecipe" class="custom-btn custom-btn-danger">Delete Selected</button>
+        </div>
+      </form>
+      <p id="customRecipeStatus" class="custom-status" aria-live="polite"></p>
+    </article>
+
+    <aside class="custom-panel">
+      <h3>Custom Recipes On This Device</h3>
+      <p class="custom-muted">Private to this browser and device.</p>
+      <div class="custom-actions">
+        <button type="button" id="exportRecipes" class="custom-btn">Export JSON</button>
+        <button type="button" id="importRecipesReplace" class="custom-btn">Import Replace</button>
+        <button type="button" id="importRecipesMerge" class="custom-btn">Import Merge</button>
+      </div>
+      <p class="custom-import-help">Replace overwrites all local recipes. Merge appends and de-duplicates by recipe content.</p>
+      <input id="importRecipesFile" type="file" accept="application/json" hidden>
+      <ul id="customRecipeList" class="custom-recipe-list"></ul>
+
+      <hr class="custom-divider">
+
+      <h3>Use Chatbot To Draft</h3>
+      <p class="custom-muted">Generate a tailored prompt, copy it, and ask Common Table Chat.</p>
+      <div class="custom-actions custom-chat-actions">
+        <button type="button" id="copyChatPrompt" class="custom-btn custom-btn-primary">Copy Prompt For Chat</button>
+        <button type="button" id="openChatWidget" class="custom-btn">Open Chat</button>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<script>
+(() => {
+  const STORAGE_KEY = "common_table_custom_recipes_v1";
+
+  const form = document.getElementById("customRecipeForm");
+  const titleInput = document.getElementById("recipeTitle");
+  const servingsInput = document.getElementById("recipeServings");
+  const timeInput = document.getElementById("recipeTime");
+  const ingredientsInput = document.getElementById("recipeIngredients");
+  const stepsInput = document.getElementById("recipeSteps");
+  const notesInput = document.getElementById("recipeNotes");
+  const clearBtn = document.getElementById("clearRecipeForm");
+  const deleteBtn = document.getElementById("deleteRecipe");
+  const listEl = document.getElementById("customRecipeList");
+  const statusEl = document.getElementById("customRecipeStatus");
+  const copyPromptBtn = document.getElementById("copyChatPrompt");
+  const openChatBtn = document.getElementById("openChatWidget");
+  const exportBtn = document.getElementById("exportRecipes");
+  const importReplaceBtn = document.getElementById("importRecipesReplace");
+  const importMergeBtn = document.getElementById("importRecipesMerge");
+  const importFileInput = document.getElementById("importRecipesFile");
+
+  let recipes = [];
+  let selectedId = null;
+  let pendingImportMode = "replace";
+
+  function loadRecipes() {
+    try {
+      const raw = window.localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [];
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function persistRecipes() {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(recipes));
+  }
+
+  function setStatus(message, isError = false) {
+    statusEl.textContent = message;
+    statusEl.classList.toggle("error", Boolean(isError));
+  }
+
+  function getFormRecipe() {
+    return {
+      id: selectedId || String(Date.now()),
+      title: titleInput.value.trim(),
+      servings: servingsInput.value.trim(),
+      time: timeInput.value.trim(),
+      ingredients: ingredientsInput.value.trim(),
+      steps: stepsInput.value.trim(),
+      notes: notesInput.value.trim(),
+      updatedAt: new Date().toISOString()
+    };
+  }
+
+  function populateForm(recipe) {
+    titleInput.value = recipe.title || "";
+    servingsInput.value = recipe.servings || "";
+    timeInput.value = recipe.time || "";
+    ingredientsInput.value = recipe.ingredients || "";
+    stepsInput.value = recipe.steps || "";
+    notesInput.value = recipe.notes || "";
+    selectedId = recipe.id;
+    setStatus(`Loaded recipe: ${recipe.title}`);
+  }
+
+  function clearForm() {
+    form.reset();
+    selectedId = null;
+  }
+
+  function renderList() {
+    if (recipes.length === 0) {
+      listEl.innerHTML = '<li class="custom-empty">No custom recipes saved yet.</li>';
+      return;
+    }
+
+    const sorted = [...recipes].sort((a, b) => {
+      return new Date(b.updatedAt || 0).getTime() - new Date(a.updatedAt || 0).getTime();
+    });
+
+    listEl.innerHTML = sorted.map(recipe => {
+      const meta = [recipe.time, recipe.servings].filter(Boolean).join(" • ");
+      const active = recipe.id === selectedId ? " custom-recipe-item-active" : "";
+      return `
+        <li class="custom-recipe-item${active}">
+          <div>
+            <strong>${escapeHtml(recipe.title || "Untitled Recipe")}</strong>
+            <p>${escapeHtml(meta || "No details yet")}</p>
+          </div>
+          <button type="button" class="custom-btn custom-btn-small" data-load-id="${recipe.id}">Load</button>
+        </li>
+      `;
+    }).join("");
+  }
+
+  function escapeHtml(text) {
+    return String(text)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function buildChatPrompt() {
+    const draft = getFormRecipe();
+    const title = draft.title || "Custom recipe";
+    const ingredients = draft.ingredients || "No ingredients provided yet.";
+
+    return [
+      `Help me create a recipe draft for "${title}".`,
+      "Please keep it practical, affordable, and high protein where possible.",
+      draft.time ? `Target time: ${draft.time}.` : "",
+      draft.servings ? `Servings: ${draft.servings}.` : "",
+      "Ingredients I have (or want to use):",
+      ingredients,
+      "Return:",
+      "1) short recipe summary",
+      "2) ingredient list with quantities",
+      "3) step-by-step method",
+      "4) 2 substitution ideas",
+      "5) storage or meal-prep tips"
+    ].filter(Boolean).join("\n");
+  }
+
+  function sanitizeImportedRecipes(value) {
+    if (!Array.isArray(value)) return [];
+
+    return value
+      .map((item, index) => {
+        const title = String(item?.title || "").trim();
+        if (!title) return null;
+
+        return {
+          id: String(item?.id || `${Date.now()}-${index}`),
+          title,
+          servings: String(item?.servings || "").trim(),
+          time: String(item?.time || "").trim(),
+          ingredients: String(item?.ingredients || "").trim(),
+          steps: String(item?.steps || "").trim(),
+          notes: String(item?.notes || "").trim(),
+          updatedAt: item?.updatedAt ? String(item.updatedAt) : new Date().toISOString()
+        };
+      })
+      .filter(Boolean);
+  }
+
+  function normalizedRecipeKey(recipe) {
+    const title = String(recipe.title || "").trim().toLowerCase();
+    const ingredients = String(recipe.ingredients || "").trim().toLowerCase();
+    const steps = String(recipe.steps || "").trim().toLowerCase();
+    return `${title}::${ingredients}::${steps}`;
+  }
+
+  function mergeRecipes(existingRecipes, importedRecipes) {
+    const byKey = new Map();
+
+    existingRecipes.forEach(recipe => {
+      byKey.set(normalizedRecipeKey(recipe), recipe);
+    });
+
+    importedRecipes.forEach(recipe => {
+      const key = normalizedRecipeKey(recipe);
+      const existing = byKey.get(key);
+      if (!existing) {
+        byKey.set(key, recipe);
+        return;
+      }
+
+      const existingTime = new Date(existing.updatedAt || 0).getTime();
+      const importedTime = new Date(recipe.updatedAt || 0).getTime();
+      if (importedTime >= existingTime) {
+        byKey.set(key, recipe);
+      }
+    });
+
+    return Array.from(byKey.values());
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const recipe = getFormRecipe();
+
+    if (!recipe.title) {
+      setStatus("Please add a recipe name before saving.", true);
+      return;
+    }
+
+    const existingIndex = recipes.findIndex(item => item.id === recipe.id);
+    if (existingIndex >= 0) {
+      recipes[existingIndex] = recipe;
+      setStatus(`Updated: ${recipe.title}`);
+    } else {
+      recipes.push(recipe);
+      selectedId = recipe.id;
+      setStatus(`Saved: ${recipe.title}`);
+    }
+
+    persistRecipes();
+    renderList();
+  });
+
+  listEl.addEventListener("click", (event) => {
+    const btn = event.target.closest("button[data-load-id]");
+    if (!btn) return;
+
+    const recipe = recipes.find(item => item.id === btn.dataset.loadId);
+    if (!recipe) return;
+
+    populateForm(recipe);
+    renderList();
+  });
+
+  clearBtn.addEventListener("click", () => {
+    clearForm();
+    renderList();
+    setStatus("Form cleared.");
+  });
+
+  deleteBtn.addEventListener("click", () => {
+    if (!selectedId) {
+      setStatus("Load a recipe first to delete it.", true);
+      return;
+    }
+
+    const recipe = recipes.find(item => item.id === selectedId);
+    recipes = recipes.filter(item => item.id !== selectedId);
+    persistRecipes();
+    clearForm();
+    renderList();
+    setStatus(`Deleted: ${recipe ? recipe.title : "recipe"}`);
+  });
+
+  copyPromptBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(buildChatPrompt());
+      setStatus("Prompt copied. Paste it into chat and ask for a recipe draft.");
+    } catch (_error) {
+      setStatus("Could not copy prompt automatically. Please copy it manually.", true);
+    }
+  });
+
+  openChatBtn.addEventListener("click", () => {
+    const chatButton = document.querySelector('button[aria-label="Open chat"]') || document.querySelector('button[aria-label="Close chat"]');
+    if (!chatButton) {
+      setStatus("Chat widget is not ready yet. Try again in a moment.", true);
+      return;
+    }
+
+    chatButton.click();
+    setStatus("Chat opened. Paste your copied prompt into the chatbot.");
+  });
+
+  exportBtn.addEventListener("click", () => {
+    if (recipes.length === 0) {
+      setStatus("No recipes to export yet.", true);
+      return;
+    }
+
+    const payload = {
+      exportedAt: new Date().toISOString(),
+      source: "Common Table Custom Recipe Builder",
+      recipes
+    };
+
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `common-table-custom-recipes-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    setStatus("Exported custom recipes as JSON.");
+  });
+
+  importReplaceBtn.addEventListener("click", () => {
+    pendingImportMode = "replace";
+    importFileInput.click();
+  });
+
+  importMergeBtn.addEventListener("click", () => {
+    pendingImportMode = "merge";
+    importFileInput.click();
+  });
+
+  importFileInput.addEventListener("change", async () => {
+    const file = importFileInput.files && importFileInput.files[0];
+    if (!file) return;
+
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+      const imported = sanitizeImportedRecipes(parsed?.recipes || parsed);
+
+      if (imported.length === 0) {
+        setStatus("No valid recipes found in that file.", true);
+        importFileInput.value = "";
+        return;
+      }
+
+      if (pendingImportMode === "merge") {
+        recipes = mergeRecipes(recipes, imported);
+      } else {
+        recipes = imported;
+      }
+      selectedId = null;
+      persistRecipes();
+      renderList();
+      clearForm();
+      if (pendingImportMode === "merge") {
+        setStatus(`Merged ${imported.length} recipe${imported.length === 1 ? "" : "s"}. Total now: ${recipes.length}.`);
+      } else {
+        setStatus(`Imported ${imported.length} recipe${imported.length === 1 ? "" : "s"}.`);
+      }
+    } catch (_error) {
+      setStatus("Import failed. Please use a valid JSON export file.", true);
+    } finally {
+      importFileInput.value = "";
+      pendingImportMode = "replace";
+    }
+  });
+
+  recipes = loadRecipes();
+  renderList();
+})();
+</script>
+
+<script src="scripts/chat-config.js?v=20260808"></script>
+<script src="scripts/nav.js?v=20260808"></script>
+</body>
+</html>
