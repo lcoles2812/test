@@ -267,6 +267,31 @@ nav {
     margin-bottom: 8px;
 }
 
+.featured-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.featured-heading > div {
+    min-width: 0;
+}
+
+.featured-heading .section-title {
+    margin-bottom: 8px;
+}
+
+.featured-heading .search-help {
+    margin-bottom: 0;
+}
+
+.featured-heading .search-clear {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
 .search-summary {
     margin: 0 0 14px;
     color: var(--muted);
@@ -752,6 +777,10 @@ footer {
 
     .search-row {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .featured-heading {
         align-items: stretch;
     }
 
