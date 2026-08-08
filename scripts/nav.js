@@ -130,7 +130,7 @@ function buildRecipeKeywords(recipeData) {
 
 function extractNutritionFromPage() {
     const macrosHeading = Array.from(document.querySelectorAll(".section-title")).find(heading =>
-        heading.textContent && heading.textContent.toLowerCase().includes("macros")
+        heading.textContent && ["macros", "nutrition"].some(term => heading.textContent.toLowerCase().includes(term))
     );
 
     if (!macrosHeading) return null;
