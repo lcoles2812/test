@@ -16,8 +16,10 @@
 <meta name="theme-color" content="#ff4d2e">
 
 <link rel="canonical" href="https://commontablekitchen.com.au/custom-recipe.html">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
 <link rel="stylesheet" href="styles.css">
@@ -47,7 +49,7 @@
 </nav>
 
 <header class="hero">
-  <h1>🧪 Custom Recipe Builder</h1>
+  <h1>Custom Recipe Builder</h1>
   <p class="hero-text">Create your own recipe with chatbot help. Saved recipes stay on your device only.</p>
 </header>
 
@@ -58,6 +60,20 @@
       This page does not save to the live website database. Your custom recipes are stored in your browser only.
       If you clear browser data or switch devices, they will not carry across.
     </p>
+  </section>
+
+  <section class="custom-chat-promo" aria-label="Draft a recipe with AI">
+    <h3>Draft with AI first</h3>
+    <p class="custom-muted">The fastest way to start: ask the chatbot what to cook, then save what it gives you.</p>
+    <ol class="custom-steps">
+      <li>Copy a tailored prompt below</li>
+      <li>Paste it into the chat and get a full recipe back</li>
+      <li>Copy the details into the form and save</li>
+    </ol>
+    <div class="custom-actions custom-chat-actions">
+      <button type="button" id="copyChatPrompt" class="custom-btn custom-btn-primary">Copy Prompt For Chat</button>
+      <button type="button" id="openChatWidget" class="custom-btn">Open Chat</button>
+    </div>
   </section>
 
   <section class="custom-recipe-grid" aria-label="Custom recipe workspace">
@@ -97,28 +113,35 @@
     </article>
 
     <aside class="custom-panel">
-      <h3>Custom Recipes On This Device</h3>
+      <h3>Custom Recipes On This Device <span id="customRecipeCount" class="custom-count"></span></h3>
       <p class="custom-muted">Private to this browser and device.</p>
-      <div class="custom-actions">
-        <button type="button" id="exportRecipes" class="custom-btn">Export JSON</button>
-        <button type="button" id="importRecipesReplace" class="custom-btn">Import Replace</button>
-        <button type="button" id="importRecipesMerge" class="custom-btn">Import Merge</button>
-      </div>
-      <p class="custom-import-help">Replace overwrites all local recipes. Merge appends and de-duplicates by recipe content.</p>
-      <input id="importRecipesFile" type="file" accept="application/json" hidden>
+      <input id="customRecipeSearch" class="custom-input custom-search-input" type="search" placeholder="Search your recipes...">
       <ul id="customRecipeList" class="custom-recipe-list"></ul>
 
       <hr class="custom-divider">
 
-      <h3>Use Chatbot To Draft</h3>
-      <p class="custom-muted">Generate a tailored prompt, copy it, and ask Common Table Chat.</p>
-      <div class="custom-actions custom-chat-actions">
-        <button type="button" id="copyChatPrompt" class="custom-btn custom-btn-primary">Copy Prompt For Chat</button>
-        <button type="button" id="openChatWidget" class="custom-btn">Open Chat</button>
+      <h3>Backup</h3>
+      <p class="custom-muted">Recipes live only in this browser, so back them up if you want to keep them safe or move them to another device.</p>
+      <div class="custom-actions">
+        <button type="button" id="exportRecipes" class="custom-btn">Download Backup</button>
+        <button type="button" id="importRecipesReplace" class="custom-btn">Restore Backup</button>
+        <button type="button" id="importRecipesMerge" class="custom-btn">Add From Backup</button>
       </div>
+      <p class="custom-import-help">Restore replaces everything saved here. Add From Backup merges recipes in without removing what you already have.</p>
+      <input id="importRecipesFile" type="file" accept="application/json" hidden>
     </aside>
   </section>
 </main>
+
+<div id="recipeViewOverlay" class="recipe-view-overlay" hidden>
+  <div class="recipe-view-panel" role="dialog" aria-modal="true" aria-labelledby="recipeViewTitle">
+    <div class="recipe-view-header">
+      <button type="button" id="closeRecipeView" class="custom-btn custom-btn-small">Close</button>
+      <button type="button" id="printRecipeView" class="custom-btn custom-btn-primary custom-btn-small">Print</button>
+    </div>
+    <div id="recipeViewContent" class="recipe-view-content"></div>
+  </div>
+</div>
 
 <script>
 (() => {
@@ -141,10 +164,17 @@
   const importReplaceBtn = document.getElementById("importRecipesReplace");
   const importMergeBtn = document.getElementById("importRecipesMerge");
   const importFileInput = document.getElementById("importRecipesFile");
+  const searchInput = document.getElementById("customRecipeSearch");
+  const countEl = document.getElementById("customRecipeCount");
+  const viewOverlay = document.getElementById("recipeViewOverlay");
+  const viewContent = document.getElementById("recipeViewContent");
+  const closeViewBtn = document.getElementById("closeRecipeView");
+  const printViewBtn = document.getElementById("printRecipeView");
 
   let recipes = [];
   let selectedId = null;
   let pendingImportMode = "replace";
+  let searchQuery = "";
 
   function loadRecipes() {
     try {
@@ -196,12 +226,24 @@
   }
 
   function renderList() {
+    countEl.textContent = recipes.length ? `(${recipes.length})` : "";
+
     if (recipes.length === 0) {
       listEl.innerHTML = '<li class="custom-empty">No custom recipes saved yet.</li>';
       return;
     }
 
-    const sorted = [...recipes].sort((a, b) => {
+    const query = searchQuery.trim().toLowerCase();
+    const filtered = query
+      ? recipes.filter(recipe => (recipe.title || "").toLowerCase().includes(query))
+      : recipes;
+
+    if (filtered.length === 0) {
+      listEl.innerHTML = '<li class="custom-empty">No recipes match your search.</li>';
+      return;
+    }
+
+    const sorted = [...filtered].sort((a, b) => {
       return new Date(b.updatedAt || 0).getTime() - new Date(a.updatedAt || 0).getTime();
     });
 
@@ -214,10 +256,62 @@
             <strong>${escapeHtml(recipe.title || "Untitled Recipe")}</strong>
             <p>${escapeHtml(meta || "No details yet")}</p>
           </div>
-          <button type="button" class="custom-btn custom-btn-small" data-load-id="${recipe.id}">Load</button>
+          <div class="custom-recipe-item-actions">
+            <button type="button" class="custom-btn custom-btn-small" data-view-id="${recipe.id}">View</button>
+            <button type="button" class="custom-btn custom-btn-small" data-load-id="${recipe.id}">Load</button>
+            <button type="button" class="custom-btn custom-btn-small" data-duplicate-id="${recipe.id}">Duplicate</button>
+          </div>
         </li>
       `;
     }).join("");
+  }
+
+  function linesToListItems(text) {
+    return String(text || "")
+      .split("\n")
+      .map(line => line.trim())
+      .filter(Boolean)
+      .map(line => `<li>${escapeHtml(line)}</li>`)
+      .join("");
+  }
+
+  function openRecipeView(recipe) {
+    const meta = [recipe.time, recipe.servings ? `Serves ${recipe.servings}` : ""].filter(Boolean).join(" • ");
+    const ingredientsHtml = linesToListItems(recipe.ingredients) || "<li>No ingredients added yet.</li>";
+    const stepsHtml = linesToListItems(recipe.steps) || "<li>No method added yet.</li>";
+    const notesHtml = recipe.notes
+      ? `<h4>Notes</h4><p class="recipe-view-notes">${escapeHtml(recipe.notes)}</p>`
+      : "";
+
+    viewContent.innerHTML = `
+      <h2 id="recipeViewTitle">${escapeHtml(recipe.title || "Untitled Recipe")}</h2>
+      ${meta ? `<p class="recipe-view-meta">${escapeHtml(meta)}</p>` : ""}
+      <h4>Ingredients</h4>
+      <ul>${ingredientsHtml}</ul>
+      <h4>Method</h4>
+      <ol>${stepsHtml}</ol>
+      ${notesHtml}
+    `;
+
+    viewOverlay.hidden = false;
+  }
+
+  function closeRecipeView() {
+    viewOverlay.hidden = true;
+    viewContent.innerHTML = "";
+  }
+
+  function duplicateRecipe(recipe) {
+    const copy = {
+      ...recipe,
+      id: String(Date.now()),
+      title: `${recipe.title} (Copy)`,
+      updatedAt: new Date().toISOString()
+    };
+    recipes.push(copy);
+    persistRecipes();
+    renderList();
+    setStatus(`Duplicated: ${recipe.title}`);
   }
 
   function escapeHtml(text) {
@@ -328,14 +422,48 @@
   });
 
   listEl.addEventListener("click", (event) => {
-    const btn = event.target.closest("button[data-load-id]");
-    if (!btn) return;
+    const loadBtn = event.target.closest("button[data-load-id]");
+    if (loadBtn) {
+      const recipe = recipes.find(item => item.id === loadBtn.dataset.loadId);
+      if (recipe) {
+        populateForm(recipe);
+        renderList();
+      }
+      return;
+    }
 
-    const recipe = recipes.find(item => item.id === btn.dataset.loadId);
-    if (!recipe) return;
+    const viewBtn = event.target.closest("button[data-view-id]");
+    if (viewBtn) {
+      const recipe = recipes.find(item => item.id === viewBtn.dataset.viewId);
+      if (recipe) openRecipeView(recipe);
+      return;
+    }
 
-    populateForm(recipe);
+    const duplicateBtn = event.target.closest("button[data-duplicate-id]");
+    if (duplicateBtn) {
+      const recipe = recipes.find(item => item.id === duplicateBtn.dataset.duplicateId);
+      if (recipe) duplicateRecipe(recipe);
+      return;
+    }
+  });
+
+  searchInput.addEventListener("input", () => {
+    searchQuery = searchInput.value;
     renderList();
+  });
+
+  closeViewBtn.addEventListener("click", closeRecipeView);
+
+  viewOverlay.addEventListener("click", (event) => {
+    if (event.target === viewOverlay) closeRecipeView();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !viewOverlay.hidden) closeRecipeView();
+  });
+
+  printViewBtn.addEventListener("click", () => {
+    window.print();
   });
 
   clearBtn.addEventListener("click", () => {
@@ -351,11 +479,17 @@
     }
 
     const recipe = recipes.find(item => item.id === selectedId);
+    const label = recipe ? recipe.title : "this recipe";
+
+    if (!window.confirm(`Delete "${label}"? This can't be undone.`)) {
+      return;
+    }
+
     recipes = recipes.filter(item => item.id !== selectedId);
     persistRecipes();
     clearForm();
     renderList();
-    setStatus(`Deleted: ${recipe ? recipe.title : "recipe"}`);
+    setStatus(`Deleted: ${label}`);
   });
 
   copyPromptBtn.addEventListener("click", async () => {
@@ -453,6 +587,27 @@
   renderList();
 })();
 </script>
+
+<footer>
+    <div class="footer-social" aria-label="Common Table on social media">
+        <a href="https://instagram.com/commontablekitchen" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://pinterest.com/commontablekitchen" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9.3"/>
+                <text x="12" y="16.5" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="currentColor" stroke="none">P</text>
+            </svg>
+        </a>
+        <a href="mailto:commontableadmin@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 6.5l8 6.2 8-6.2"/></svg>
+        </a>
+    </div>
+    <p class="footer-contact">
+        <a href="mailto:commontableadmin@gmail.com">commontableadmin@gmail.com</a>
+    </p>
+    <p class="footer-copy">© 2026 Common Table • Built for real cooking</p>
+</footer>
 
 <script src="scripts/chat-config.js?v=20260808"></script>
 <script src="scripts/nav.js?v=20260808"></script>

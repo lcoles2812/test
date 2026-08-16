@@ -49,7 +49,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     initRelatedRecipes();
     enhanceRecipeStructuredData();
+    initShareCopyButtons();
 });
+
+function initShareCopyButtons() {
+    document.querySelectorAll("[data-share-copy]").forEach(btn => {
+        const originalLabel = btn.querySelector(".share-btn-label");
+        if (!originalLabel) return;
+        const defaultText = originalLabel.textContent;
+
+        btn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                originalLabel.textContent = "Copied!";
+            } catch (_error) {
+                originalLabel.textContent = "Couldn't copy";
+            }
+            setTimeout(() => {
+                originalLabel.textContent = defaultText;
+            }, 1800);
+        });
+    });
+}
 
 function initChatling(config) {
     const chatbotId = String(config?.chatbotId || "").trim();
@@ -337,7 +358,7 @@ function createRelatedRecipeCard(recipe) {
         <div class="recipe-content">
             <h3>${recipe.title}</h3>
             <p>${recipe.excerpt || ""}</p>
-            <div class="related-recipe-meta">⏱ ${recipe.time || ""}</div>
+            <div class="related-recipe-meta">${recipe.time || ""}</div>
             <span class="tag">${displayTag}</span>
         </div>
     `;
