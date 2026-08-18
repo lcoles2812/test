@@ -248,5 +248,45 @@
     "excerpt": "Crispy skin salmon with buttery sweet potato mash, glazed Dutch carrots and garlic sauteed spinach.",
     "tags": ["quick", "high protein", "seafood", "fresh", "weeknight"],
     "search": "crispy skin salmon sweet potato mash dutch carrots garlic spinach weeknight high protein omega-3 fish dinner"
+  },
+  {
+    "title": "Butternut Squash Chicken Curry",
+    "url": "recipes/butternut-squash-chicken-curry.html",
+    "image": "images/butternut-squash-chicken-curry.jpg",
+    "time": "45–55 mins",
+    "category": "weeknight",
+    "excerpt": "Seared chicken thighs, butternut squash and carrots simmered in a coconut-tomato sauce with a homemade spice blend.",
+    "tags": ["curry", "chicken", "high protein", "coconut", "meal prep"],
+    "search": "butternut squash chicken curry coconut tomato spice blend coriander cumin turmeric ginger cinnamon weeknight meal prep"
+  },
+  {
+    "title": "Authentic Spaghetti Carbonara",
+    "url": "recipes/carbonara.html",
+    "image": "images/carbonara.jpg",
+    "time": "20–25 mins",
+    "category": "single night",
+    "excerpt": "Real Roman carbonara with guanciale, egg yolks, Pecorino Romano and black pepper — no cream.",
+    "tags": ["pasta", "italian", "date night", "quick", "high protein"],
+    "search": "spaghetti carbonara guanciale pancetta egg yolk pecorino romano black pepper authentic italian date night quick"
+  },
+  {
+    "title": "BBQ Fish & King Prawns with Mango Orzo",
+    "url": "recipes/bbq-fish-prawns.html",
+    "image": "images/bbq-fish-prawns-mango-orzo.jpg",
+    "time": "45–55 mins",
+    "category": "single night",
+    "excerpt": "Whole fish grilled in foil with garlic and ginger, butterflied king prawns in garlic chilli butter, and a mango orzo salad.",
+    "tags": ["seafood", "bbq", "summer", "sharing", "high protein"],
+    "search": "bbq whole fish king prawns garlic chilli butter mango orzo salad avocado feta summer sharing seafood"
+  },
+  {
+    "title": "Steak Tacos with Homemade Guac",
+    "url": "recipes/steak-tacos.html",
+    "image": "images/steak-tacos.jpg",
+    "time": "30–40 mins",
+    "category": "single night",
+    "excerpt": "Seared, sliced steak in warm tortillas with chunky homemade guacamole, diced onion, coriander and lime.",
+    "tags": ["tacos", "beef", "mexican", "sharing", "high protein"],
+    "search": "steak tacos homemade guacamole diced onion coriander lime build your own weekend dinner"
   }
 ]
