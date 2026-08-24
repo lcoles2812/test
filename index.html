@@ -65,7 +65,7 @@
     "@type": "ItemList",
     "name": "Common Table Recipe Index",
     "itemListOrder": "https://schema.org/ItemListOrderAscending",
-    "numberOfItems": 29,
+    "numberOfItems": 30,
     "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Beef Ragu", "url": "https://commontablekitchen.com.au/recipes/bolognese.html"},
         {"@type": "ListItem", "position": 2, "name": "Burrito Bowl", "url": "https://commontablekitchen.com.au/recipes/burrito-bowl.html"},
@@ -95,7 +95,8 @@
         {"@type": "ListItem", "position": 26, "name": "Butternut Squash Chicken Curry", "url": "https://commontablekitchen.com.au/recipes/butternut-squash-chicken-curry.html"},
         {"@type": "ListItem", "position": 27, "name": "Authentic Spaghetti Carbonara", "url": "https://commontablekitchen.com.au/recipes/carbonara.html"},
         {"@type": "ListItem", "position": 28, "name": "BBQ Fish & King Prawns with Mango Orzo", "url": "https://commontablekitchen.com.au/recipes/bbq-fish-prawns.html"},
-        {"@type": "ListItem", "position": 29, "name": "Steak Tacos with Homemade Guac", "url": "https://commontablekitchen.com.au/recipes/steak-tacos.html"}
+        {"@type": "ListItem", "position": 29, "name": "Steak Tacos with Homemade Guac", "url": "https://commontablekitchen.com.au/recipes/steak-tacos.html"},
+        {"@type": "ListItem", "position": 30, "name": "Beef Mince Burrito Bowl", "url": "https://commontablekitchen.com.au/recipes/beef-mince-burrito-bowl.html"}
     ]
 }
 </script>
@@ -122,11 +123,36 @@
         <button class="nav-toggle-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">☰</button>
         <div class="nav-links" id="site-nav">
             <a href="index.html" class="active">Home</a>
-            <a href="weeknight.html">Weeknight</a>
-            <a href="singlenight.html">Single Night</a>
-            <a href="sunday.html">Sunday</a>
+            <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="navRecipesPanel">
+          Recipes
+          <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
             <a href="custom-recipe.html">Custom Recipe</a>
+      <form class="nav-search" action="index.html" method="GET" role="search">
+        <input type="search" name="q" class="nav-search-input" placeholder="Search recipes..." aria-label="Search recipes">
+      </form>
         </div>
+<div class="nav-dropdown-panel" id="navRecipesPanel">
+      <div class="nav-dropdown-col">
+        <p class="nav-dropdown-heading">By Time of Week</p>
+        <a href="weeknight.html">Weeknight</a>
+        <a href="singlenight.html">Single Night</a>
+        <a href="sunday.html">Sunday</a>
+      </div>
+      <div class="nav-dropdown-col">
+        <p class="nav-dropdown-heading">By What You're After</p>
+        <a href="high-protein.html">High Protein</a>
+        <a href="fresh.html">Fresh</a>
+        <a href="fast.html">Fast</a>
+        <a href="slow-cook.html">Slow Cook</a>
+        <a href="meal-prep.html">Meal Prep</a>
+        <a href="dinner-for-two.html">Dinner for Two</a>
+        <a href="party-food.html">Party Food</a>
+      </div>
+    </div>
+
     </div>
 </nav>
 
@@ -229,7 +255,7 @@
             <button type="button" id="shuffleRecipes" class="search-clear">Shuffle 20</button>
         </div>
 
-        <section class="search-section">
+        <section class="search-section" id="search">
             <div class="search-row">
                 <input type="text" id="recipeSearch" class="search-box" placeholder="Try chicken, noodles, pasta, bowl...">
                 <button type="button" id="clearSearch" class="search-clear">Clear</button>
@@ -318,6 +344,7 @@
                 <a class="seo-link-pill" href="recipes/carbonara.html">Authentic Spaghetti Carbonara</a>
                 <a class="seo-link-pill" href="recipes/bbq-fish-prawns.html">BBQ Fish & King Prawns with Mango Orzo</a>
                 <a class="seo-link-pill" href="recipes/steak-tacos.html">Steak Tacos with Homemade Guac</a>
+                <a class="seo-link-pill" href="recipes/beef-mince-burrito-bowl.html">Beef Mince Burrito Bowl</a>
             </div>
         </section>
 
@@ -573,10 +600,22 @@ if (filterCategory) {
 }
 if (filterCuisine) filterCuisine.addEventListener("change", filterRecipes);
 
+// Pick up a ?q= search term from the nav search box on other pages
+const urlQuery = new URLSearchParams(window.location.search).get("q");
+if (urlQuery) {
+    searchInput.value = urlQuery;
+}
+
 // Fetch the site-wide index for better search coverage, bypassing stale cache
 fetch('recipes/recipes.json?v=20260806', { cache: 'no-store' })
     .then(r => r.json())
-    .then(data => { recipeIndex = data; filterRecipes(); })
+    .then(data => {
+        recipeIndex = data;
+        filterRecipes();
+        if (urlQuery) {
+            document.getElementById("search")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    })
     .catch(() => { /* silently continue with DOM-only search */ filterRecipes(); });
 
 </script>

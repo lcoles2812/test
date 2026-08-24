@@ -119,10 +119,35 @@
 
     <div class="nav-links" id="site-nav">
       <a href="../index.html">Home</a>
-      <a href="../weeknight.html">Weeknight</a>
-      <a href="../singlenight.html">Single Night</a>
-      <a href="../sunday.html">Sunday</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="navRecipesPanel">
+          Recipes
+          <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <form class="nav-search" action="../index.html" method="GET" role="search">
+        <input type="search" name="q" class="nav-search-input" placeholder="Search recipes..." aria-label="Search recipes">
+      </form>
     </div>
+<div class="nav-dropdown-panel" id="navRecipesPanel">
+      <div class="nav-dropdown-col">
+        <p class="nav-dropdown-heading">By Time of Week</p>
+        <a href="../weeknight.html">Weeknight</a>
+        <a href="../singlenight.html">Single Night</a>
+        <a href="../sunday.html">Sunday</a>
+      </div>
+      <div class="nav-dropdown-col">
+        <p class="nav-dropdown-heading">By What You're After</p>
+        <a href="../high-protein.html">High Protein</a>
+        <a href="../fresh.html">Fresh</a>
+        <a href="../fast.html">Fast</a>
+        <a href="../slow-cook.html">Slow Cook</a>
+        <a href="../meal-prep.html">Meal Prep</a>
+        <a href="../dinner-for-two.html">Dinner for Two</a>
+        <a href="../party-food.html">Party Food</a>
+      </div>
+    </div>
+
   </div>
 </nav>
 

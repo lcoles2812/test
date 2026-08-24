@@ -50,7 +50,123 @@ document.addEventListener("DOMContentLoaded", () => {
     initRelatedRecipes();
     enhanceRecipeStructuredData();
     initShareCopyButtons();
+    initCollectionGrid();
+    initNavDropdown();
 });
+
+function initNavDropdown() {
+    // Panels are siblings of .nav-links (not nested inside it), so they aren't
+    // clipped by .nav-links' overflow-x:auto on mobile. Trigger and panel are
+    // linked via aria-controls / id rather than DOM nesting.
+    const triggers = Array.from(document.querySelectorAll(".nav-dropdown-trigger"));
+    if (triggers.length === 0) return;
+
+    const pairs = triggers
+        .map(trigger => {
+            const panelId = trigger.getAttribute("aria-controls");
+            const panel = panelId ? document.getElementById(panelId) : null;
+            return panel ? { trigger, panel } : null;
+        })
+        .filter(Boolean);
+
+    const closeAll = () => {
+        pairs.forEach(({ trigger, panel }) => {
+            panel.classList.remove("open");
+            trigger.setAttribute("aria-expanded", "false");
+        });
+    };
+
+    pairs.forEach(({ trigger, panel }) => {
+        trigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            const willOpen = !panel.classList.contains("open");
+            closeAll();
+            if (willOpen) {
+                panel.classList.add("open");
+                trigger.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+
+    document.addEventListener("click", (event) => {
+        const openPair = pairs.find(({ panel }) => panel.classList.contains("open"));
+        if (openPair && !openPair.panel.contains(event.target) && !openPair.trigger.contains(event.target)) {
+            closeAll();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeAll();
+    });
+}
+
+function initCollectionGrid() {
+    const grid = document.getElementById("collectionGrid");
+    if (!grid) return;
+
+    const config = window.COMMON_TABLE_COLLECTION || {};
+
+    fetch("recipes/recipes.json", { cache: "no-store" })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Recipe index request failed: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(recipes => {
+            const matches = recipes
+                .filter(recipe => collectionMatches(recipe, config))
+                .sort((a, b) => a.title.localeCompare(b.title));
+
+            const countEl = document.getElementById("collectionCount");
+            if (countEl) {
+                countEl.textContent = `${matches.length} recipe${matches.length === 1 ? "" : "s"}`;
+            }
+
+            if (matches.length === 0) {
+                grid.innerHTML = '<p class="no-results">No recipes match this collection yet.</p>';
+                return;
+            }
+
+            matches.forEach(recipe => {
+                grid.appendChild(createCollectionRecipeCard(recipe));
+            });
+        })
+        .catch(error => {
+            console.error("Unable to load collection recipes", error);
+        });
+}
+
+function collectionMatches(recipe, config) {
+    if (config.tag) {
+        return (recipe.tags || []).includes(config.tag);
+    }
+    if (config.maxServings) {
+        return typeof recipe.servings === "number" && recipe.servings <= config.maxServings;
+    }
+    return false;
+}
+
+function createCollectionRecipeCard(recipe) {
+    const card = document.createElement("a");
+    card.className = "recipe-card";
+    card.href = recipe.url;
+
+    const primaryTag = (recipe.tags || [])[0] || "Recipe";
+    const displayTag = primaryTag.charAt(0).toUpperCase() + primaryTag.slice(1);
+
+    card.innerHTML = `
+        <img src="${recipe.image || 'images/placeholder.png'}" alt="${recipe.title}" class="recipe-image" loading="lazy">
+        <div class="recipe-content">
+            <h3>${recipe.title}</h3>
+            <p>${recipe.excerpt || ""}</p>
+            <div class="collection-recipe-meta">${recipe.time || ""}</div>
+            <span class="tag">${displayTag}</span>
+        </div>
+    `;
+
+    return card;
+}
 
 function initShareCopyButtons() {
     document.querySelectorAll("[data-share-copy]").forEach(btn => {
