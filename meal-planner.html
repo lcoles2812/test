@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slow Cook Recipes | Common Table</title>
+<title>Meal Planner | Common Table</title>
 
-<meta name="description" content="Low and slow recipes with deep, developed flavour — set it going and let the oven or stovetop do the work.">
-<meta property="og:title" content="Slow Cook Recipes | Common Table">
-<meta property="og:description" content="Low and slow recipes with deep, developed flavour — set it going and let the oven or stovetop do the work.">
-<meta property="og:image" content="https://commontablekitchen.com.au/images/ragu.jpg">
-<meta property="og:url" content="https://commontablekitchen.com.au/slow-cook.html">
+<meta name="description" content="Can't decide what to cook? Randomly generate 5 meals from across the site, lock the ones you like, and reshuffle the rest.">
+<meta property="og:title" content="Meal Planner | Common Table">
+<meta property="og:description" content="Can't decide what to cook? Randomly generate 5 meals from across the site, lock the ones you like, and reshuffle the rest.">
+<meta property="og:image" content="https://commontablekitchen.com.au/images/chicken_tikka2.jpg">
+<meta property="og:url" content="https://commontablekitchen.com.au/meal-planner.html">
 <meta property="og:type" content="website">
 
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#ff4d2e">
 
-<link rel="canonical" href="https://commontablekitchen.com.au/slow-cook.html">
+<link rel="canonical" href="https://commontablekitchen.com.au/meal-planner.html">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -30,9 +30,6 @@
   function gtag(){dataLayer.push(arguments);}
   gtag("js", new Date());
   gtag("config", "G-TDM7SCTG3K");
-</script>
-<script>
-  window.COMMON_TABLE_COLLECTION = { tag: "slow cook" };
 </script>
 </head>
 
@@ -51,7 +48,7 @@
         </button>
       </div>
       <a href="custom-recipe.html">Custom Recipe</a>
-      <a href="meal-planner.html">Meal Planner</a>
+      <a href="meal-planner.html" class="active">Meal Planner</a>
       <form class="nav-search" action="index.html" method="GET" role="search">
         <input type="search" name="q" class="nav-search-input" placeholder="Search recipes..." aria-label="Search recipes">
       </form>
@@ -79,13 +76,20 @@
 </nav>
 
 <header class="hero">
-  <h1>Slow Cook Recipes</h1>
-  <p class="hero-text">Low, slow, and worth the wait — set it going and let the time do the work.</p>
+  <h1>Meal Planner</h1>
+  <p class="hero-text">Can't decide what to cook? Five random meals, picked from across the site. Lock the ones you like, hit regenerate, and the rest reshuffle — or just press the spacebar.</p>
 </header>
 
 <main class="container">
-  <p class="collection-count" id="collectionCount"></p>
-  <div class="recipe-grid" id="collectionGrid"></div>
+
+  <div class="roulette" id="rouletteTrack" aria-live="polite" aria-busy="true"></div>
+
+  <div class="roulette-controls">
+    <button type="button" class="roulette-regenerate-btn" id="rouletteRegenerate">Regenerate</button>
+    <p class="roulette-hint">Tip: press the spacebar to regenerate too.</p>
+    <p class="roulette-status" id="rouletteStatus"></p>
+  </div>
+
 </main>
 
 <footer>

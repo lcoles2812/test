@@ -33,11 +33,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/meal-planner.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Recipe Pages -->
   <url>
-    <loc>https://commontablekitchen.com.au/recipes/bolognese.html</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://commontablekitchen.com.au/recipes/beef-ragu.html</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -133,6 +139,18 @@
   </url>
   <url>
     <loc>https://commontablekitchen.com.au/recipes/beef-mince-burrito-bowl.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/recipes/bolognese.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/recipes/one-pot-creamy-paprika-beef-pasta.html</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

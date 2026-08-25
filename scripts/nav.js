@@ -52,7 +52,124 @@ document.addEventListener("DOMContentLoaded", () => {
     initShareCopyButtons();
     initCollectionGrid();
     initNavDropdown();
+    initMealRoulette();
 });
+
+function initMealRoulette() {
+    const track = document.getElementById("rouletteTrack");
+    if (!track) return;
+
+    const regenerateBtn = document.getElementById("rouletteRegenerate");
+    const statusEl = document.getElementById("rouletteStatus");
+    const SLOT_COUNT = 5;
+
+    let allRecipes = [];
+    let slots = new Array(SLOT_COUNT).fill(null);
+    let locked = new Array(SLOT_COUNT).fill(false);
+
+    const lockIconOpen = '<path d="M8 11V7a4 4 0 0 1 7.2-2.4"/><rect x="5" y="11" width="14" height="10" rx="2"/>';
+    const lockIconClosed = '<path d="M8 11V7a4 4 0 0 1 8 0v4"/><rect x="5" y="11" width="14" height="10" rx="2"/>';
+
+    function shuffle(array) {
+        const copy = [...array];
+        for (let i = copy.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        return copy;
+    }
+
+    function fillSlots(isInitial) {
+        const lockedUrls = slots
+            .filter((recipe, i) => locked[i] && recipe)
+            .map(recipe => recipe.url);
+
+        const neededCount = isInitial ? SLOT_COUNT : locked.filter(l => !l).length;
+
+        if (!isInitial && neededCount === 0) {
+            if (statusEl) statusEl.textContent = "Every slot is locked — unlock one to reshuffle it.";
+            return;
+        }
+
+        const pool = allRecipes.filter(r => !lockedUrls.includes(r.url));
+        let picks = shuffle(pool).slice(0, neededCount);
+
+        // If the site ever has fewer than 5 recipes, top up by re-allowing repeats
+        // rather than leaving slots empty.
+        if (picks.length < neededCount) {
+            const extra = shuffle(allRecipes).slice(0, neededCount - picks.length);
+            picks = picks.concat(extra);
+        }
+
+        let pickIndex = 0;
+        for (let i = 0; i < SLOT_COUNT; i += 1) {
+            if (isInitial || !locked[i]) {
+                slots[i] = picks[pickIndex];
+                pickIndex += 1;
+            }
+        }
+
+        if (statusEl) statusEl.textContent = "";
+        render();
+    }
+
+    function render() {
+        track.innerHTML = slots.map((recipe, i) => {
+            if (!recipe) return "";
+            const lockedClass = locked[i] ? " locked" : "";
+            const lockIcon = locked[i] ? lockIconClosed : lockIconOpen;
+            return `
+                <div class="roulette-slot${lockedClass}">
+                    <a class="roulette-slot-link" href="${recipe.url}">
+                        <img class="roulette-slot-image" src="${recipe.image || 'images/placeholder.png'}" alt="${recipe.title}" loading="lazy">
+                        <div class="roulette-slot-overlay">
+                            <h3 class="roulette-slot-title">${recipe.title}</h3>
+                        </div>
+                    </a>
+                    <button type="button" class="roulette-lock-btn" data-slot-index="${i}" aria-pressed="${locked[i]}" aria-label="${locked[i] ? "Unlock" : "Lock"} ${recipe.title}">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">${lockIcon}</svg>
+                    </button>
+                </div>
+            `;
+        }).join("");
+    }
+
+    track.addEventListener("click", (event) => {
+        const btn = event.target.closest(".roulette-lock-btn");
+        if (!btn) return;
+        event.preventDefault();
+        const index = parseInt(btn.dataset.slotIndex, 10);
+        locked[index] = !locked[index];
+        render();
+    });
+
+    if (regenerateBtn) {
+        regenerateBtn.addEventListener("click", () => fillSlots(false));
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.code !== "Space") return;
+        const target = event.target;
+        const isTyping = target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable);
+        if (isTyping) return;
+        event.preventDefault();
+        fillSlots(false);
+    });
+
+    fetch("recipes/recipes.json", { cache: "no-store" })
+        .then(response => {
+            if (!response.ok) throw new Error(`Recipe index request failed: ${response.status}`);
+            return response.json();
+        })
+        .then(recipes => {
+            allRecipes = recipes;
+            fillSlots(true);
+        })
+        .catch(error => {
+            console.error("Unable to load meal planner recipes", error);
+            if (statusEl) statusEl.textContent = "Couldn't load recipes right now — try refreshing the page.";
+        });
+}
 
 function initNavDropdown() {
     // Panels are siblings of .nav-links (not nested inside it), so they aren't

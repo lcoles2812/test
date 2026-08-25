@@ -1,14 +1,14 @@
 [
   {
-    "title": "Beef Ragú",
-    "url": "recipes/bolognese.html",
+    "title": "Beef Ragù",
+    "url": "recipes/beef-ragu.html",
     "image": "images/ragu.jpg",
-    "time": "1–3 hrs",
+    "time": "3–3.5 hrs",
     "servings": 4,
     "category": "sunday",
-    "excerpt": "A slow-cooked ragù built on deep browning, gentle simmering and a rich tomato base.",
+    "excerpt": "A slow-braised beef ragù made with chuck or short rib, shredded into a rich tomato sauce and tossed through pappardelle.",
     "tags": ["comfort food", "slow cook", "beef", "pasta", "italian"],
-    "search": "beef ragu bolognese slow-cooked tomato base beef mince pulled beef ragù italian pasta comfort food sunday"
+    "search": "beef ragu chuck short rib shredded slow braise tomato base pappardelle italian pasta comfort food sunday"
   },
   {
     "title": "Burrito Bowl",
@@ -328,5 +328,27 @@
     "excerpt": "Seared beef mince with capsicum, beans and corn over rice, with a fresh salad and a smoky chipotle Greek yoghurt sauce.",
     "tags": ["high protein", "meal prep", "beef", "mexican", "quick"],
     "search": "beef mince burrito bowl black beans corn capsicum rice salad chipotle adobo greek yoghurt sauce weeknight meal prep"
+  },
+  {
+    "title": "Beef Bolognese",
+    "url": "recipes/bolognese.html",
+    "image": "images/bolognese.jpg",
+    "time": "45–60 mins",
+    "servings": 4,
+    "category": "weeknight",
+    "excerpt": "Deeply browned mince in a rich tomato and red wine sauce, finished with an egg yolk for a silky, rounded sauce.",
+    "tags": ["comfort food", "beef", "pasta", "italian", "high protein"],
+    "search": "beef bolognese mince red wine egg yolk tomato soffritto spaghetti parmesan italian pasta weeknight"
+  },
+  {
+    "title": "One Pot Creamy Paprika Beef Pasta",
+    "url": "recipes/one-pot-creamy-paprika-beef-pasta.html",
+    "image": "images/creamy-paprika-beef-pasta.jpg",
+    "time": "35–40 mins",
+    "servings": 5,
+    "category": "weeknight",
+    "excerpt": "Smoky paprika beef mince simmered with rigatoni in one pot, finished creamy with double cream and wilted spinach.",
+    "tags": ["quick", "high protein", "beef", "pasta", "meal prep"],
+    "search": "one pot creamy paprika beef pasta rigatoni smoked paprika cayenne double cream spinach parmesan weeknight"
   }
 ]

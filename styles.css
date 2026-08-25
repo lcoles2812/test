@@ -1114,6 +1114,148 @@ nav {
 }
 
 /* =========================
+   MEAL ROULETTE
+   ========================= */
+
+.roulette {
+    display: flex;
+    gap: 6px;
+    height: 68vh;
+    min-height: 380px;
+    max-height: 640px;
+    margin: 8px 0 24px;
+}
+
+.roulette-slot {
+    position: relative;
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f0f0f0;
+    transition: flex-grow 0.3s ease;
+}
+
+.roulette-slot.locked {
+    box-shadow: inset 0 0 0 3px var(--accent);
+}
+
+.roulette-slot-link {
+    position: absolute;
+    inset: 0;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.roulette-slot-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.roulette-slot-link:hover .roulette-slot-image {
+    transform: scale(1.05);
+}
+
+.roulette-slot-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 36px 14px 16px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+}
+
+.roulette-slot-title {
+    color: #fff;
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 1.25;
+}
+
+.roulette-lock-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    z-index: 2;
+}
+
+.roulette-lock-btn:hover {
+    background: #fff;
+    transform: scale(1.06);
+}
+
+.roulette-lock-btn[aria-pressed="true"] {
+    background: var(--accent);
+    color: #fff;
+}
+
+.roulette-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 48px;
+}
+
+.roulette-regenerate-btn {
+    background: var(--text);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 16px 36px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.roulette-regenerate-btn:hover {
+    background: var(--accent);
+}
+
+.roulette-hint {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.roulette-status {
+    min-height: 20px;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+@media (max-width: 900px) {
+    .roulette {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+        min-height: 0;
+        gap: 10px;
+    }
+
+    .roulette-slot {
+        flex: none;
+        height: 190px;
+    }
+}
+
+/* =========================
    RECIPE SHARE
    ========================= */
 
