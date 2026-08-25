@@ -61,11 +61,17 @@ function initMealRoulette() {
 
     const regenerateBtn = document.getElementById("rouletteRegenerate");
     const statusEl = document.getElementById("rouletteStatus");
-    const SLOT_COUNT = 5;
+    const countValueEl = document.getElementById("rouletteCount");
+    const decreaseBtn = document.getElementById("rouletteDecrease");
+    const increaseBtn = document.getElementById("rouletteIncrease");
+    const MIN_SLOTS = 2;
+    const MAX_SLOTS = 7;
+    const DEFAULT_SLOTS = 5;
 
     let allRecipes = [];
-    let slots = new Array(SLOT_COUNT).fill(null);
-    let locked = new Array(SLOT_COUNT).fill(false);
+    let slots = [];
+    let locked = [];
+    let slotCount = DEFAULT_SLOTS;
 
     const lockIconOpen = '<path d="M8 11V7a4 4 0 0 1 7.2-2.4"/><rect x="5" y="11" width="14" height="10" rx="2"/>';
     const lockIconClosed = '<path d="M8 11V7a4 4 0 0 1 8 0v4"/><rect x="5" y="11" width="14" height="10" rx="2"/>';
@@ -79,12 +85,16 @@ function initMealRoulette() {
         return copy;
     }
 
+    function usedUrls() {
+        return slots.filter(Boolean).map(recipe => recipe.url);
+    }
+
     function fillSlots(isInitial) {
         const lockedUrls = slots
             .filter((recipe, i) => locked[i] && recipe)
             .map(recipe => recipe.url);
 
-        const neededCount = isInitial ? SLOT_COUNT : locked.filter(l => !l).length;
+        const neededCount = isInitial ? slotCount : locked.filter(l => !l).length;
 
         if (!isInitial && neededCount === 0) {
             if (statusEl) statusEl.textContent = "Every slot is locked — unlock one to reshuffle it.";
@@ -94,15 +104,20 @@ function initMealRoulette() {
         const pool = allRecipes.filter(r => !lockedUrls.includes(r.url));
         let picks = shuffle(pool).slice(0, neededCount);
 
-        // If the site ever has fewer than 5 recipes, top up by re-allowing repeats
-        // rather than leaving slots empty.
+        // If the site ever has fewer recipes than slots, top up by re-allowing
+        // repeats rather than leaving slots empty.
         if (picks.length < neededCount) {
             const extra = shuffle(allRecipes).slice(0, neededCount - picks.length);
             picks = picks.concat(extra);
         }
 
+        if (isInitial) {
+            slots = new Array(slotCount).fill(null);
+            locked = new Array(slotCount).fill(false);
+        }
+
         let pickIndex = 0;
-        for (let i = 0; i < SLOT_COUNT; i += 1) {
+        for (let i = 0; i < slotCount; i += 1) {
             if (isInitial || !locked[i]) {
                 slots[i] = picks[pickIndex];
                 pickIndex += 1;
@@ -113,7 +128,30 @@ function initMealRoulette() {
         render();
     }
 
+    function changeSlotCount(delta) {
+        const newCount = slotCount + delta;
+        if (newCount < MIN_SLOTS || newCount > MAX_SLOTS) return;
+
+        if (delta > 0) {
+            const newRecipe = shuffle(allRecipes.filter(r => !usedUrls().includes(r.url)))[0]
+                || shuffle(allRecipes)[0];
+            slots.push(newRecipe);
+            locked.push(false);
+        } else {
+            slots.pop();
+            locked.pop();
+        }
+
+        slotCount = newCount;
+        if (statusEl) statusEl.textContent = "";
+        render();
+    }
+
     function render() {
+        if (countValueEl) countValueEl.textContent = slotCount;
+        if (decreaseBtn) decreaseBtn.disabled = slotCount <= MIN_SLOTS;
+        if (increaseBtn) increaseBtn.disabled = slotCount >= MAX_SLOTS;
+
         track.innerHTML = slots.map((recipe, i) => {
             if (!recipe) return "";
             const lockedClass = locked[i] ? " locked" : "";
@@ -145,6 +183,14 @@ function initMealRoulette() {
 
     if (regenerateBtn) {
         regenerateBtn.addEventListener("click", () => fillSlots(false));
+    }
+
+    if (decreaseBtn) {
+        decreaseBtn.addEventListener("click", () => changeSlotCount(-1));
+    }
+
+    if (increaseBtn) {
+        increaseBtn.addEventListener("click", () => changeSlotCount(1));
     }
 
     document.addEventListener("keydown", (event) => {

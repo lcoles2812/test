@@ -1240,18 +1240,78 @@ nav {
     font-size: 0.88rem;
 }
 
+.roulette-count-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.roulette-count-label {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.roulette-count-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.roulette-count-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.roulette-count-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.roulette-count-value {
+    min-width: 18px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Mobile: stays a horizontal row (like coolors on phone) rather than stacking
+   vertically — recipe titles need more width than a hex code does, so each
+   slot gets a fixed comfortable width and the row scrolls/snaps horizontally
+   instead of cramming every slot into a sliver. */
 @media (max-width: 900px) {
     .roulette {
-        flex-direction: column;
-        height: auto;
-        max-height: none;
-        min-height: 0;
-        gap: 10px;
+        height: 62vh;
+        min-height: 380px;
+        max-height: 560px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
     }
 
     .roulette-slot {
         flex: none;
-        height: 190px;
+        width: 74vw;
+        max-width: 320px;
+        height: 100%;
+        scroll-snap-align: center;
+    }
+
+    .roulette-controls {
+        margin-bottom: 40px;
     }
 }
 

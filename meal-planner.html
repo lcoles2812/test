@@ -85,6 +85,12 @@
   <div class="roulette" id="rouletteTrack" aria-live="polite" aria-busy="true"></div>
 
   <div class="roulette-controls">
+    <div class="roulette-count-control">
+      <span class="roulette-count-label">Recipes:</span>
+      <button type="button" class="roulette-count-btn" id="rouletteDecrease" aria-label="Show fewer recipes">−</button>
+      <span class="roulette-count-value" id="rouletteCount">5</span>
+      <button type="button" class="roulette-count-btn" id="rouletteIncrease" aria-label="Show more recipes">+</button>
+    </div>
     <button type="button" class="roulette-regenerate-btn" id="rouletteRegenerate">Regenerate</button>
     <p class="roulette-hint">Tip: press the spacebar to regenerate too.</p>
     <p class="roulette-status" id="rouletteStatus"></p>
