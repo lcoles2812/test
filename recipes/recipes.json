@@ -8,7 +8,20 @@
     "category": "sunday",
     "excerpt": "A slow-braised beef ragù made with chuck or short rib, shredded into a rich tomato sauce and tossed through pappardelle.",
     "tags": ["comfort food", "slow cook", "beef", "pasta", "italian"],
-    "search": "beef ragu chuck short rib shredded slow braise tomato base pappardelle italian pasta comfort food sunday"
+    "search": "beef ragu chuck short rib shredded slow braise tomato base pappardelle italian pasta comfort food sunday",
+    "ingredients": [
+      "800g beef chuck or short rib, cut into large chunks",
+      "1 onion, finely diced",
+      "1 carrot, finely diced",
+      "3 garlic cloves, minced",
+      "2 tbsp tomato paste",
+      "400g canned tomatoes",
+      "150ml white wine",
+      "250ml beef stock (or water)",
+      "2 tbsp olive oil",
+      "300g pappardelle, to serve",
+      "Salt & pepper, to taste"
+    ]
   },
   {
     "title": "Burrito Bowl",
@@ -19,7 +32,22 @@
     "category": "weeknight",
     "excerpt": "Smoky chipotle chicken with fresh toppings, built for high protein and meal prep.",
     "tags": ["high protein", "meal prep", "chicken", "mexican"],
-    "search": "burrito bowl chipotle chicken rice beans corn high protein meal prep quick weeknight mexican"
+    "search": "burrito bowl chipotle chicken rice beans corn high protein meal prep quick weeknight mexican",
+    "ingredients": [
+      "400g chicken thighs",
+      "2 tbsp chipotle in adobo",
+      "1 tbsp lime juice",
+      "3 garlic cloves",
+      "1 tsp cumin",
+      "1 tsp paprika",
+      "300g rice",
+      "1 can black beans",
+      "1 cup corn",
+      "1 capsicum",
+      "1 onion",
+      "150g Greek yogurt",
+      "1 tbsp mayo"
+    ]
   },
   {
     "title": "Chicken Burger",
@@ -30,7 +58,19 @@
     "category": "single night",
     "excerpt": "Crispy crumbed chicken with fresh slaw and a spicy creamy sauce.",
     "tags": ["quick", "chicken", "crispy", "fresh"],
-    "search": "chicken burger crispy crumbed slaw spicy sauce quick fresh single night"
+    "search": "chicken burger crispy crumbed slaw spicy sauce quick fresh single night",
+    "ingredients": [
+      "2 chicken breasts",
+      "1 cup breadcrumbs",
+      "1 egg",
+      "½ cup red cabbage",
+      "½ cup carrot",
+      "¼ onion",
+      "½ cup Greek yogurt",
+      "2 tbsp mayo",
+      "1 tbsp sriracha",
+      "3 pickles"
+    ]
   },
   {
     "title": "Fresh Chicken Power Bowl",
@@ -41,7 +81,27 @@
     "category": "single night",
     "excerpt": "A bright chicken super salad with quinoa, chickpeas, cucumber, tomato, pomegranate, feta, capers and herbs.",
     "tags": ["high protein", "fresh", "chicken", "salad", "meal prep"],
-    "search": "chicken supersalad chicken super salad quinoa chickpeas cucumber tomato pomegranate feta capers parsley mint honey mustard lemon olive oil"
+    "search": "chicken supersalad chicken super salad quinoa chickpeas cucumber tomato pomegranate feta capers parsley mint honey mustard lemon olive oil",
+    "ingredients": [
+      "450g cooked shredded chicken",
+      "2 cups cooked quinoa",
+      "1 can chickpeas, drained and rinsed",
+      "1 Lebanese cucumber, diced",
+      "2 tomatoes, diced",
+      "0.5 red onion, finely diced",
+      "120g feta, crumbled",
+      "2 tbsp capers",
+      "0.5 cup pumpkin seeds",
+      "0.75 cup pomegranate arils",
+      "0.5 cup flat-leaf parsley, chopped",
+      "0.25 cup mint leaves, chopped",
+      "3 tbsp extra virgin olive oil",
+      "2 tbsp lemon juice",
+      "1.5 tbsp wholegrain or Dijon mustard",
+      "1 tbsp honey",
+      "0.5 tsp salt (adjust to taste)",
+      "0.5 tsp black pepper"
+    ]
   },
   {
     "title": "Chipotle Chicken Tacos",
@@ -52,7 +112,22 @@
     "category": "weeknight",
     "excerpt": "Smoky chipotle adobo chicken tacos topped with guac, feta, diced onion and tomato.",
     "tags": ["quick", "high protein", "chicken", "mexican", "fresh"],
-    "search": "chipotle chicken tacos adobo garlic paprika lime guac guacamole feta onion tomato mexican weeknight"
+    "search": "chipotle chicken tacos adobo garlic paprika lime guac guacamole feta onion tomato mexican weeknight",
+    "ingredients": [
+      "600g chicken thighs, sliced",
+      "2 tbsp chipotle in adobo",
+      "3 garlic cloves, minced",
+      "1 tsp paprika",
+      "1 tbsp olive oil",
+      "1 lime (juice + zest)",
+      "1 tsp salt",
+      "0.5 tsp black pepper",
+      "12 small tortillas",
+      "1 cup guacamole",
+      "120g feta, crumbled",
+      "1 red onion, diced",
+      "2 tomatoes, diced"
+    ]
   },
   {
     "title": "Chicken Noodle Soup",
@@ -63,7 +138,17 @@
     "category": "sunday",
     "excerpt": "Slow-simmered roast chicken broth with ginger, garlic, miso, and noodles.",
     "tags": ["comfort food", "slow cook", "chicken", "soup", "asian"],
-    "search": "chicken noodle soup broth miso ginger slow simmer noodles comfort food warm"
+    "search": "chicken noodle soup broth miso ginger slow simmer noodles comfort food warm",
+    "ingredients": [
+      "1 whole roast chicken",
+      "1 onion",
+      "4 garlic cloves",
+      "1 tbsp ginger",
+      "1 carrot",
+      "2 tbsp miso paste",
+      "200g noodles",
+      "2 spring onions"
+    ]
   },
   {
     "title": "Chicken Shawarma with Sweet Potato Puree",
@@ -74,7 +159,48 @@
     "category": "sunday",
     "excerpt": "Spiced shawarma chicken over sweet potato puree with crispy chickpeas, greens and garlic yoghurt.",
     "tags": ["high protein", "meal prep", "chicken", "middle eastern", "comfort food"],
-    "search": "chicken shawarma sweet potato puree crispy chickpeas garlic yoghurt broccoli broccolini pickled onion parsley mint meal prep"
+    "search": "chicken shawarma sweet potato puree crispy chickpeas garlic yoghurt broccoli broccolini pickled onion parsley mint meal prep",
+    "ingredients": [
+      "800g chicken thighs (boneless, skinless)",
+      "3 tbsp olive oil",
+      "5 cloves garlic, minced",
+      "1 large lemon (juice + zest)",
+      "2 tsp ground cumin",
+      "2 tsp smoked paprika",
+      "2 tsp ground coriander",
+      "1 tsp turmeric",
+      "1 tsp cinnamon",
+      "1 tsp chilli flakes (optional)",
+      "1 tsp salt",
+      "1 tsp black pepper",
+      "1200g sweet potato, peeled and chopped",
+      "3 tbsp olive oil",
+      "3 cloves garlic",
+      "1 tsp ground cumin",
+      "1 tsp ground coriander",
+      "0.5 tsp smoked paprika",
+      "0.5 tsp cinnamon",
+      "0.5 lemon (juice)",
+      "100g Greek yoghurt (optional)",
+      "0.4 cup chicken stock or water (to loosen)",
+      "2 x 400g cans chickpeas (about 480g drained)",
+      "1 tbsp olive oil",
+      "1 tsp cumin",
+      "1 tsp smoked paprika",
+      "0.5 tsp garlic powder",
+      "400g broccoli or broccolini",
+      "1 tbsp olive oil",
+      "1 tsp garlic powder",
+      "1 lemon (to finish)",
+      "250g Greek yoghurt",
+      "2 cloves garlic, finely grated",
+      "1 tbsp lemon juice",
+      "1 tbsp olive oil",
+      "2 tbsp mint or parsley, chopped",
+      "1 red onion, thinly sliced (pickle if you like)",
+      "0.5 cup fresh parsley or coriander",
+      "2 tbsp toasted pepitas or almonds"
+    ]
   },
   {
     "title": "Chicken, Sundried Tomato & Spinach Risotto",
@@ -85,7 +211,23 @@
     "category": "weeknight",
     "excerpt": "Creamy risotto with chicken, sundried tomato, spinach, garlic, lemon and parmesan.",
     "tags": ["comfort food", "high protein", "chicken", "italian", "weeknight"],
-    "search": "chicken risotto rissoto sundried tomato spinach arborio rice parmesan butter lemon garlic onion weeknight"
+    "search": "chicken risotto rissoto sundried tomato spinach arborio rice parmesan butter lemon garlic onion weeknight",
+    "ingredients": [
+      "750g chicken breast, diced",
+      "2 tbsp olive oil",
+      "1 large onion, finely diced",
+      "4 cloves garlic, minced",
+      "2 cups arborio rice",
+      "100g sundried tomatoes, finely diced",
+      "2 large handfuls baby spinach, roughly chopped",
+      "0.5 cup fresh oregano, basil and parsley, chopped (optional)",
+      "1.9L chicken stock, kept hot",
+      "70g parmesan, finely grated",
+      "40g butter",
+      "0.75 lemon (juice, to taste)",
+      "1 tsp salt, plus extra to taste",
+      "0.5 tsp black pepper, plus extra to taste"
+    ]
   },
   {
     "title": "Korean Beef Mince Rice Bowl",
@@ -96,7 +238,33 @@
     "category": "weeknight",
     "excerpt": "A Korean-inspired rice bowl with garlicky beef mince, spring onion, chilli, sesame and a creamy sriracha yoghurt sauce.",
     "tags": ["high protein", "beef", "asian", "weeknight", "quick"],
-    "search": "korean beef mince rice bowl garlic spring onion chilli sriracha mayo greek yoghurt sesame weeknight"
+    "search": "korean beef mince rice bowl garlic spring onion chilli sriracha mayo greek yoghurt sesame weeknight",
+    "ingredients": [
+      "700g beef mince",
+      "1 tbsp neutral oil",
+      "5 cloves garlic, minced",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "1 tbsp brown sugar or honey",
+      "1 tbsp gochujang or chilli paste",
+      "1 tsp black pepper",
+      "3 cups cooked jasmine or short grain rice",
+      "3 stalks spring onion, sliced",
+      "1 red chilli, thinly sliced",
+      "2 tbsp sesame seeds",
+      "0.5 cup mayonnaise",
+      "1.5 tbsp sriracha",
+      "1 tsp lime juice",
+      "250g Greek yoghurt",
+      "2 cloves garlic, finely grated",
+      "1 tbsp lemon juice",
+      "1 tbsp olive oil",
+      "1 tbsp chopped spring onion or parsley",
+      "1 cucumber, sliced",
+      "1 carrot, julienned",
+      "0.5 cup kimchi",
+      "1 tsp extra chilli oil"
+    ]
   },
   {
     "title": "Chicken Tikka Curry",
@@ -107,7 +275,21 @@
     "category": "weeknight",
     "excerpt": "A rich, creamy curry built on a spiced yogurt marinade and a deeply developed tomato base.",
     "tags": ["high protein", "curry", "chicken", "indian"],
-    "search": "chicken tikka curry spiced yogurt tomato base creamy indian high protein"
+    "search": "chicken tikka curry spiced yogurt tomato base creamy indian high protein",
+    "ingredients": [
+      "600g chicken thighs",
+      "150g Greek yogurt",
+      "2 tbsp garam masala",
+      "1 tbsp ground cumin",
+      "1 tbsp paprika",
+      "4 garlic cloves",
+      "1 tbsp ginger",
+      "1 onion",
+      "400g canned tomatoes",
+      "100ml cream or coconut cream",
+      "20g butter",
+      "1 tbsp lemon juice"
+    ]
   },
   {
     "title": "Pad Kee Mao (Drunken Noodles)",
@@ -118,7 +300,22 @@
     "category": "weeknight",
     "excerpt": "A bold, spicy noodle dish packed with garlic, chilli, fresh basil and a rich savoury sauce.",
     "tags": ["quick", "spicy", "thai", "noodles", "chicken"],
-    "search": "drunken noodles pad kee mao spicy basil chicken thai wok quick"
+    "search": "drunken noodles pad kee mao spicy basil chicken thai wok quick",
+    "ingredients": [
+      "500g chicken thigh, sliced",
+      "400g fresh Pad Thai rice noodles",
+      "4 garlic cloves, minced",
+      "1 brown onion, sliced",
+      "1 tbsp fresh ginger, grated",
+      "1 tsp chilli flakes",
+      "3 tbsp soy sauce",
+      "2 tbsp oyster sauce",
+      "1 tbsp fish sauce",
+      "2 tsp brown sugar or honey",
+      "20g Thai basil leaves",
+      "2 spring onions, sliced",
+      "1 red capsicum, sliced"
+    ]
   },
   {
     "title": "Lemon Garlic Chilli Broccolini Pasta",
@@ -129,7 +326,18 @@
     "category": "weeknight",
     "excerpt": "Bright, lemony pasta with garlic, chilli and broccolini — quick and satisfying.",
     "tags": ["quick", "fresh", "pasta", "chicken", "vegetarian-friendly"],
-    "search": "lemon pasta broccolini garlic chilli quick weeknight fresh light pasta"
+    "search": "lemon pasta broccolini garlic chilli quick weeknight fresh light pasta",
+    "ingredients": [
+      "250g chicken breast",
+      "200g pasta",
+      "200g broccolini",
+      "3 garlic cloves",
+      "1 tsp chilli flakes",
+      "1 lemon (zest + juice)",
+      "2 tbsp olive oil",
+      "30g parmesan",
+      "salt & pepper"
+    ]
   },
   {
     "title": "Greek-Style Lamb Pitta",
@@ -140,7 +348,33 @@
     "category": "single night",
     "excerpt": "BBQ or oven-cooked lamb in homemade pittas with fresh salad and homemade tzatziki.",
     "tags": ["fresh", "lamb", "greek", "high protein", "sharing"],
-    "search": "lamb pitta greek style bbq oven tomato cucumber salad homemade tzatziki taziki greek yogurt flour pitta single night"
+    "search": "lamb pitta greek style bbq oven tomato cucumber salad homemade tzatziki taziki greek yogurt flour pitta single night",
+    "ingredients": [
+      "700g lamb leg or lamb shoulder, thinly sliced",
+      "2 tbsp olive oil",
+      "3 garlic cloves, minced",
+      "2 tsp dried oregano",
+      "1 tsp ground cumin",
+      "1 lemon (juice)",
+      "1 tsp salt",
+      "0.5 tsp black pepper",
+      "2 large tomatoes, diced",
+      "1 large cucumber, diced",
+      "0.5 red onion, finely sliced",
+      "2 tbsp chopped parsley",
+      "1 tbsp olive oil (for salad)",
+      "1 tbsp lemon juice (for salad)",
+      "300g Greek yogurt",
+      "0.5 cucumber, grated and squeezed dry",
+      "2 garlic cloves, finely grated",
+      "1 tbsp olive oil",
+      "1 tbsp lemon juice",
+      "1 tbsp dill or mint, finely chopped (optional)",
+      "300g self-raising flour",
+      "300g Greek yogurt",
+      "1 tsp salt",
+      "1 tbsp olive oil, for cooking pittas"
+    ]
   },
   {
     "title": "Korean Fried Chicken",
@@ -151,7 +385,25 @@
     "category": "single night",
     "excerpt": "Crispy fried chicken tossed in a sticky Korean-style chilli glaze, with oven/air-fry options.",
     "tags": ["comfort food", "chicken", "asian", "weekend", "sharing"],
-    "search": "korean fried chicken gochujang garlic soy honey sesame fried in oil friday weekend people over oven air fryer healthier alternative"
+    "search": "korean fried chicken gochujang garlic soy honey sesame fried in oil friday weekend people over oven air fryer healthier alternative",
+    "ingredients": [
+      "800g chicken thigh pieces (boneless)",
+      "1 cup plain flour",
+      "0.75 cup cornstarch",
+      "1 tsp salt",
+      "1 tsp black pepper",
+      "1 tsp garlic powder",
+      "2 eggs, beaten",
+      "500ml neutral oil for frying",
+      "2 tbsp gochujang",
+      "2 tbsp soy sauce",
+      "2 tbsp honey",
+      "1 tbsp rice vinegar",
+      "3 garlic cloves, minced",
+      "1 tbsp sesame oil",
+      "1 tbsp sesame seeds",
+      "2 spring onions, sliced"
+    ]
   },
   {
     "title": "Panang Curry",
@@ -162,7 +414,17 @@
     "category": "weeknight",
     "excerpt": "A quick weeknight curry that still feels indulgent — creamy coconut, warm spice, and tender chicken.",
     "tags": ["quick", "curry", "thai", "chicken", "high protein"],
-    "search": "panang curry coconut chicken thai spicy quick weeknight indulgent"
+    "search": "panang curry coconut chicken thai spicy quick weeknight indulgent",
+    "ingredients": [
+      "600g chicken thighs",
+      "2 tbsp Panang curry paste",
+      "400ml coconut cream/milk",
+      "4 garlic cloves",
+      "1 capsicum",
+      "100g green beans",
+      "1 tbsp fish sauce",
+      "1 tsp sugar (optional)"
+    ]
   },
   {
     "title": "Spicy Peanut Noodles",
@@ -173,7 +435,24 @@
     "category": "weeknight",
     "excerpt": "Chewy noodles tossed in a creamy peanut-chilli sauce with savoury mince, cucumber and fresh herbs.",
     "tags": ["quick", "high protein", "noodles", "asian", "meal prep"],
-    "search": "spicy peanut noodles mince cucumber coriander spring onion lime chilli crisp quick weeknight"
+    "search": "spicy peanut noodles mince cucumber coriander spring onion lime chilli crisp quick weeknight",
+    "ingredients": [
+      "500g fresh thick noodles (udon or hokkien)",
+      "500g chicken or pork mince",
+      "3 tbsp smooth peanut butter",
+      "2 tbsp soy sauce",
+      "1 tbsp dark soy sauce",
+      "1 tbsp rice vinegar",
+      "1 tbsp chilli crisp or chilli oil",
+      "2 tsp honey",
+      "3 cloves garlic, minced",
+      "1 tbsp fresh ginger, grated",
+      "4 tbsp hot water (to loosen sauce)",
+      "0.5 cucumber, sliced",
+      "2 stalks spring onions, sliced",
+      "0.5 cup coriander leaves",
+      "1 lime, cut into wedges"
+    ]
   },
   {
     "title": "Teriyaki Chicken Poke Bowl",
@@ -184,7 +463,21 @@
     "category": "weeknight",
     "excerpt": "A quick, fresh rice bowl with sticky teriyaki chicken, crunchy veg and a homemade sauce.",
     "tags": ["quick", "fresh", "high protein", "asian", "chicken"],
-    "search": "poke bowl teriyaki chicken rice edamame cucumber carrot spring onion sauce fresh quick"
+    "search": "poke bowl teriyaki chicken rice edamame cucumber carrot spring onion sauce fresh quick",
+    "ingredients": [
+      "300g chicken thigh",
+      "2 tbsp soy sauce",
+      "1 tbsp honey",
+      "1 tbsp mirin or rice vinegar",
+      "1 tsp sesame oil",
+      "1 cup cooked rice",
+      "1 carrot",
+      "1 cup edamame",
+      "1 cucumber",
+      "1 cup corn",
+      "2 spring onions",
+      "2 tbsp homemade sauce"
+    ]
   },
   {
     "title": "Garlic Chilli Prawn Pasta",
@@ -195,7 +488,16 @@
     "category": "single night",
     "excerpt": "A bright, silky pasta built on garlic, chilli, lemon and sweet prawns.",
     "tags": ["quick", "fresh", "pasta", "seafood", "italian"],
-    "search": "prawn pasta garlic chilli lemon quick prawns seafood italian fresh"
+    "search": "prawn pasta garlic chilli lemon quick prawns seafood italian fresh",
+    "ingredients": [
+      "200g prawns",
+      "3 garlic cloves",
+      "1 tsp chilli flakes",
+      "100ml white wine",
+      "1 lemon (juice)",
+      "200g pasta",
+      "10g parsley"
+    ]
   },
   {
     "title": "Paprika Chicken with Romesco",
@@ -206,7 +508,31 @@
     "category": "single night",
     "excerpt": "Garlic paprika marinated chicken with a roasted capsicum romesco, tomato, garlic, pumpkin seeds and broccolini.",
     "tags": ["high protein", "chicken", "fresh", "single night", "mediterranean"],
-    "search": "paprika chicken romesco roasted capsicum garlic tomato pumpkin seeds broccolini single night high protein"
+    "search": "paprika chicken romesco roasted capsicum garlic tomato pumpkin seeds broccolini single night high protein",
+    "ingredients": [
+      "800g chicken thighs (boneless, skinless)",
+      "2 tbsp olive oil",
+      "4 cloves garlic, minced",
+      "2 tsp smoked paprika",
+      "1 tsp sweet paprika",
+      "1 tsp ground cumin",
+      "1 lemon (juice)",
+      "1 tsp salt",
+      "0.5 tsp black pepper",
+      "2 red capsicums",
+      "1 ripe tomato",
+      "4 cloves garlic (roasted)",
+      "0.5 cup pumpkin seeds, toasted",
+      "2 tbsp olive oil",
+      "1 tbsp red wine vinegar",
+      "1 tsp smoked paprika",
+      "0.5 tsp chilli flakes (optional)",
+      "0.75 tsp salt",
+      "2 bunches broccolini",
+      "1 tbsp olive oil",
+      "0.5 tsp garlic powder",
+      "0.5 lemon (to finish)"
+    ]
   },
   {
     "title": "Pulled Beef Tacos",
@@ -217,7 +543,17 @@
     "category": "sunday",
     "excerpt": "Rich chipotle beef that pulls apart and keeps well for taco night or leftovers.",
     "tags": ["comfort food", "slow cook", "beef", "mexican", "meal prep"],
-    "search": "pulled beef tacos chipotle slow braise pico lime mexican comfort food"
+    "search": "pulled beef tacos chipotle slow braise pico lime mexican comfort food",
+    "ingredients": [
+      "1kg chuck beef",
+      "2 tbsp chipotle in adobo",
+      "1 onion",
+      "4 garlic cloves",
+      "2 tsp spices (cumin + paprika)",
+      "500ml beef stock",
+      "8 taco shells",
+      "1 cup pico de gallo"
+    ]
   },
   {
     "title": "Spiced Beef Meatball Bowl",
@@ -228,7 +564,42 @@
     "category": "sunday",
     "excerpt": "Oven-baked spiced beef meatballs with silky carrot puree and aromatic rice.",
     "tags": ["high protein", "meal prep", "beef", "comfort food", "middle eastern"],
-    "search": "spiced beef meatball bowl carrot puree aromatic rice basmati cumin paprika parsley mint feta high protein sunday"
+    "search": "spiced beef meatball bowl carrot puree aromatic rice basmati cumin paprika parsley mint feta high protein sunday",
+    "ingredients": [
+      "1kg beef mince",
+      "120g panko breadcrumbs",
+      "150ml chicken stock",
+      "2 eggs",
+      "1 large onion",
+      "5 cloves garlic",
+      "0.5 cup parsley",
+      "0.25 cup mint (optional)",
+      "70g feta (optional)",
+      "2 tsp ground cumin",
+      "2 tsp smoked paprika",
+      "1 tsp ground coriander",
+      "1 tsp dried oregano",
+      "2 tsp salt",
+      "1 tsp black pepper",
+      "pinch chilli flakes (optional)",
+      "2 tbsp olive oil",
+      "800g carrots",
+      "1 large onion",
+      "5 cloves garlic",
+      "50g butter",
+      "1 tbsp olive oil",
+      "1 tsp ground cumin",
+      "0.5 tsp smoked paprika",
+      "400ml chicken stock",
+      "1 tbsp lemon juice",
+      "2.5 cups basmati rice",
+      "3.75 cups chicken stock or water",
+      "40g butter",
+      "1 tsp cumin seeds",
+      "1 tsp turmeric",
+      "1 bay leaf (optional)",
+      "handful parsley"
+    ]
   },
   {
     "title": "Steak and Veg",
@@ -239,7 +610,16 @@
     "category": "single night",
     "excerpt": "A fresh dinner plate with steak, roasted sweet potato and greens — flexible and satisfying.",
     "tags": ["high protein", "fresh", "beef", "single serving"],
-    "search": "steak veg steak bowl sweet potato broccolini chimichurri fresh high protein"
+    "search": "steak veg steak bowl sweet potato broccolini chimichurri fresh high protein",
+    "ingredients": [
+      "250g steak (sirloin or ribeye)",
+      "200g sweet potato",
+      "100g broccolini",
+      "2 garlic cloves",
+      "15g parsley",
+      "1 tbsp olive oil",
+      "1 tbsp vinegar or lemon juice"
+    ]
   },
   {
     "title": "Sticky Beef Mince Bowl",
@@ -250,7 +630,17 @@
     "category": "weeknight",
     "excerpt": "Comforting, sticky-savoury beef mince glazed in an umami-rich sauce, built for meal prep.",
     "tags": ["meal prep", "high protein", "beef", "asian", "comfort food"],
-    "search": "sticky beef mince umami soy honey miso rice bowl meal prep weeknight"
+    "search": "sticky beef mince umami soy honey miso rice bowl meal prep weeknight",
+    "ingredients": [
+      "300g beef mince",
+      "3 garlic cloves",
+      "1 onion",
+      "2 tbsp soy sauce",
+      "1 tbsp honey",
+      "1 tsp miso paste",
+      "250ml chicken stock",
+      "200g rice"
+    ]
   },
   {
     "title": "Crispy Chorizo Tacos",
@@ -261,7 +651,18 @@
     "category": "weeknight",
     "excerpt": "Pan-crisped chorizo tacos with melty cheese, red onion, coriander and fresh lime.",
     "tags": ["quick", "comfort food", "mexican", "tacos", "sharing"],
-    "search": "crispy chorizo tacos pan fried tortillas cheese red onion coriander lime quick weeknight"
+    "search": "crispy chorizo tacos pan fried tortillas cheese red onion coriander lime quick weeknight",
+    "ingredients": [
+      "500g chorizo sausage meat (casings removed)",
+      "8 small corn tortillas",
+      "1.5 cups grated mozzarella or tasty cheese",
+      "1 small red onion, finely diced",
+      "0.5 cup coriander leaves, chopped",
+      "2 limes, cut into wedges",
+      "1 tbsp olive oil",
+      "0.5 tsp chilli flakes (optional)",
+      "0.5 cup sour cream or Greek yogurt (optional)"
+    ]
   },
   {
     "title": "Crispy Skin Salmon with Sweet Potato Mash",
@@ -272,7 +673,24 @@
     "category": "weeknight",
     "excerpt": "Crispy skin salmon with buttery sweet potato mash, glazed Dutch carrots and garlic sauteed spinach.",
     "tags": ["quick", "high protein", "seafood", "fresh", "weeknight"],
-    "search": "crispy skin salmon sweet potato mash dutch carrots garlic spinach weeknight high protein omega-3 fish dinner"
+    "search": "crispy skin salmon sweet potato mash dutch carrots garlic spinach weeknight high protein omega-3 fish dinner",
+    "ingredients": [
+      "2 salmon fillets (180-220g each), skin on",
+      "1 tbsp olive oil",
+      "salt",
+      "black pepper",
+      "lemon wedges",
+      "600g sweet potato, peeled and chopped",
+      "40g butter",
+      "2-3 tbsp reserved cooking water",
+      "4 Dutch carrots, trimmed and peeled",
+      "20g butter",
+      "1 tsp honey (optional)",
+      "150g baby spinach",
+      "1 tbsp butter or olive oil",
+      "1 garlic clove, finely sliced",
+      "squeeze of lemon juice (optional)"
+    ]
   },
   {
     "title": "Butternut Squash Chicken Curry",
@@ -283,7 +701,28 @@
     "category": "weeknight",
     "excerpt": "Seared chicken thighs, butternut squash and carrots simmered in a coconut-tomato sauce with a homemade spice blend.",
     "tags": ["curry", "chicken", "high protein", "coconut", "meal prep"],
-    "search": "butternut squash chicken curry coconut tomato spice blend coriander cumin turmeric ginger cinnamon weeknight meal prep"
+    "search": "butternut squash chicken curry coconut tomato spice blend coriander cumin turmeric ginger cinnamon weeknight meal prep",
+    "ingredients": [
+      "2 tsp ground coriander",
+      "1 tsp ground cumin",
+      "1 tsp ground turmeric",
+      "½ tsp ground ginger (skip if using fresh ginger)",
+      "¼ tsp ground cinnamon",
+      "¼ tsp chili powder or cayenne (optional)",
+      "¼ tsp black pepper",
+      "1kg chicken thighs, cut into chunks",
+      "1 brown onion, diced",
+      "3 garlic cloves, minced",
+      "1 tbsp fresh ginger, grated",
+      "500g butternut squash, peeled and cubed",
+      "3 carrots, sliced",
+      "400g canned diced tomatoes",
+      "400ml coconut milk",
+      "250ml chicken stock or water",
+      "2 tbsp vegetable oil",
+      "1 tsp salt",
+      "2 cups rice, uncooked, to serve"
+    ]
   },
   {
     "title": "Authentic Spaghetti Carbonara",
@@ -294,7 +733,16 @@
     "category": "single night",
     "excerpt": "Real Roman carbonara with guanciale, egg yolks, Pecorino Romano and black pepper — no cream.",
     "tags": ["pasta", "italian", "date night", "quick"],
-    "search": "spaghetti carbonara guanciale pancetta egg yolk pecorino romano black pepper authentic italian date night quick"
+    "search": "spaghetti carbonara guanciale pancetta egg yolk pecorino romano black pepper authentic italian date night quick",
+    "ingredients": [
+      "200g spaghetti",
+      "100g guanciale (or pancetta), diced",
+      "3 egg yolks",
+      "1 whole egg",
+      "50g Pecorino Romano, finely grated, plus extra to serve",
+      "Black pepper, generously cracked",
+      "Salt, for the pasta water"
+    ]
   },
   {
     "title": "BBQ Fish & King Prawns with Mango Orzo",
@@ -305,7 +753,33 @@
     "category": "single night",
     "excerpt": "Whole fish grilled in foil with garlic and ginger, butterflied king prawns in garlic chilli butter, and a mango orzo salad.",
     "tags": ["seafood", "bbq", "summer", "sharing", "high protein"],
-    "search": "bbq whole fish king prawns garlic chilli butter mango orzo salad avocado feta summer sharing seafood"
+    "search": "bbq whole fish king prawns garlic chilli butter mango orzo salad avocado feta summer sharing seafood",
+    "ingredients": [
+      "1 whole fish (about 800g-1kg), cleaned and scaled",
+      "4 garlic cloves, sliced",
+      "1 thumb ginger, sliced into matchsticks",
+      "2 spring onions, sliced",
+      "1 lime, sliced, plus extra to serve",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "Handful coriander",
+      "500g king prawns, butterflied and deveined",
+      "50g butter, melted",
+      "3 garlic cloves, minced",
+      "1 red chilli, finely sliced",
+      "Handful parsley, chopped",
+      "200g orzo",
+      "1 mango, diced",
+      "1 avocado, diced",
+      "1 Lebanese cucumber, diced",
+      "1 tomato, diced",
+      "1/2 red onion, finely diced",
+      "100g feta, crumbled",
+      "2 tbsp olive oil",
+      "1 tbsp lime juice",
+      "Handful mint or coriander, chopped",
+      "Salt and pepper, to taste"
+    ]
   },
   {
     "title": "Steak Tacos with Homemade Guac",
@@ -316,7 +790,24 @@
     "category": "single night",
     "excerpt": "Seared, sliced steak in warm tortillas with chunky homemade guacamole, diced onion, coriander and lime.",
     "tags": ["tacos", "beef", "mexican", "sharing", "high protein"],
-    "search": "steak tacos homemade guacamole diced onion coriander lime build your own weekend dinner"
+    "search": "steak tacos homemade guacamole diced onion coriander lime build your own weekend dinner",
+    "ingredients": [
+      "600g steak (rump, sirloin or skirt)",
+      "1 tsp cumin",
+      "1 tsp smoked paprika",
+      "1/2 tsp chili powder",
+      "Salt and pepper, to taste",
+      "1 tbsp olive oil",
+      "1 lime, juiced",
+      "8-10 small flour or corn tortillas",
+      "2 avocados",
+      "1/2 red onion, finely diced (for the guac)",
+      "1 small tomato, diced (optional, for the guac)",
+      "1 small green chilli, finely diced (optional, for the guac)",
+      "1/2 white onion, finely diced (to serve)",
+      "Handful coriander, chopped",
+      "Lime wedges, to serve"
+    ]
   },
   {
     "title": "Beef Mince Burrito Bowl",
@@ -327,7 +818,25 @@
     "category": "weeknight",
     "excerpt": "Seared beef mince with capsicum, beans and corn over rice, with a fresh salad and a smoky chipotle Greek yoghurt sauce.",
     "tags": ["high protein", "meal prep", "beef", "mexican", "quick"],
-    "search": "beef mince burrito bowl black beans corn capsicum rice salad chipotle adobo greek yoghurt sauce weeknight meal prep"
+    "search": "beef mince burrito bowl black beans corn capsicum rice salad chipotle adobo greek yoghurt sauce weeknight meal prep",
+    "ingredients": [
+      "500g beef mince",
+      "1 onion, diced",
+      "1 capsicum, diced",
+      "3 garlic cloves, minced",
+      "1 tsp smoked paprika",
+      "1 tsp ground cumin",
+      "Salt and pepper, to taste",
+      "400g canned black beans, rinsed and drained",
+      "1 cup corn kernels, rinsed if canned",
+      "2 cups rice, cooked",
+      "2 cups lettuce, shredded",
+      "1 Lebanese cucumber, diced",
+      "1 tomato, diced",
+      "2 tbsp chipotles in adobo, finely chopped, plus 1 tsp adobo sauce",
+      "1 tbsp mayonnaise",
+      "2 tbsp Greek yoghurt"
+    ]
   },
   {
     "title": "Beef Bolognese",
@@ -338,7 +847,21 @@
     "category": "weeknight",
     "excerpt": "Deeply browned mince in a rich tomato and red wine sauce, finished with an egg yolk for a silky, rounded sauce.",
     "tags": ["comfort food", "beef", "pasta", "italian", "high protein"],
-    "search": "beef bolognese mince red wine egg yolk tomato soffritto spaghetti parmesan italian pasta weeknight"
+    "search": "beef bolognese mince red wine egg yolk tomato soffritto spaghetti parmesan italian pasta weeknight",
+    "ingredients": [
+      "500g beef mince",
+      "1 onion, finely diced",
+      "1 carrot, finely diced",
+      "3 garlic cloves, minced",
+      "2 tbsp tomato paste",
+      "400g canned tomatoes",
+      "150ml red wine",
+      "2 tbsp olive oil",
+      "1 egg yolk",
+      "400g spaghetti, to serve",
+      "Parmesan, to serve",
+      "Salt & pepper, to taste"
+    ]
   },
   {
     "title": "One Pot Creamy Paprika Beef Pasta",
@@ -349,6 +872,24 @@
     "category": "weeknight",
     "excerpt": "Smoky paprika beef mince simmered with rigatoni in one pot, finished creamy with double cream and wilted spinach.",
     "tags": ["quick", "high protein", "beef", "pasta", "meal prep"],
-    "search": "one pot creamy paprika beef pasta rigatoni smoked paprika cayenne double cream spinach parmesan weeknight"
+    "search": "one pot creamy paprika beef pasta rigatoni smoked paprika cayenne double cream spinach parmesan weeknight",
+    "ingredients": [
+      "500g rigatoni, uncooked",
+      "1 tbsp olive oil",
+      "1 brown onion, finely diced",
+      "4 garlic cloves, minced",
+      "500g lean beef mince (10% fat)",
+      "1 tbsp smoked paprika",
+      "1 tsp cayenne pepper",
+      "1.5 tbsp Italian herbs",
+      "2 tsp chilli flakes (optional)",
+      "2 tbsp tomato paste",
+      "800g whole peeled tomatoes",
+      "650ml low-sodium beef stock",
+      "0.5 cup double cream",
+      "2 large handfuls fresh baby spinach",
+      "Salt & pepper, to taste",
+      "Parmesan, to serve"
+    ]
   }
 ]

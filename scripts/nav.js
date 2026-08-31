@@ -64,6 +64,11 @@ function initMealRoulette() {
     const countValueEl = document.getElementById("rouletteCount");
     const decreaseBtn = document.getElementById("rouletteDecrease");
     const increaseBtn = document.getElementById("rouletteIncrease");
+    const groceryBtn = document.getElementById("rouletteGroceryBtn");
+    const groceryPanel = document.getElementById("groceryList");
+    const groceryBody = document.getElementById("groceryListBody");
+    const groceryCopyBtn = document.getElementById("groceryCopyBtn");
+    const groceryCloseBtn = document.getElementById("groceryCloseBtn");
     const MIN_SLOTS = 2;
     const MAX_SLOTS = 7;
     const DEFAULT_SLOTS = 5;
@@ -170,6 +175,97 @@ function initMealRoulette() {
                 </div>
             `;
         }).join("");
+
+        if (groceryPanel && !groceryPanel.hidden) renderGroceryList();
+    }
+
+    function groceryGroups() {
+        return slots
+            .filter(Boolean)
+            .map(recipe => ({ title: recipe.title, url: recipe.url, ingredients: recipe.ingredients || [] }));
+    }
+
+    function renderGroceryList() {
+        if (!groceryBody) return;
+        const groups = groceryGroups();
+
+        if (groups.length === 0) {
+            groceryBody.innerHTML = '<p class="grocery-empty">No recipes to list yet.</p>';
+            return;
+        }
+
+        groceryBody.innerHTML = groups.map(group => `
+            <div class="grocery-recipe-group">
+                <h3 class="grocery-recipe-title"><a href="${group.url}">${group.title}</a></h3>
+                <ul class="grocery-items">
+                    ${group.ingredients.map(item => `
+                        <li class="grocery-item">
+                            <label>
+                                <input type="checkbox">
+                                <span>${item}</span>
+                            </label>
+                        </li>
+                    `).join("")}
+                </ul>
+            </div>
+        `).join("");
+    }
+
+    function groceryListText() {
+        return groceryGroups()
+            .map(group => `${group.title}\n${group.ingredients.map(item => `- ${item}`).join("\n")}`)
+            .join("\n\n");
+    }
+
+    if (groceryBtn && groceryPanel) {
+        groceryBtn.addEventListener("click", () => {
+            const willOpen = groceryPanel.hidden;
+            if (willOpen) {
+                renderGroceryList();
+                groceryPanel.hidden = false;
+                groceryBtn.setAttribute("aria-expanded", "true");
+                groceryBtn.textContent = "Hide Grocery List";
+                groceryPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+            } else {
+                groceryPanel.hidden = true;
+                groceryBtn.setAttribute("aria-expanded", "false");
+                groceryBtn.textContent = "Grocery List";
+            }
+        });
+    }
+
+    if (groceryCloseBtn && groceryPanel) {
+        groceryCloseBtn.addEventListener("click", () => {
+            groceryPanel.hidden = true;
+            if (groceryBtn) {
+                groceryBtn.setAttribute("aria-expanded", "false");
+                groceryBtn.textContent = "Grocery List";
+            }
+        });
+    }
+
+    if (groceryBody) {
+        groceryBody.addEventListener("change", (event) => {
+            const checkbox = event.target.closest('input[type="checkbox"]');
+            if (!checkbox) return;
+            const item = checkbox.closest(".grocery-item");
+            if (item) item.classList.toggle("checked", checkbox.checked);
+        });
+    }
+
+    if (groceryCopyBtn) {
+        groceryCopyBtn.addEventListener("click", async () => {
+            const text = groceryListText();
+            const originalLabel = groceryCopyBtn.textContent;
+            try {
+                await navigator.clipboard.writeText(text);
+                groceryCopyBtn.textContent = "Copied!";
+            } catch (error) {
+                console.error("Unable to copy grocery list", error);
+                groceryCopyBtn.textContent = "Couldn't copy";
+            }
+            setTimeout(() => { groceryCopyBtn.textContent = originalLabel; }, 1500);
+        });
     }
 
     track.addEventListener("click", (event) => {
