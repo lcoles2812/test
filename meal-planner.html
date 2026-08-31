@@ -78,6 +78,12 @@
 <header class="hero hero-compact">
   <h1>Meal Planner</h1>
   <p class="hero-text">Can't decide what to cook? Five random meals, picked from across the site. Lock the ones you like, hit regenerate, and the rest reshuffle — or just press the spacebar.</p>
+  <div class="roulette-count-control">
+    <span class="roulette-count-label">Recipes:</span>
+    <button type="button" class="roulette-count-btn" id="rouletteDecrease" aria-label="Show fewer recipes">−</button>
+    <span class="roulette-count-value" id="rouletteCount">5</span>
+    <button type="button" class="roulette-count-btn" id="rouletteIncrease" aria-label="Show more recipes">+</button>
+  </div>
 </header>
 
 <main class="container">
@@ -85,12 +91,6 @@
   <div class="roulette" id="rouletteTrack" aria-live="polite" aria-busy="true"></div>
 
   <div class="roulette-controls">
-    <div class="roulette-count-control">
-      <span class="roulette-count-label">Recipes:</span>
-      <button type="button" class="roulette-count-btn" id="rouletteDecrease" aria-label="Show fewer recipes">−</button>
-      <span class="roulette-count-value" id="rouletteCount">5</span>
-      <button type="button" class="roulette-count-btn" id="rouletteIncrease" aria-label="Show more recipes">+</button>
-    </div>
     <div class="roulette-action-buttons">
       <button type="button" class="roulette-regenerate-btn" id="rouletteRegenerate">Regenerate</button>
       <button type="button" class="roulette-grocery-btn" id="rouletteGroceryBtn" aria-expanded="false" aria-controls="groceryList">Grocery List</button>

@@ -1311,7 +1311,9 @@ nav {
 .roulette-count-control {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
+    margin-top: 20px;
 }
 
 .roulette-count-label {
@@ -1491,24 +1493,53 @@ nav {
    Regenerate button fit on one screen with no scrolling — the point is to
    be able to flick through options fast, the way you would on coolors. */
 @media (max-width: 900px) {
+    /* The recipe-count stepper sits inline with the heading instead of
+       its own row below the photos — same row the title already needs,
+       so it costs no extra height at all. */
     .hero-compact {
-        padding: 18px 16px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+        padding: 16px 16px 14px;
     }
 
     .hero-compact h1 {
-        font-size: 1.6rem;
-        margin-bottom: 4px;
+        font-size: 1.5rem;
+        margin-bottom: 0;
     }
 
     .hero-compact .hero-text {
         display: none;
     }
 
+    .hero-compact .roulette-count-control {
+        margin-top: 0;
+        gap: 8px;
+    }
+
+    .hero-compact .roulette-count-label {
+        display: none;
+    }
+
+    .hero-compact .roulette-count-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 1rem;
+    }
+
+    /* The nav/hero/controls around the roulette take roughly the same
+       fixed number of pixels regardless of phone size, so a plain vh
+       percentage over-shrinks it on small phones while leaving space
+       unused on bigger ones. Subtracting that fixed overhead instead
+       gives every phone the same safety margin and hands everything
+       else to the photos. */
     .roulette {
         flex-direction: column;
-        height: 46vh;
+        height: calc(100vh - 305px);
         min-height: 300px;
-        max-height: 440px;
+        max-height: 620px;
         gap: 6px;
     }
 
@@ -1525,8 +1556,8 @@ nav {
     }
 
     .roulette-slot-title {
-        font-size: 0.84rem;
-        line-height: 1.15;
+        font-size: 0.88rem;
+        line-height: 1.18;
     }
 
     .roulette-lock-btn {
