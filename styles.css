@@ -1205,6 +1205,50 @@ nav {
     color: #fff;
 }
 
+.roulette-slot-servings {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 999px;
+    padding: 4px 4px;
+    z-index: 2;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.roulette-slot-serving-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.roulette-slot-serving-btn:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.roulette-slot-serving-value {
+    min-width: 14px;
+    text-align: center;
+}
+
 .roulette-controls {
     display: flex;
     flex-direction: column;
@@ -1379,40 +1423,39 @@ nav {
 }
 
 .grocery-list-body {
-    columns: 220px 4;
-    column-gap: 32px;
     padding-bottom: 20px;
 }
 
-.grocery-recipe-group {
-    break-inside: avoid;
+.grocery-section {
     margin-bottom: 24px;
 }
 
-.grocery-recipe-title {
-    font-size: 1rem;
+.grocery-section:last-child {
+    margin-bottom: 0;
+}
+
+.grocery-section-heading {
+    font-size: 0.82rem;
     font-weight: 700;
-    margin: 0 0 10px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent);
-}
-
-.grocery-recipe-title a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.grocery-recipe-title a:hover {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--accent);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
 }
 
 .grocery-items {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    columns: 240px 3;
+    column-gap: 32px;
+}
+
+.grocery-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
 }
 
 .grocery-item label {
@@ -1443,25 +1486,80 @@ nav {
 }
 
 /* Mobile: like coolors on phone, each slot flips from a vertical column
-   into a full-width horizontal band, and the bands stack top to bottom
-   with normal page scroll — no horizontal scrolling. */
+   into a full-width horizontal band, stacked top to bottom. The whole
+   group is height-bound (not auto-stacked) so all 5 bands plus the
+   Regenerate button fit on one screen with no scrolling — the point is to
+   be able to flick through options fast, the way you would on coolors. */
 @media (max-width: 900px) {
+    .hero-compact {
+        padding: 18px 16px 14px;
+    }
+
+    .hero-compact h1 {
+        font-size: 1.6rem;
+        margin-bottom: 4px;
+    }
+
+    .hero-compact .hero-text {
+        display: none;
+    }
+
     .roulette {
         flex-direction: column;
-        height: auto;
-        min-height: 0;
-        max-height: none;
-        gap: 10px;
+        height: 46vh;
+        min-height: 300px;
+        max-height: 440px;
+        gap: 6px;
     }
 
     .roulette-slot {
-        flex: none;
+        flex: 1;
         width: 100%;
-        height: 190px;
+        height: auto;
+        min-height: 0;
+        border-radius: 12px;
+    }
+
+    .roulette-slot-overlay {
+        padding: 18px 12px 8px;
+    }
+
+    .roulette-slot-title {
+        font-size: 0.84rem;
+        line-height: 1.15;
+    }
+
+    .roulette-lock-btn {
+        width: 28px;
+        height: 28px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .roulette-slot-servings {
+        top: 8px;
+        left: 8px;
+    }
+
+    .roulette-slot-serving-btn {
+        width: 18px;
+        height: 18px;
+        font-size: 0.8rem;
     }
 
     .roulette-controls {
-        margin-bottom: 40px;
+        margin: 10px 0 32px;
+        gap: 8px;
+    }
+
+    .roulette-hint {
+        display: none;
+    }
+
+    .roulette-regenerate-btn,
+    .roulette-grocery-btn {
+        padding: 11px 22px;
+        font-size: 0.92rem;
     }
 }
 
