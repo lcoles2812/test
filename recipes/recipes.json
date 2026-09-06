@@ -891,5 +891,36 @@
       "Salt & pepper, to taste",
       "Parmesan, to serve"
     ]
+  },
+  {
+    "title": "Braised Lamb Leg with Balsamic, Garlic & Thyme",
+    "url": "recipes/braised-lamb-leg.html",
+    "image": "images/braised-lamb-leg-mash.jpg",
+    "time": "4.5–5 hrs",
+    "servings": 6,
+    "category": "sunday",
+    "excerpt": "A whole lamb leg seared then braised for hours in balsamic, garlic and thyme until it falls apart, shredded over buttery mash with a rich reduced sauce.",
+    "tags": ["comfort food", "slow cook", "lamb", "meal prep", "high protein"],
+    "search": "braised lamb leg balsamic garlic thyme mash slow cook sunday meal prep high protein",
+    "ingredients": [
+      "1 lamb leg, bone-in (plus any smaller trim pieces)",
+      "2 tbsp olive oil, for searing",
+      "Salt and black pepper",
+      "1 brown onion, halved",
+      "1-2 carrots, quartered",
+      "1 whole garlic bulb, halved crosswise (skin on)",
+      "3 sprigs fresh thyme",
+      "3 tbsp balsamic vinegar",
+      "Stock, enough to come 1/3-1/2 way up the lamb",
+      "Water, to top up if needed",
+      "1 tbsp cornflour (optional, for thickening sauce)",
+      "1.5kg potatoes, peeled and quartered",
+      "Salt, for the potato water",
+      "80g butter, softened",
+      "150ml warm milk or cream",
+      "Salt and black pepper, to taste",
+      "2 tbsp fresh chives, finely chopped",
+      "2 tbsp fresh parsley, finely chopped"
+    ]
   }
 ]

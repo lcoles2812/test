@@ -1051,7 +1051,13 @@ function initRelatedRecipes() {
         return;
     }
 
-    if (document.querySelector(".related-recipes")) return;
+    // Some recipe pages already have a hand-written "Related Recipes"
+    // section (a plain <ul class="text-muted">, not the auto-widget's own
+    // .related-recipes class), so checking for that class alone missed
+    // them and doubled up the heading. Check for either.
+    const hasManualRelatedSection = Array.from(document.querySelectorAll(".container h2"))
+        .some(heading => heading.textContent.trim().toLowerCase() === "related recipes");
+    if (document.querySelector(".related-recipes") || hasManualRelatedSection) return;
 
     const recipeContainer = document.querySelector(".container");
     const recipeHero = document.querySelector(".recipe-hero");
