@@ -50,29 +50,6 @@
     ]
   },
   {
-    "title": "Chicken Burger",
-    "url": "recipes/chicken-burger.html",
-    "image": "images/chicken_tikka2.jpg",
-    "time": "25–35 mins",
-    "servings": 2,
-    "category": "single night",
-    "excerpt": "Crispy crumbed chicken with fresh slaw and a spicy creamy sauce.",
-    "tags": ["quick", "chicken", "crispy", "fresh"],
-    "search": "chicken burger crispy crumbed slaw spicy sauce quick fresh single night",
-    "ingredients": [
-      "2 chicken breasts",
-      "1 cup breadcrumbs",
-      "1 egg",
-      "½ cup red cabbage",
-      "½ cup carrot",
-      "¼ onion",
-      "½ cup Greek yogurt",
-      "2 tbsp mayo",
-      "1 tbsp sriracha",
-      "3 pickles"
-    ]
-  },
-  {
     "title": "Fresh Chicken Power Bowl",
     "url": "recipes/chicken-quinoa-crunch-salad.html",
     "image": "images/chicken supersalad.jpg",
@@ -127,27 +104,6 @@
       "120g feta, crumbled",
       "1 red onion, diced",
       "2 tomatoes, diced"
-    ]
-  },
-  {
-    "title": "Chicken Noodle Soup",
-    "url": "recipes/chicken-noodle-soup.html",
-    "image": "images/beefnoodles.jpg",
-    "time": "2–3 hrs",
-    "servings": 4,
-    "category": "sunday",
-    "excerpt": "Slow-simmered roast chicken broth with ginger, garlic, miso, and noodles.",
-    "tags": ["comfort food", "slow cook", "chicken", "soup", "asian"],
-    "search": "chicken noodle soup broth miso ginger slow simmer noodles comfort food warm",
-    "ingredients": [
-      "1 whole roast chicken",
-      "1 onion",
-      "4 garlic cloves",
-      "1 tbsp ginger",
-      "1 carrot",
-      "2 tbsp miso paste",
-      "200g noodles",
-      "2 spring onions"
     ]
   },
   {
@@ -921,6 +877,42 @@
       "Salt and black pepper, to taste",
       "2 tbsp fresh chives, finely chopped",
       "2 tbsp fresh parsley, finely chopped"
+    ]
+  },
+  {
+    "title": "Taiwanese Braised Beef Noodle Soup",
+    "url": "recipes/taiwanese-beef-noodle-soup.html",
+    "image": "images/beefnoodles.jpg",
+    "time": "2.5–3 hrs",
+    "servings": 4,
+    "category": "sunday",
+    "excerpt": "Beef shank braised for hours in a rich, spiced broth with doubanjiang and star anise, ladled over wheat noodles with bok choy.",
+    "tags": ["comfort food", "slow cook", "beef", "soup", "asian"],
+    "search": "taiwanese braised beef noodle soup shank doubanjiang star anise sichuan pepper bok choy slow cook sunday comfort food",
+    "ingredients": [
+      "1kg beef shank, short rib or chuck, cut into large chunks",
+      "2 tbsp vegetable oil",
+      "3 garlic cloves, smashed",
+      "5 slices fresh ginger",
+      "3 spring onions, cut into 5cm lengths (white and green separated)",
+      "2 tomatoes, quartered",
+      "2 tbsp doubanjiang (spicy fermented broad bean paste)",
+      "2 tbsp tomato paste",
+      "0.5 cup Shaoxing wine",
+      "0.3 cup light soy sauce",
+      "2 tbsp dark soy sauce",
+      "2 tbsp rock sugar (or brown sugar)",
+      "2 star anise",
+      "1 cinnamon stick",
+      "1 tsp Sichuan peppercorns",
+      "2 bay leaves",
+      "1 dried chilli (optional, for heat)",
+      "1.5L beef stock or water",
+      "400g fresh wheat noodles (or dried, if fresh unavailable)",
+      "4 baby bok choy, halved",
+      "2 spring onions, thinly sliced (for garnish)",
+      "2 tbsp pickled mustard greens or Chinese pickled vegetables (optional, for topping)",
+      "1 handful coriander leaves, for garnish"
     ]
   }
 ]

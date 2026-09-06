@@ -433,7 +433,7 @@ function initMealRoulette() {
         // rule under Fruit & Veg instead.
         { name: "Spices & Seasoning", test: /\b(ground|powder|cumin|paprika|turmeric|cinnamon|cayenne|garam masala|chilli flake|cardamom|nutmeg|dried|spice|herb)\b/ },
         { name: "Meat & Seafood", test: /\b(beef|mince|steak|chuck|short rib|chicken|thigh|breast|lamb|pork|bacon|chorizo|sausage|prawn|salmon|fish|guanciale|pancetta)\b/ },
-        { name: "Fruit & Veg", test: /\b(onion|garlic|carrot|potato|capsicum|cucumber|tomato|lettuce|spinach|cabbage|broccolini?|avocado|lemon|lime|mango|ginger|chilli|chili|coriander|parsley|mint|basil|oregano|dill|bean|spring onion|pomegranate|corn|edamame|squash|sweet potato)\b/ },
+        { name: "Fruit & Veg", test: /\b(onion|garlic|carrot|potato|capsicum|cucumber|tomato|lettuce|spinach|cabbage|bok choy|broccolini?|avocado|lemon|lime|mango|ginger|chilli|chili|coriander|parsley|mint|basil|oregano|dill|bean|spring onion|pomegranate|corn|edamame|squash|sweet potato)\b/ },
     ];
 
     function categorizeIngredient(coreName, isCanned) {
