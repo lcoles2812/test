@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Recipes | Common Table</title>
+
+<meta name="description" content="Light, bright recipes built around fresh vegetables, herbs and simple dressings — good for when you don't want anything heavy.">
+<meta property="og:title" content="Fresh Recipes | Common Table">
+<meta property="og:description" content="Light, bright recipes built around fresh vegetables, herbs and simple dressings — good for when you don't want anything heavy.">
+<meta property="og:image" content="https://commontablekitchen.com.au/images/chicken%20supersalad.jpg">
+<meta property="og:url" content="https://commontablekitchen.com.au/fresh.html">
+<meta property="og:type" content="website">
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ff4d2e">
+
+<link rel="canonical" href="https://commontablekitchen.com.au/fresh.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="stylesheet" href="styles.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDM7SCTG3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-TDM7SCTG3K");
+</script>
+<script>
+  window.COMMON_TABLE_COLLECTION = { tag: "fresh" };
+</script>
+</head>
+
+<body>
+<nav>
+  <div class="nav-container">
+    <div class="logo">Common Table</div>
+
+    <button class="nav-toggle-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">☰</button>
+    <div class="nav-links" id="site-nav">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="navRecipesPanel">
+          Recipes
+          <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+      <a href="custom-recipe.html">Custom Recipe</a>
+      <a href="meal-planner.html">Meal Planner</a>
+      <form class="nav-search" action="index.html" method="GET" role="search">
+        <input type="search" name="q" class="nav-search-input" placeholder="Search recipes..." aria-label="Search recipes">
+      </form>
+    </div>
+<div class="nav-dropdown-panel" id="navRecipesPanel">
+      <div class="nav-dropdown-col">
+        <p class="nav-dropdown-heading">By Time of Week</p>
+        <a href="weeknight.html">Weeknight</a>
+        <a href="singlenight.html">Single Night</a>
+        <a href="sunday.html">Sunday</a>
+      </div>
+      <div class="nav-dropdown-col">
+        <p class="nav-dropdown-heading">By What You're After</p>
+        <a href="high-protein.html">High Protein</a>
+        <a href="fresh.html">Fresh</a>
+        <a href="fast.html">Fast</a>
+        <a href="slow-cook.html">Slow Cook</a>
+        <a href="meal-prep.html">Meal Prep</a>
+        <a href="dinner-for-two.html">Dinner for Two</a>
+        <a href="party-food.html">Party Food</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Fresh Recipes</h1>
+  <p class="hero-text">Light, bright dishes built around vegetables, herbs and simple dressings — nothing heavy.</p>
+</header>
+
+<main class="container">
+  <p class="collection-count" id="collectionCount"></p>
+  <div class="recipe-grid" id="collectionGrid"></div>
+</main>
+
+<footer>
+    <div class="footer-social" aria-label="Common Table on social media">
+        <a href="https://instagram.com/commontablekitchen" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://pinterest.com/commontablekitchen" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9.3"/>
+                <text x="12" y="16.5" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="currentColor" stroke="none">P</text>
+            </svg>
+        </a>
+        <a href="mailto:commontableadmin@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 6.5l8 6.2 8-6.2"/></svg>
+        </a>
+    </div>
+    <p class="footer-contact">
+        <a href="mailto:commontableadmin@gmail.com">commontableadmin@gmail.com</a>
+    </p>
+    <p class="footer-copy">© 2026 Common Table • Built for real cooking</p>
+</footer>
+
+<script src="scripts/chat-config.js?v=20260808"></script>
+<script src="scripts/nav.js?v=20260808"></script>
+</body>
+</html>
