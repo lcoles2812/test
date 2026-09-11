@@ -941,5 +941,33 @@
       "1 tbsp mayonnaise",
       "Sriracha, to serve"
     ]
+  },
+  {
+    "title": "Pad Kra Pao Moo Sub (Thai Basil Beef)",
+    "url": "recipes/thai-basil-beef.html",
+    "image": "images/thai basil beef.jpg",
+    "time": "25 mins",
+    "servings": 4,
+    "category": "weeknight",
+    "excerpt": "Authentic Thai basil beef with chilli, garlic, green beans and a quick savoury sauce, served over rice with a fried egg.",
+    "tags": ["high protein", "beef", "thai", "quick", "weeknight"],
+    "search": "pad kra pao thai basil beef chilli garlic spring onion green beans basil fried egg rice authentic",
+    "ingredients": [
+      "600g beef mince",
+      "2 tbsp neutral oil",
+      "2 red chillies, chopped",
+      "4 garlic cloves, chopped",
+      "3 spring onion whites, chopped",
+      "1 tbsp soy sauce",
+      "1 tbsp fish sauce",
+      "1 tbsp oyster sauce",
+      "1 tsp sugar",
+      "1 tbsp dark soy sauce",
+      "1 small handful green beans",
+      "1 cup basil leaves (holy, Thai or sweet)",
+      "1-2 extra chillies, optional",
+      "Cooked rice, to serve",
+      "2 fried eggs, to serve"
+    ]
   }
 ]
