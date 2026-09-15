@@ -2330,6 +2330,8 @@ footer .footer-copy {
     #servings {
         width: 100%;
         margin: 8px 0 10px;
+        accent-color: var(--accent);
+        color: var(--accent);
     }
 
     #servingValue {

@@ -820,6 +820,46 @@
     ]
   },
   {
+    "title": "Lasagne",
+    "url": "recipes/lasagne.html",
+    "image": "images/lasangne.jpeg",
+    "time": "1.5–2 hrs",
+    "servings": 6,
+    "category": "sunday",
+    "excerpt": "Classic beef lasagne layered with bolognese sauce, pasta sheets and creamy homemade bechamel, finished with cheese and fresh basil.",
+    "tags": ["comfort food", "beef", "pasta", "italian", "sunday"],
+    "search": "lasagne lasagna beef bolognese pasta sheets bechamel cheese basil italian comfort food sunday",
+    "ingredients": [
+      "1 batch beef bolognese sauce",
+      "Lasagne pasta sheets",
+      "75g butter",
+      "75g plain flour",
+      "600ml milk",
+      "150g grated cheese",
+      "Basil leaves, to finish"
+    ]
+  },
+  {
+    "title": "Steak Mash and Green Beans",
+    "url": "recipes/steak-mash.html",
+    "image": "images/steakmash.png",
+    "time": "40 mins",
+    "servings": 2,
+    "category": "weeknight",
+    "excerpt": "Seared steak with buttery mashed potato, pan-finished green beans and homemade or packet gravy.",
+    "tags": ["high protein", "beef", "comfort food", "weeknight"],
+    "search": "steak mash mashed potato green beans gravy seared pan grill high protein comfort food weeknight",
+    "ingredients": [
+      "2 steaks",
+      "500g potatoes",
+      "100ml milk",
+      "40g butter",
+      "250g green beans",
+      "Gravy, homemade or packet",
+      "Oil, salt and pepper"
+    ]
+  },
+  {
     "title": "One Pot Creamy Paprika Beef Pasta",
     "url": "recipes/one-pot-creamy-paprika-beef-pasta.html",
     "image": "images/creamy-paprika-beef-pasta.jpg",
@@ -943,7 +983,7 @@
     ]
   },
   {
-    "title": "Pad Kra Pao Moo Sub (Thai Basil Beef)",
+    "title": "Pad Kra Pao (Thai Basil Beef)",
     "url": "recipes/thai-basil-beef.html",
     "image": "images/thai basil beef.jpg",
     "time": "25 mins",
