@@ -820,6 +820,26 @@
     ]
   },
   {
+    "title": "Coconut Braised Beef Red Curry",
+    "url": "recipes/coconut-braised-beef-red-curry.html",
+    "image": "images/coconut beef.jpeg",
+    "time": "2.5–3 hrs",
+    "servings": 6,
+    "category": "sunday",
+    "excerpt": "Chuck steak slowly braised in coconut milk and red curry paste with lemongrass, garlic and spring onion until deeply tender.",
+    "tags": ["slow cook", "beef", "curry", "thai", "comfort food"],
+    "search": "coconut braised beef red curry chuck steak lemongrass garlic spring onion coconut milk thai slow cook",
+    "ingredients": [
+      "1kg chuck steak, cut into large chunks",
+      "2 x 400ml cans coconut milk",
+      "3–4 tbsp red curry paste",
+      "3 garlic cloves, minced",
+      "2 spring onions, chopped",
+      "2 lemongrass stalks, bruised",
+      "500ml beef stock"
+    ]
+  },
+  {
     "title": "Lasagna",
     "url": "recipes/lasagne.html",
     "image": "images/lasangne.jpeg",
