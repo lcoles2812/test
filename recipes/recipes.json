@@ -83,7 +83,7 @@
   {
     "title": "Chipotle Chicken Tacos",
     "url": "recipes/chicken-taco.html",
-    "image": "images/Chicken taco.png",
+    "image": "images/chicken-taco.jpg",
     "time": "25–35 mins",
     "servings": 4,
     "category": "weeknight",
@@ -298,7 +298,7 @@
   {
     "title": "Greek-Style Lamb Pitta",
     "url": "recipes/lamb-pitta.html",
-    "image": "images/lamb pitta.png",
+    "image": "images/lamb-pitta.jpg",
     "time": "45–60 mins",
     "servings": 4,
     "category": "single night",
@@ -335,7 +335,7 @@
   {
     "title": "Korean Fried Chicken",
     "url": "recipes/korean-fried-chicken.html",
-    "image": "images/Korean Fried Chicken.png",
+    "image": "images/korean-fried-chicken.jpg",
     "time": "40–50 mins",
     "servings": 4,
     "category": "single night",
@@ -413,7 +413,7 @@
   {
     "title": "Teriyaki Chicken Poke Bowl",
     "url": "recipes/poke-bowl.html",
-    "image": "images/Poke.png",
+    "image": "images/poke-bowl.jpg",
     "time": "20–30 mins",
     "servings": 2,
     "category": "weeknight",
@@ -870,7 +870,7 @@
   {
     "title": "Steak Mash and Green Beans",
     "url": "recipes/steak-mash.html",
-    "image": "images/steakmash.png",
+    "image": "images/steak-mash.jpg",
     "time": "40 mins",
     "servings": 2,
     "category": "weeknight",

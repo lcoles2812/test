@@ -796,10 +796,34 @@ function initCollectionGrid() {
             matches.forEach(recipe => {
                 grid.appendChild(createCollectionRecipeCard(recipe));
             });
+
+            addCollectionItemListSchema(matches);
         })
         .catch(error => {
             console.error("Unable to load collection recipes", error);
         });
+}
+
+// Collection grids are built client-side, so describe them to search engines here
+// rather than in a hand-maintained list that goes stale as recipes are added.
+function addCollectionItemListSchema(recipes) {
+    const heading = document.querySelector("h1");
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": heading ? heading.textContent.trim() : document.title,
+        "itemListElement": recipes.map((recipe, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": recipe.title,
+            "url": `https://commontablekitchen.com.au/${recipe.url}`
+        }))
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
 }
 
 function collectionMatches(recipe, config) {
