@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
   <url>
     <loc>https://commontablekitchen.com.au/</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Category Pages -->
   <url>
     <loc>https://commontablekitchen.com.au/weeknight.html</loc>
     <lastmod>2026-08-05</lastmod>
@@ -28,6 +25,41 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://commontablekitchen.com.au/high-protein.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/fresh.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/fast.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/slow-cook.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/meal-prep.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/dinner-for-two.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/party-food.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://commontablekitchen.com.au/custom-recipe.html</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -39,8 +71,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Recipe Pages -->
   <url>
     <loc>https://commontablekitchen.com.au/recipes/beef-ragu.html</loc>
     <lastmod>2026-08-24</lastmod>
@@ -238,9 +268,26 @@
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://commontablekitchen.com.au/recipes/thai-basil-beef.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url></urlset>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/recipes/coconut-braised-beef-red-curry.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/recipes/lasagne.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://commontablekitchen.com.au/recipes/steak-mash.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
