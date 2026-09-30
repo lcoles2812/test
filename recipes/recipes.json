@@ -1037,5 +1037,35 @@
       "Cooked rice, to serve",
       "2 fried eggs, to serve"
     ]
+  },
+  {
+    "title": "Chicken Pesto Pasta",
+    "url": "recipes/chicken-pesto-pasta.html",
+    "image": "images/chicken-pesto-pasta.jpg",
+    "time": "30–35 mins",
+    "servings": 4,
+    "category": "weeknight",
+    "excerpt": "Rigatoni in homemade basil pesto with golden chicken thighs and blistered cherry tomatoes.",
+    "tags": [
+      "high protein",
+      "chicken",
+      "pasta",
+      "italian",
+      "quick",
+      "meal prep"
+    ],
+    "search": "chicken pesto pasta basil pesto rigatoni chicken thighs cherry tomatoes pine nuts walnuts parmesan garlic italian weeknight",
+    "ingredients": [
+      "650g boneless, skinless chicken thighs, cut into bite-sized pieces",
+      "400g rigatoni",
+      "250g cherry tomatoes, halved",
+      "70g basil leaves (about 2 bunches)",
+      "40g pine nuts (or walnuts)",
+      "30g Parmesan, finely grated, plus extra to serve",
+      "2 garlic cloves",
+      "120ml extra virgin olive oil, for the pesto",
+      "1 tbsp olive oil, for the chicken",
+      "1 tsp salt, plus black pepper to taste"
+    ]
   }
 ]
