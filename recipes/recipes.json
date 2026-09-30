@@ -1062,5 +1062,36 @@
       "1 tbsp olive oil, for the chicken",
       "1 tsp salt, plus black pepper to taste"
     ]
+  },
+  {
+    "title": "Seared Salmon Pearl Couscous Bowl",
+    "url": "recipes/salmon-couscous-bowl.html",
+    "image": "images/salmon-couscous-bowl.jpg",
+    "time": "25–30 mins",
+    "servings": 4,
+    "category": "weeknight",
+    "excerpt": "Crispy-skin salmon over a lemony pearl couscous salad with tomato, cucumber, greens and feta.",
+    "tags": [
+      "high protein",
+      "fresh",
+      "seafood",
+      "quick",
+      "meal prep",
+      "mediterranean"
+    ],
+    "search": "seared salmon crispy skin pearl couscous salad bowl cherry tomato cucumber spinach rocket parsley lemon olive oil dressing feta mediterranean fresh",
+    "ingredients": [
+      "600g skin-on salmon fillets",
+      "1 tbsp olive oil, for the salmon",
+      "300g pearl couscous",
+      "250g cherry tomatoes, halved",
+      "1 Lebanese cucumber, diced",
+      "60g baby spinach and rocket",
+      "20g flat-leaf parsley, chopped (plus extra to serve)",
+      "60ml extra virgin olive oil, for the dressing",
+      "3 tbsp lemon juice (about 1 lemon)",
+      "1 tsp salt, plus black pepper to taste",
+      "100g feta, crumbled"
+    ]
   }
 ]
