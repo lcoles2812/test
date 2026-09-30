@@ -1093,5 +1093,34 @@
       "1 tsp salt, plus black pepper to taste",
       "100g feta, crumbled"
     ]
+  },
+  {
+    "title": "Classic Beef Burger",
+    "url": "recipes/beef-burger.html",
+    "image": "images/beef-burger.jpg",
+    "time": "20–25 mins",
+    "servings": 4,
+    "category": "weeknight",
+    "excerpt": "Salt-and-pepper beef patties with melted cheddar, aioli, relish and fresh salad in a toasted brioche bun.",
+    "tags": [
+      "beef",
+      "high protein",
+      "quick",
+      "comfort food",
+      "sharing"
+    ],
+    "search": "classic beef burger cheeseburger homemade patty mince cheddar aioli relish brioche bun rocket tomato red onion bbq weeknight",
+    "ingredients": [
+      "600g beef mince (ideally 20% fat)",
+      "1 tsp salt, plus black pepper to taste",
+      "1 tbsp olive oil",
+      "4 slices cheddar",
+      "4 brioche buns, halved",
+      "4 tbsp aioli",
+      "4 tbsp tomato relish",
+      "1 large tomato, sliced",
+      "0.5 red onion, thinly sliced into rings",
+      "30g rocket"
+    ]
   }
 ]
