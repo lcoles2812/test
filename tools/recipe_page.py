@@ -216,12 +216,12 @@ def render(spec):
     if spec.get("related"):
         out.append("""
 <!-- RELATED -->
-<h2 class="section-title">You Might Also Like</h2>
+<h2 class="section-title">Related Recipes</h2>
 
 <ul class="text-muted">
 """)
         for rel_slug, rel_title, why in spec["related"]:
-            out.append(f'  <li><a href="{rel_slug}.html">{txt(rel_title)}</a>: {txt(why)}</li>\n')
+            out.append(f'  <li><a href="{rel_slug}.html">{txt(rel_title)}</a> — {txt(why)}</li>\n')
         out.append("</ul>\n")
     out.append("\n</div>\n\n" + SCALE_SCRIPT % spec["servings"] + FOOTER)
     return "".join(out)
