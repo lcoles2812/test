@@ -1,0 +1,50 @@
+{
+  "slug": "steak-mash",
+  "title": "Steak Mash and Green Beans",
+  "description": "Seared steak with buttery mashed potato, pan-finished green beans and homemade or packet gravy.",
+  "image": "steak-mash.jpg",
+  "alt": "Steak with mashed potato, green beans and gravy",
+  "datePublished": "2026-09-15",
+  "prepTime": "PT15M",
+  "cookTime": "PT25M",
+  "totalTime": "PT40M",
+  "servings": 2,
+  "maxServings": 6,
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "British",
+  "keywords": "steak and mash, steak dinner, mashed potato, green beans, gravy, comfort food, high protein",
+  "quickStats": "40 mins • High Protein",
+  "intro": [
+    "A proper comfort-food plate: steak seared in a hot pan or on the grill, buttery mash, beans finished in the pan and plenty of gravy.",
+    "It feels like a treat but only takes about 40 minutes, and most of that is the potatoes boiling while you get everything else ready.",
+    "The secret is a properly hot pan and a bit of patience. Dry the steaks well, leave them alone until they've built a crust, and always let them rest before serving."
+  ],
+  "ingredients": [
+    [2, "", "steaks (about 250g each, such as scotch fillet or rump)"],
+    [500, "g", "potatoes, peeled and chopped"],
+    [100, "ml", "milk"],
+    [40, "g", "butter"],
+    [250, "g", "green beans, trimmed"],
+    [1, "batch", "gravy, homemade or packet"],
+    [1, "tbsp", "oil, plus salt and pepper"]
+  ],
+  "steps": [
+    ["Make the mash", "Peel and chop the potatoes. Boil in salted water until tender, drain well, then mash with the milk and butter. Season and keep warm."],
+    ["Cook the steak", "Pat the steaks dry and season generously. Sear in a very hot pan or cook on a hot grill until done to your liking. Rest for 5 to 10 minutes before serving."],
+    ["Finish the beans", "Boil the beans in salted water until just tender, then drain. Add them to the steak pan and sear briefly so they pick up the browned flavour."],
+    ["Make the gravy", "Use the pan juices for a homemade gravy, or prepare a packet gravy. Serve generously over the steak and mash."]
+  ],
+  "nutrients": "Steak is one of the best sources of easily absorbed iron and zinc, along with plenty of protein and vitamin B12. Potatoes add potassium and vitamin C, and the green beans bring fibre, folate and vitamin K.",
+  "swaps": [
+    ["Richer mash", "add extra butter or replace some of the milk with cream."],
+    ["Sweet potato mash", "swap some or all of the potatoes for sweet potato."],
+    ["Different greens", "broccolini, asparagus or peas all work in place of the beans."],
+    ["Sauce swap", "a peppercorn or mushroom sauce instead of gravy."],
+    ["Choosing a cut", "scotch fillet for flavour, eye fillet for tenderness, or rump if you're on a budget."]
+  ],
+  "related": [
+    ["steak-bowl", "Steak and Veg", "a lighter steak dinner with sweet potato and broccolini."],
+    ["crispy-skin-salmon-mash-carrots-spinach", "Crispy Skin Salmon with Sweet Potato Mash", "another classic protein-and-mash plate."],
+    ["steak-tacos", "Steak Tacos with Homemade Guac", "a fun way to use the same seared steak."]
+  ]
+}

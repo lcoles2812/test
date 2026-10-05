@@ -1,0 +1,122 @@
+{
+  "slug": "beef-burger",
+  "title": "Classic Beef Burger",
+  "description": "Juicy salt-and-pepper beef patties with melted cheddar, aioli, relish, rocket, tomato and red onion in a toasted brioche bun.",
+  "image": "beef-burger.jpg",
+  "alt": "Beef burger with melted cheddar, red onion, tomato and rocket in a brioche bun",
+  "datePublished": "2026-09-30",
+  "prepTime": "PT10M",
+  "cookTime": "PT15M",
+  "totalTime": "PT25M",
+  "servings": 4,
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "American",
+  "keywords": "beef burger, cheeseburger, homemade burger, cheddar, aioli, relish, brioche bun, weeknight dinner",
+  "quickStats": "20–25 mins • Weeknight",
+  "intro": [
+    "A proper homemade cheeseburger: a thick, well-crusted beef patty seasoned with nothing but salt and pepper, melted cheddar, garlicky aioli, tomato relish and fresh rocket, tomato and red onion, all in a toasted brioche bun.",
+    "Good beef doesn't need much. Mince with around 20% fat keeps the patties juicy, and seasoning just before they hit the pan gives the best crust.",
+    "Get the pan properly hot and leave the patties alone until they release easily. That dark crust is where all the flavour is."
+  ],
+  "ingredients": [
+    [
+      600,
+      "g",
+      "beef mince (ideally 20% fat)"
+    ],
+    [
+      1,
+      "tsp",
+      "salt, plus black pepper to taste"
+    ],
+    [
+      1,
+      "tbsp",
+      "olive oil"
+    ],
+    [
+      4,
+      "",
+      "slices cheddar"
+    ],
+    [
+      4,
+      "",
+      "brioche buns, halved"
+    ],
+    [
+      4,
+      "tbsp",
+      "aioli"
+    ],
+    [
+      4,
+      "tbsp",
+      "tomato relish"
+    ],
+    [
+      1,
+      "",
+      "large tomato, sliced"
+    ],
+    [
+      0.5,
+      "",
+      "red onion, thinly sliced into rings"
+    ],
+    [
+      30,
+      "g",
+      "rocket"
+    ]
+  ],
+  "steps": [
+    [
+      "Shape the patties",
+      "Divide the mince into 4 and gently shape into patties about 2cm thick and a little wider than your buns. Press a shallow dent into the middle of each with your thumb so they stay flat as they cook. Don't overwork the meat or the burgers will be tough."
+    ],
+    [
+      "Prep the toppings",
+      "Slice the tomato and red onion, and have the rocket, aioli and relish ready to go."
+    ],
+    [
+      "Toast the buns",
+      "Place the buns cut-side down in a dry frying pan over medium heat for 1-2 minutes until golden. Set aside."
+    ],
+    [
+      "Cook the patties",
+      "Season the patties generously on both sides with salt and pepper just before cooking. Heat the oil in a heavy pan or on the BBQ over high heat and cook for 3-4 minutes without moving them, until a dark crust forms. Flip and cook for another 3-4 minutes until cooked through."
+    ],
+    [
+      "Melt the cheese",
+      "Lay a slice of cheddar on each patty for the last minute of cooking and cover with a lid so it melts."
+    ],
+    [
+      "Build the burgers",
+      "Spread aioli on the bottom buns and top with rocket, tomato and red onion. Add the cheesy patty, spread relish on the top bun and close it up."
+    ]
+  ],
+  "nutrients": "Beef is one of the best sources of easily absorbed iron and zinc, along with plenty of protein and vitamin B12. The cheddar adds calcium, and the rocket, tomato and red onion bring some freshness, vitamin C and fibre to balance the richness.",
+  "swaps": [
+    [
+      "Smash burgers",
+      "roll the mince into balls and smash them thin in a very hot pan for extra crispy edges. Cook two per burger."
+    ],
+    [
+      "Add extras",
+      "bacon, pickles, a fried egg or caramelised onions all work well."
+    ],
+    [
+      "Different cheese",
+      "Swiss, Havarti or American-style slices melt beautifully too."
+    ],
+    [
+      "Lighter option",
+      "skip the bun and serve the patty in lettuce cups or over a big salad."
+    ],
+    [
+      "Make ahead",
+      "shape the patties up to a day ahead and keep covered in the fridge, or freeze them between sheets of baking paper."
+    ]
+  ]
+}
