@@ -9,6 +9,7 @@
   "cookTime": "PT1H",
   "totalTime": "PT1H30M",
   "servings": 6,
+  "calories": 730,
   "maxServings": 10,
   "recipeCategory": "Main Course",
   "recipeCuisine": "Italian",
@@ -20,33 +21,106 @@
     "Don't skip the rest at the end. Ten to fifteen minutes out of the oven lets the layers set, so you get clean slices instead of a sloppy pile."
   ],
   "ingredients": [
-    [1, "batch", "beef bolognese sauce"],
-    [1, "pack", "lasagna sheets (about 250g)"],
-    [75, "g", "butter"],
-    [75, "g", "plain flour"],
-    [600, "ml", "milk"],
-    [150, "g", "grated cheese"],
-    [1, "handful", "basil leaves"]
+    [
+      1,
+      "batch",
+      "beef bolognese sauce"
+    ],
+    [
+      1,
+      "pack",
+      "lasagna sheets (about 250g)"
+    ],
+    [
+      75,
+      "g",
+      "butter"
+    ],
+    [
+      75,
+      "g",
+      "plain flour"
+    ],
+    [
+      600,
+      "ml",
+      "milk"
+    ],
+    [
+      150,
+      "g",
+      "grated cheese"
+    ],
+    [
+      1,
+      "handful",
+      "basil leaves"
+    ]
   ],
   "steps": [
-    ["Make the meat sauce", "Prepare the beef bolognese sauce and let it cool slightly so it is easier to layer."],
-    ["Make the bechamel", "Melt the butter in a saucepan. Stir in the flour and cook for 1 minute, then gradually whisk in the milk. Cook until smooth and thickened, seasoning to taste."],
-    ["Layer the lasagna", "Spread meat sauce over the base of a baking dish, add pasta sheets, then bechamel. Repeat the layers, finishing this stage with meat sauce."],
-    ["Bake covered", "Cover with foil and bake at 180°C for 30 to 40 minutes, until the pasta is tender and the sauce is bubbling."],
-    ["Finish uncovered", "Remove the foil. Add the final layer of bechamel and scatter over the cheese. Bake uncovered for another 15 to 20 minutes until golden."],
-    ["Rest and serve", "Rest for 10 to 15 minutes, then top with basil leaves and slice."]
+    [
+      "Make the meat sauce",
+      "Prepare the beef bolognese sauce and let it cool slightly so it is easier to layer."
+    ],
+    [
+      "Make the bechamel",
+      "Melt the butter in a saucepan. Stir in the flour and cook for 1 minute, then gradually whisk in the milk. Cook until smooth and thickened, seasoning to taste."
+    ],
+    [
+      "Layer the lasagna",
+      "Spread meat sauce over the base of a baking dish, add pasta sheets, then bechamel. Repeat the layers, finishing this stage with meat sauce."
+    ],
+    [
+      "Bake covered",
+      "Cover with foil and bake at 180°C for 30 to 40 minutes, until the pasta is tender and the sauce is bubbling."
+    ],
+    [
+      "Finish uncovered",
+      "Remove the foil. Add the final layer of bechamel and scatter over the cheese. Bake uncovered for another 15 to 20 minutes until golden."
+    ],
+    [
+      "Rest and serve",
+      "Rest for 10 to 15 minutes, then top with basil leaves and slice."
+    ]
   ],
   "nutrients": "The beef bolognese brings plenty of protein, iron and zinc, while the milk and cheese in the bechamel add calcium. Slow-cooked tomatoes are a great source of lycopene. It's a rich, comforting dish, so serve it with a simple green salad.",
   "swaps": [
-    ["Cheese blend", "use a mix of mozzarella for stretch and Parmesan for flavour."],
-    ["Add greens", "layer in some wilted spinach or a ricotta and spinach mix."],
-    ["Vegetarian", "swap the bolognese for a lentil and mushroom ragù."],
-    ["Fresh pasta sheets", "they don't need pre-cooking and give a softer, silkier lasagna."],
-    ["Make ahead", "assemble a day ahead and bake when needed, or freeze individual portions once cooked."]
+    [
+      "Cheese blend",
+      "use a mix of mozzarella for stretch and Parmesan for flavour."
+    ],
+    [
+      "Add greens",
+      "layer in some wilted spinach or a ricotta and spinach mix."
+    ],
+    [
+      "Vegetarian",
+      "swap the bolognese for a lentil and mushroom ragù."
+    ],
+    [
+      "Fresh pasta sheets",
+      "they don't need pre-cooking and give a softer, silkier lasagna."
+    ],
+    [
+      "Make ahead",
+      "assemble a day ahead and bake when needed, or freeze individual portions once cooked."
+    ]
   ],
   "related": [
-    ["bolognese", "Beef Bolognese", "the meat sauce this lasagna is built on."],
-    ["beef-ragu", "Beef Ragù", "another slow-cooked Sunday pasta."],
-    ["one-pot-creamy-paprika-beef-pasta", "One Pot Creamy Paprika Beef Pasta", "a quicker baked-pasta-style weeknight option."]
+    [
+      "bolognese",
+      "Beef Bolognese",
+      "the meat sauce this lasagna is built on."
+    ],
+    [
+      "beef-ragu",
+      "Beef Ragù",
+      "another slow-cooked Sunday pasta."
+    ],
+    [
+      "one-pot-creamy-paprika-beef-pasta",
+      "One Pot Creamy Paprika Beef Pasta",
+      "a quicker baked-pasta-style weeknight option."
+    ]
   ]
 }

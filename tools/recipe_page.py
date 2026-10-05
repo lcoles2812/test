@@ -98,6 +98,8 @@ def render(spec):
         "recipeIngredient": ingredient_text,
         "recipeInstructions": [{"@type": "HowToStep", "text": f"{h}: {t}"} for h, t in spec["steps"]],
     }
+    if spec.get("calories"):
+        recipe["nutrition"] = {"@type": "NutritionInformation", "calories": f"{spec['calories']} calories"}
     crumbs = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -204,7 +206,8 @@ def render(spec):
 <p class="text-muted">
 {txt(spec['nutrients'])}
 </p>
-
+""" + (f"""<p class="text-muted"><strong>Approx. calories:</strong> about {spec['calories']} kcal per serve</p>
+""" if spec.get("calories") else "") + f"""
 <!-- SMART SWAPS -->
 <h2 class="section-title">Smart Swaps & Variations</h2>
 
