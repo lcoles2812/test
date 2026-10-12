@@ -77,8 +77,13 @@ def render(spec):
     url = f"{SITE}recipes/{slug}.html"
     image_url = f"{SITE}images/{spec['image']}"
     title, desc = spec["title"], spec["description"]
-    ingredients = [(fmt(a), unit_attr(u), n) for a, u, n in spec["ingredients"]]
-    ingredient_text = [f"{a}{u} {n}" for a, u, n in ingredients]
+    # Ingredients are either one flat list of [amount, unit, name], or a list of
+    # {"heading": ..., "items": [...]} groups shown under their own subheadings.
+    grouped = isinstance(spec["ingredients"][0], dict)
+    groups = spec["ingredients"] if grouped else [{"heading": None, "items": spec["ingredients"]}]
+    for group in groups:
+        group["rows"] = [(fmt(a), unit_attr(u), n) for a, u, n in group["items"]]
+    ingredient_text = [f"{a}{u} {n}" for g in groups for a, u, n in g["rows"]]
 
     recipe = {
         "@context": "https://schema.org/",
@@ -168,7 +173,7 @@ def render(spec):
 <!-- SERVINGS -->
 <h2 class="section-title">Servings</h2>
 
-<input id="servings" type="range" min="1" max="{spec.get('maxServings', 8)}" value="{spec['servings']}">
+<input id="servings" type="range" min="{spec.get('minServings', 1)}" max="{spec.get('maxServings', 8)}" value="{spec['servings']}">
 <p><span id="servingValue">{spec['servings']}</span> servings</p>
 
 <!-- QUICK STATS -->
@@ -177,15 +182,17 @@ def render(spec):
 
 <!-- INGREDIENTS -->
 <h2 class="section-title">Ingredients</h2>
-
-<ul id="ingredients">
-
 """]
-    for (a, u, n), text in zip(ingredients, ingredient_text):
-        out.append(f'  <li data-amount="{a}" data-unit="{u}" data-name="{esc(n)}">{html.escape(text, quote=False)}</li>\n')
+    for i, group in enumerate(groups, 1):
+        if grouped:
+            out.append(f'\n<h3 class="section-subtitle">{txt(group["heading"])}</h3>\n<ul id="ingredients-{i}">\n')
+        else:
+            out.append('\n<ul id="ingredients">\n\n')
+        for a, u, n in group["rows"]:
+            out.append(f'  <li data-amount="{a}" data-unit="{u}" data-name="{esc(n)}">{html.escape(f"{a}{u} {n}", quote=False)}</li>\n')
+        out.append("" if grouped else "\n")
+        out.append("</ul>\n")
     out.append("""
-</ul>
-
 <!-- METHOD -->
 <h2 class="section-title">Method</h2>
 
@@ -226,7 +233,10 @@ def render(spec):
         for rel_slug, rel_title, why in spec["related"]:
             out.append(f'  <li><a href="{rel_slug}.html">{txt(rel_title)}</a> — {txt(why)}</li>\n')
         out.append("</ul>\n")
-    out.append("\n</div>\n\n" + SCALE_SCRIPT % spec["servings"] + FOOTER)
+    script = SCALE_SCRIPT % spec["servings"]
+    if grouped:
+        script = script.replace('querySelectorAll("#ingredients li")', 'querySelectorAll("[id^=\'ingredients-\'] li")')
+    out.append("\n</div>\n\n" + script + FOOTER)
     return "".join(out)
 
 

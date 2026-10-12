@@ -1,0 +1,255 @@
+{
+  "slug": "chilli-con-carne",
+  "title": "Slow Cooked Beef Chilli Con Carne",
+  "description": "A rich, smoky chilli with chipotle, black beans and a herb bundle, simmered low and slow, then topped with sour cream and fresh coriander.",
+  "image": "chilli-con-carne.jpg",
+  "alt": "Beef chilli con carne over rice with sour cream, coriander and a lime wedge",
+  "datePublished": "2026-10-12",
+  "prepTime": "PT25M",
+  "cookTime": "PT2H45M",
+  "totalTime": "PT3H10M",
+  "servings": 8,
+  "calories": 700,
+  "minServings": 4,
+  "maxServings": 16,
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "Mexican",
+  "keywords": "chilli con carne, beef chilli, slow cooked chilli, chipotle, black beans, meal prep, batch cooking, sunday cooking",
+  "quickStats": "About 3 hrs 10 mins • Slow Cook",
+  "intro": [
+    "A rich, smoky chilli with chipotle, black beans and a herb bundle, simmered low and slow, then topped with sour cream and fresh coriander.",
+    "The flavour comes in layers: deeply browned mince, spices toasted with the tomato paste, chipotle for smokiness, and a spoonful of cocoa that adds depth without tasting like chocolate. Two hours on the lowest heat brings it all together.",
+    "It makes eight serves and tastes even better the next day, so it's perfect for a Sunday cook-up that covers lunches for the week."
+  ],
+  "ingredients": [
+    {
+      "heading": "Chilli",
+      "items": [
+        [
+          3,
+          "tbsp",
+          "olive oil, divided"
+        ],
+        [
+          1,
+          "kg",
+          "beef mince"
+        ],
+        [
+          2,
+          "",
+          "large brown onions, finely diced"
+        ],
+        [
+          1,
+          "",
+          "red capsicum, diced"
+        ],
+        [
+          1,
+          "",
+          "jalapeño, finely diced (leave the seeds in for more heat)"
+        ],
+        [
+          5,
+          "",
+          "garlic cloves, minced"
+        ],
+        [
+          3,
+          "tbsp",
+          "tomato paste"
+        ],
+        [
+          2,
+          "tbsp",
+          "smoked paprika"
+        ],
+        [
+          1,
+          "tbsp",
+          "ground cumin"
+        ],
+        [
+          1,
+          "tsp",
+          "ground coriander"
+        ],
+        [
+          0.25,
+          "tsp",
+          "ground cinnamon"
+        ],
+        [
+          1,
+          "tsp",
+          "chilli powder (adjust to taste)"
+        ],
+        [
+          2,
+          "",
+          "chipotle peppers in adobo, chopped"
+        ],
+        [
+          1,
+          "tbsp",
+          "adobo sauce (from the chipotle tin)"
+        ],
+        [
+          800,
+          "g",
+          "crushed tomatoes"
+        ],
+        [
+          250,
+          "ml",
+          "beef stock"
+        ],
+        [
+          1,
+          "tbsp",
+          "unsweetened cocoa powder"
+        ],
+        [
+          1.5,
+          "tsp",
+          "salt"
+        ],
+        [
+          0.5,
+          "tsp",
+          "black pepper"
+        ],
+        [
+          400,
+          "g",
+          "canned black beans, drained and rinsed"
+        ],
+        [
+          1,
+          "tbsp",
+          "lime juice, to finish"
+        ]
+      ]
+    },
+    {
+      "heading": "Herb Bundle",
+      "items": [
+        [
+          4,
+          "sprigs",
+          "fresh oregano"
+        ],
+        [
+          2,
+          "",
+          "bay leaves"
+        ],
+        [
+          3,
+          "",
+          "whole cloves"
+        ]
+      ]
+    },
+    {
+      "heading": "To Serve",
+      "items": [
+        [
+          120,
+          "g",
+          "sour cream"
+        ],
+        [
+          10,
+          "g",
+          "fresh coriander, chopped"
+        ],
+        [
+          1,
+          "",
+          "lime, cut into wedges (optional)"
+        ],
+        [
+          3,
+          "cups",
+          "basmati or jasmine rice (uncooked), cooked to serve"
+        ]
+      ]
+    }
+  ],
+  "steps": [
+    [
+      "Make the herb bundle",
+      "Wrap the oregano sprigs and cloves inside the bay leaves and tie tightly with kitchen twine, leaving a long tail so it's easy to remove later."
+    ],
+    [
+      "Brown the mince",
+      "Heat 2 tbsp of the olive oil in a large heavy pot over high heat. Brown the mince in two batches, breaking it up and letting it get deeply browned and crusty, about 7-8 minutes per batch. Remove to a bowl."
+    ],
+    [
+      "Soften the vegetables",
+      "Reduce the heat to medium. Add the remaining oil, onions, capsicum, jalapeño and garlic. Cook for about 8 minutes, scraping up the browned bits, until soft and sweet."
+    ],
+    [
+      "Toast the spices",
+      "Stir in the tomato paste, smoked paprika, cumin, ground coriander, cinnamon, chilli powder and chipotle with its sauce. Cook for 1-2 minutes until fragrant and the paste darkens slightly."
+    ],
+    [
+      "Build the base",
+      "Return the mince to the pot with any juices. Add the crushed tomatoes, beef stock, cocoa, salt and pepper, then nestle in the herb bundle. Stir well and bring to a gentle boil."
+    ],
+    [
+      "Slow simmer",
+      "Reduce to the lowest heat with the lid slightly ajar. Simmer for about 2 hours, stirring every 20-30 minutes and adding a splash of water or stock if it gets too thick."
+    ],
+    [
+      "Add the beans",
+      "Remove the herb bundle, pressing it against the side of the pot to squeeze out the flavour. Stir in the black beans and simmer uncovered for 20-30 minutes until thick and spoonable."
+    ],
+    [
+      "Finish and serve",
+      "Stir through the lime juice, then taste and adjust the salt and heat. Serve over rice, topped with sour cream, fresh coriander and a lime wedge."
+    ]
+  ],
+  "nutrients": "Beef mince brings plenty of protein, iron, zinc and vitamin B12, while black beans add fibre, plant protein and folate. Tomatoes, capsicum and lime give a good hit of vitamin C, and the long simmer makes the tomatoes' lycopene easier to absorb.",
+  "swaps": [
+    [
+      "Kidney beans",
+      "use red kidney beans instead of black beans, or a mix of both."
+    ],
+    [
+      "Slow cooker",
+      "after toasting the spices, transfer everything to a slow cooker and cook on low for 6-8 hours. Add the beans for the last 30 minutes."
+    ],
+    [
+      "Turn the heat up or down",
+      "add more chipotle and keep the jalapeño seeds for heat, or skip the chilli powder for a milder, family-friendly pot."
+    ],
+    [
+      "Different bases",
+      "serve with tortilla chips, in burritos, over a baked potato or with cornbread instead of rice."
+    ],
+    [
+      "Meal prep",
+      "keeps for 4 days in the fridge and freezes well for up to 3 months. Freeze in portions with or without the rice."
+    ]
+  ],
+  "related": [
+    [
+      "pulled-beef-tacos",
+      "Pulled Beef Tacos",
+      "another low-and-slow Mexican beef dish."
+    ],
+    [
+      "beef-mince-burrito-bowl",
+      "Beef Mince Burrito Bowl",
+      "the same smoky flavours in a quick weeknight bowl."
+    ],
+    [
+      "beef-ragu",
+      "Beef Ragù",
+      "another slow-simmered Sunday cook-up."
+    ]
+  ]
+}

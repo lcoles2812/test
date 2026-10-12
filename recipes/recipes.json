@@ -1125,5 +1125,52 @@
       "0.5 red onion, thinly sliced into rings",
       "30g rocket"
     ]
+  },
+  {
+    "title": "Slow Cooked Beef Chilli Con Carne",
+    "url": "recipes/chilli-con-carne.html",
+    "image": "images/chilli-con-carne.jpg",
+    "time": "About 3 hrs",
+    "servings": 8,
+    "category": "sunday",
+    "excerpt": "Smoky beef chilli with chipotle and black beans, simmered low and slow and topped with sour cream and coriander.",
+    "tags": [
+      "slow cook",
+      "beef",
+      "mexican",
+      "comfort food",
+      "meal prep"
+    ],
+    "search": "slow cooked beef chilli con carne mince chipotle adobo black beans smoked paprika cumin cocoa jalapeno sour cream coriander rice mexican batch cooking",
+    "ingredients": [
+      "3 tbsp olive oil, divided",
+      "1kg beef mince",
+      "2 large brown onions, finely diced",
+      "1 red capsicum, diced",
+      "1 jalapeño, finely diced (leave the seeds in for more heat)",
+      "5 garlic cloves, minced",
+      "3 tbsp tomato paste",
+      "2 tbsp smoked paprika",
+      "1 tbsp ground cumin",
+      "1 tsp ground coriander",
+      "0.25 tsp ground cinnamon",
+      "1 tsp chilli powder (adjust to taste)",
+      "2 chipotle peppers in adobo, chopped",
+      "1 tbsp adobo sauce (from the chipotle tin)",
+      "800g crushed tomatoes",
+      "250ml beef stock",
+      "1 tbsp unsweetened cocoa powder",
+      "1.5 tsp salt",
+      "0.5 tsp black pepper",
+      "400g canned black beans, drained and rinsed",
+      "1 tbsp lime juice, to finish",
+      "4 sprigs fresh oregano",
+      "2 bay leaves",
+      "3 whole cloves",
+      "120g sour cream",
+      "10g fresh coriander, chopped",
+      "1 lime, cut into wedges (optional)",
+      "3 cups basmati or jasmine rice (uncooked), cooked to serve"
+    ]
   }
 ]
