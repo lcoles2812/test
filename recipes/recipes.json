@@ -1172,5 +1172,48 @@
       "1 lime, cut into wedges (optional)",
       "3 cups basmati or jasmine rice (uncooked), cooked to serve"
     ]
+  },
+  {
+    "title": "Beef Keema Matar",
+    "url": "recipes/beef-keema-matar.html",
+    "image": "images/beef-keema-matar.jpg",
+    "time": "About 1 hr 20 mins",
+    "servings": 6,
+    "category": "weeknight",
+    "excerpt": "Fragrant Indian beef mince and pea curry with whole spices, browned onions and tomato, finished with garam masala and coriander.",
+    "tags": [
+      "curry",
+      "beef",
+      "indian",
+      "high protein",
+      "meal prep"
+    ],
+    "search": "beef keema matar mince peas indian curry ghee cumin cardamom cinnamon cloves bay ginger garlic green chilli turmeric kashmiri chilli tomato yoghurt garam masala coriander lemon basmati rice naan",
+    "ingredients": [
+      "2 tbsp ghee or neutral oil",
+      "1 tsp cumin seeds",
+      "1 cinnamon stick",
+      "4 green cardamom pods, lightly crushed",
+      "4 whole cloves",
+      "2 bay leaves",
+      "2 large brown onions, finely diced",
+      "4 garlic cloves, minced",
+      "1 tbsp fresh ginger, minced",
+      "2 green chillies, finely chopped (adjust to heat)",
+      "2 tsp ground coriander",
+      "2 tsp ground cumin",
+      "1 tsp ground turmeric",
+      "2 tsp Kashmiri chilli powder (or 1 tsp regular chilli powder)",
+      "1kg lean beef mince",
+      "400g crushed or diced tomatoes (1 can)",
+      "0.5 cups plain yoghurt, whisked",
+      "2 tsp salt",
+      "1 cup hot water",
+      "300g frozen peas",
+      "2 tsp garam masala",
+      "1 tbsp lemon juice, to finish",
+      "0.5 cups fresh coriander, chopped",
+      "2 cups basmati rice (uncooked), cooked to serve, or naan"
+    ]
   }
 ]
