@@ -1215,5 +1215,36 @@
       "0.5 cups fresh coriander, chopped",
       "2 cups basmati rice (uncooked), cooked to serve, or naan"
     ]
+  },
+  {
+    "title": "Thai Red Chicken Curry",
+    "url": "recipes/thai-red-chicken-curry.html",
+    "image": "images/thai-red-chicken-curry.jpg",
+    "time": "30\u201335 mins",
+    "servings": 3,
+    "category": "weeknight",
+    "excerpt": "Quick, creamy Thai red curry with chicken thighs, broccoli and capsicum, topped with Thai basil, coriander and chilli.",
+    "tags": [
+      "quick",
+      "curry",
+      "thai",
+      "chicken",
+      "high protein"
+    ],
+    "search": "thai red chicken curry coconut milk broccoli capsicum red curry paste fish sauce thai basil coriander chilli jasmine rice quick weeknight",
+    "ingredients": [
+      "600g chicken thighs, sliced",
+      "1 tbsp neutral oil",
+      "2 tbsp Thai red curry paste (adjust to heat)",
+      "400ml coconut milk",
+      "4 garlic cloves, minced",
+      "1 red capsicum, sliced",
+      "1 head of broccoli, cut into small florets",
+      "1 tbsp fish sauce",
+      "1 tsp brown or palm sugar (optional)",
+      "1 small handful Thai basil leaves",
+      "0.25 cups fresh coriander, chopped",
+      "1 green chilli, thinly sliced"
+    ]
   }
 ]
